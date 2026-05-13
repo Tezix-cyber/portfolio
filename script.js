@@ -69,13 +69,17 @@ window.addEventListener('scroll', () => {
     progressBar.style.width = progress + '%';
 });
 
-// ===== 3D TILT EFFECT =====
-const tiltElements = document.querySelectorAll('.sae-card, .section-card, .comp-section, .block');
+// ===== 3D TILT & GLOW EFFECT =====
+const tiltElements = document.querySelectorAll('.sae-card, .section-card, .comp-card, .block, .card, .hero-card, .bio-card, .objectif-card, .intro-card');
 tiltElements.forEach(el => {
     el.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
+        
+        // Coordonnées pour l'effet Glow
+        el.style.setProperty('--mouse-x', `${x}px`);
+        el.style.setProperty('--mouse-y', `${y}px`);
         
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;

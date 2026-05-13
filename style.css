@@ -681,3 +681,42 @@ body.dark .footer-col h4 {
     z-index: 9999;
     transition: width 0.1s ease-out;
 }
+
+/* ==========================================
+   GLOW EFFECT (CARDS)
+   ========================================== */
+.section-card, .card, .sae-card, .comp-card, .hero-card, .bio-card, .objectif-card, .intro-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-card > *, .card > *, .sae-card > *, .comp-card > *, .hero-card > *, .bio-card > *, .objectif-card > *, .intro-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.section-card::before, .card::before, .sae-card::before, .comp-card::before, .hero-card::before, .bio-card::before, .objectif-card::before, .intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(14, 165, 233, 0.15), transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-card:hover::before, .card:hover::before, .sae-card:hover::before, .comp-card:hover::before, .hero-card:hover::before, .bio-card:hover::before, .objectif-card:hover::before, .intro-card:hover::before {
+    opacity: 1;
+}
+
+body.dark .section-card::before, 
+body.dark .card::before, 
+body.dark .sae-card::before, 
+body.dark .comp-card::before,
+body.dark .hero-card::before,
+body.dark .bio-card::before,
+body.dark .objectif-card::before,
+body.dark .intro-card::before {
+    background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(14, 165, 233, 0.25), transparent 80%);
+}
