@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan — Portfolio BUT R&T · Nathan Duval</title>
+    <meta name="description" content="Bilan global du parcours en BUT Réseaux & Télécommunications de Nathan Duval. Analyse de la progression, retours d'expérience et projections.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .bilan-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .bilan-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .bilan-block-header {
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bilan-block-header .ico { font-size: 20px; }
+
+        .bilan-block-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .bilan-block-body { padding: 20px 24px; }
+
+        .full-block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .full-block-header {
+            padding: 20px 28px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .full-block-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .full-block-body { padding: 24px 28px; }
+
+        .projection-card {
+            background: var(--navy);
+            border-radius: 16px;
+            padding: 32px;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .projection-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            grid-column: 1 / -1;
+        }
+
+        .proj-item {
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 12px;
+            padding: 18px;
+            background: rgba(255,255,255,.04);
+        }
+
+        .proj-item .proj-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .proj-item .placeholder {
+            background: rgba(255,255,255,.04);
+            border-color: rgba(255,255,255,.1);
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .bilan-cols { grid-template-columns: 1fr; }
+            .projection-card { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ND</span>
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="saes.html">Projets</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="page-header fade-up">
+        <div class="breadcrumb">Accueil / Bilan</div>
+        <h1>Bilan <span>Global</span></h1>
+        <p class="lead">Synthèse de mon parcours, points forts, axes d'amélioration et projection professionnelle.</p>
+    </div>
+
+    <!-- SYNTHÈSE -->
+    <div class="full-block fade-up fade-up-1">
+        <div class="full-block-header">
+            <span style="font-size:22px;">📊</span>
+            <h2>Synthèse de mon parcours</h2>
+        </div>
+        <div class="full-block-body">
+            <div class="placeholder">
+                <strong>À compléter en fin d'année :</strong>
+                Quels sont tes principaux progrès depuis le début de la formation ?
+                Quelles compétences techniques et transversales as-tu développées ?
+                Comment ton regard sur le métier R&T a-t-il évolué depuis septembre ?
+                Y a-t-il des domaines qui t'ont particulièrement surpris ou passionné ?
+            </div>
+        </div>
+    </div>
+
+    <!-- POINTS FORTS & AXES -->
+    <div class="bilan-cols fade-up fade-up-2">
+        <div class="bilan-block">
+            <div class="bilan-block-header">
+                <span class="ico">✅</span>
+                <h2>Points forts identifiés</h2>
+            </div>
+            <div class="bilan-block-body">
+                <div class="placeholder">
+                    Dans quels domaines te sens-tu à l'aise ?
+                    Quelles réussites peux-tu mettre en avant ?
+                    Quels retours positifs as-tu reçus (enseignants, équipe) ?
+                </div>
+            </div>
+        </div>
+        <div class="bilan-block">
+            <div class="bilan-block-header">
+                <span class="ico">🔧</span>
+                <h2>Axes d'amélioration</h2>
+            </div>
+            <div class="bilan-block-body">
+                <div class="placeholder">
+                    Quelles compétences souhaites-tu renforcer ?
+                    Quels apprentissages restent à consolider ?
+                    Quelle stratégie pour combler ces lacunes ?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCES TRANSVERSALES -->
+    <div class="full-block fade-up fade-up-3">
+        <div class="full-block-header">
+            <span style="font-size:22px;">🤝</span>
+            <h2>Compétences transversales développées</h2>
+        </div>
+        <div class="full-block-body">
+            <div class="grid-3" style="margin-bottom: 16px;">
+                <div class="card-sm" style="text-align:center;">
+                    <div style="font-size:24px; margin-bottom:8px;">🗣️</div>
+                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Communication</div>
+                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
+                </div>
+                <div class="card-sm" style="text-align:center;">
+                    <div style="font-size:24px; margin-bottom:8px;">👥</div>
+                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Travail en équipe</div>
+                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
+                </div>
+                <div class="card-sm" style="text-align:center;">
+                    <div style="font-size:24px; margin-bottom:8px;">🔍</div>
+                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Autonomie</div>
+                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROJECTION -->
+    <div class="projection-card fade-up fade-up-4">
+        <h2>🚀 Projection professionnelle</h2>
+        <div class="proj-item">
+            <div class="proj-label">Poursuite d'études envisagée</div>
+            <div class="placeholder">
+                Quelle école d'ingénieur vises-tu après le BUT ?
+                ESIEA, EPITA, INSA, autre ?
+                Quels critères guident ce choix ?
+            </div>
+        </div>
+        <div class="proj-item">
+            <div class="proj-label">Secteur & métier visé</div>
+            <div class="placeholder">
+                Cybersécurité, SOC analyst, pentesteur, architecte sécurité…
+                Quel type d'entreprise t'attire (ESN, institution, startup) ?
+            </div>
+        </div>
+        <div class="proj-item">
+            <div class="proj-label">Technologies à approfondir</div>
+            <div class="placeholder">
+                Quelles technologies ou certifications souhaites-tu obtenir
+                (CCNA, CEH, Linux+, Python avancé…) ?
+            </div>
+        </div>
+        <div class="proj-item">
+            <div class="proj-label">Environnement de travail idéal</div>
+            <div class="placeholder">
+                Secteur public ou privé ? Grand groupe ou structure à taille humaine ?
+                Télétravail, international, sédentaire… ?
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top: 8px;">
+        <a href="competences.html" class="btn btn-outline">← Compétences</a>
+        <a href="index.html" class="btn btn-primary">Accueil →</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="saes.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="bilan.html">Bilan global</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
+            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+            <div class="footer-social">
+                <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Nathan Duval — Tous droits réservés</span>
+        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+    </div>
+</footer>
+
+<button id="back-to-top" aria-label="Retour en haut">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

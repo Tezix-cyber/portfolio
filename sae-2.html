@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.2 — Portfolio BUT R&T · Nathan Duval</title>
+    <meta name="description" content="Détails du projet SAÉ 1.2 par Nathan Duval : contexte, missions, défis techniques et compétences mobilisées.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --accent: #8b5cf6; --accent-bg: rgba(139,92,246,.12); --accent-border: rgba(139,92,246,.25); }
+
+        .sae-hero {
+            background: var(--navy);
+            border-radius: 20px;
+            padding: 36px;
+            margin-bottom: 28px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sae-hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139,92,246,.12), transparent 70%);
+        }
+
+        .sae-hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(139,92,246,.12);
+            color: #8b5cf6;
+            border: 1px solid rgba(139,92,246,.25);
+            margin-bottom: 14px;
+        }
+
+        .sae-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .sae-hero .sae-subtitle {
+            font-size: 15px;
+            color: #94a3b8;
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .sae-hero .sae-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sae-hero .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .sae-hero .meta-item strong { color: #e2e8f0; }
+
+        /* ---- SECTION BLOCKS ---- */
+        .block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            background: var(--accent-bg);
+        }
+
+        .block-header .bh-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: rgba(139,92,246,.12);
+            border: 1px solid rgba(139,92,246,.25);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 17px;
+        }
+
+        .block-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .block-header p {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .block-body {
+            padding: 24px;
+        }
+
+        /* ---- AC CHIPS ---- */
+        .ac-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .ac-chip {
+            padding: 8px 16px;
+            border-radius: 10px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            font-size: 13px;
+            font-weight: 600;
+            color: #8b5cf6;
+        }
+
+        /* ---- TRACES ZONE ---- */
+        .traces-zone {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .traces-zone .tz-icon { font-size: 32px; margin-bottom: 10px; }
+        .traces-zone p { font-size: 14px; line-height: 1.7; }
+
+        /* ---- AUTOEVAL ---- */
+        .autoeval-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .ae-q {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .ae-q-label {
+            padding: 12px 16px;
+            background: var(--bg);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ae-q-answer {
+            padding: 14px 16px;
+            color: var(--muted);
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ---- NIVEAU ---- */
+        .niveau-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .niveau-option {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 10px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .niveau-option.selected {
+            border-color: #8b5cf6;
+            background: rgba(139,92,246,.12);
+            color: #8b5cf6;
+            font-weight: 600;
+        }
+
+        /* ---- NAV ---- */
+        .sae-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        @media (max-width: 640px) {
+            .niveau-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ND</span>
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="saes.html">Projets</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="page-header fade-up" style="margin-bottom: 24px;">
+        <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> / SAÉ 1.4</div>
+    </div>
+
+    <!-- HERO SAÉ -->
+    <div class="sae-hero fade-up">
+        <div class="badge">📂 SAÉ 1.4</div>
+        <h1>SAÉ 1.4<br><span style="color:#64748b; font-weight:400; font-size:22px;">Se présenter sur Internet</span></h1>
+        <p class="sae-subtitle">
+            Projet de validation de ressource : conception et développement d'un site web multipages en HTML/CSS.
+            Le thème étant libre, j'ai choisi de présenter mon univers musical (MAO) dans une vitrine web complète.
+        </p>
+        <div class="sae-meta">
+            <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025</div>
+            <div class="meta-item">👥 <strong>Travail</strong> : individuel</div>
+            <div class="meta-item">🛠️ <strong>Technologies</strong> : HTML, CSS, Flexbox/Grid, GitHub Pages</div>
+            <div class="meta-item">🌐 <strong>Publication</strong> : GitHub Pages</div>
+            <div class="meta-item">🐙 <strong>Repository</strong> : Tezix-cyber/site</div>
+        </div>
+    </div>
+
+    <!-- 1. DESCRIPTION -->
+    <div class="block fade-up fade-up-1">
+        <div class="block-header">
+            <div class="bh-icon">📋</div>
+            <div>
+                <h2>Description & Objectifs</h2>
+                <p>Contexte du projet et compétences visées</p>
+            </div>
+        </div>
+        <div class="block-body">
+            <div class="placeholder">
+                L'objectif de cette SAÉ était plutôt sympa : coder un site web complet en partant de zéro. J'ai choisi de faire mon site sur la Musique Assistée par Ordinateur (MAO), un sujet qui me passionne. C'était l'occasion d'associer un projet perso avec ce que j'apprenais en HTML et CSS. L'enjeu, c'était de faire un site au design propre, techniquement solide et surtout bien adapté aux écrans de smartphones.
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. APPRENTISSAGES CRITIQUES -->
+    <div class="block fade-up fade-up-2">
+        <div class="block-header">
+            <div class="bh-icon">🎯</div>
+            <div>
+                <h2>Apprentissages Critiques mobilisés</h2>
+                <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
+            </div>
+        </div>
+        <div class="block-body">
+            <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
+                Compétences mobilisées autour du développement front-end, de l'organisation du contenu et de la mise en ligne.
+            </p>
+            <div class="ac-grid">
+                <div class="ac-chip">Structurer un site multipages clair et navigable</div>
+                <div class="ac-chip">Concevoir une interface cohérente et responsive</div>
+                <div class="ac-chip">Publier et versionner un projet web avec GitHub</div>
+            </div>
+            <div style="margin-top: 20px;">
+                <div class="placeholder">
+                    J'ai pu gérer le projet du début à la fin, de la création des premières maquettes jusqu'à l'hébergement en ligne. J'ai structuré plusieurs pages (accueil, présentation, réalisations) et j'ai surtout appris à utiliser GitHub pour publier mon code. C'est toujours cool de voir son travail concrétisé par un vrai lien accessible sur le web !
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. TÂCHES -->
+    <div class="block fade-up fade-up-3">
+        <div class="block-header">
+            <div class="bh-icon">🔧</div>
+            <div>
+                <h2>Tâches réalisées</h2>
+                <p>Ta contribution personnelle et les étapes du travail</p>
+            </div>
+        </div>
+        <div class="block-body">
+            <div class="placeholder">
+                <strong>Les étapes de mon travail :</strong><br>
+                1) Réflexion sur le contenu (présentation de la MAO, de mes productions et de mon parcours).<br>
+                2) Création de maquettes simples pour imaginer la structure visuelle des pages.<br>
+                3) Développement pur en HTML pour l'ossature, et en CSS (Flexbox/Grid) pour le style.<br>
+                4) Gros focus sur le mode responsive pour que l'affichage soit parfait sur mobile.<br>
+                5) Ajout d'animations légères en CSS pour dynamiser un peu la navigation.<br>
+                6) Déploiement du code final sur GitHub Pages pour le mettre en ligne.
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. PREUVES -->
+    <div class="block fade-up fade-up-4">
+        <div class="block-header">
+            <div class="bh-icon">📎</div>
+            <div>
+                <h2>Résultats & Preuves</h2>
+                <p>Livrables, captures d'écran, extraits de configurations</p>
+            </div>
+        </div>
+        <div class="block-body">
+            <div class="placeholder" style="margin-bottom: 16px;">
+                <strong>Livrables produits :</strong><br>
+                - Site web multipages fonctionnel (accueil, contenu, auteur).<br>
+                - Charte graphique cohérente sur l'ensemble des pages.<br>
+                - Code source versionné avec plusieurs commits explicites.<br>
+                - README détaillé (objectif, technologies, structure, accès).<br>
+                - Publication du projet sur GitHub/GitHub Pages.
+            </div>
+            <div class="traces-zone">
+                <div class="tz-icon">🖼️</div>
+                <p>Lien du projet final :<br>
+                   <a href="https://github.com/Tezix-cyber/site" target="_blank" rel="noopener noreferrer">https://github.com/Tezix-cyber/site</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. AUTOÉVALUATION -->
+    <div class="block fade-up">
+        <div class="block-header">
+            <div class="bh-icon">🔍</div>
+            <div>
+                <h2>Autoévaluation réflexive</h2>
+                <p>Analyse critique de ton expérience et de ta progression</p>
+            </div>
+        </div>
+        <div class="block-body">
+            <div class="autoeval-questions">
+                <div class="ae-q">
+                    <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
+                    <div class="ae-q-answer">La principale difficulté a été de conserver une cohérence visuelle entre les pages tout en gardant un contenu riche et lisible sur mobile.</div>
+                </div>
+                <div class="ae-q">
+                    <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
+                    <div class="ae-q-answer">J'ai harmonisé les composants réutilisables (navigation, sections, cartes), puis ajusté progressivement les styles avec des tests sur plusieurs tailles d'écran.</div>
+                </div>
+                <div class="ae-q">
+                    <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                    <div class="ae-q-answer">J'ai consolidé mes compétences HTML/CSS, le responsive design, la structuration d'un projet web et le workflow GitHub (commits, documentation, publication).</div>
+                </div>
+                <div class="ae-q">
+                    <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                    <div class="ae-q-answer">Ces acquis seront utiles pour mes prochains projets académiques, mes projets personnels et mes futures expériences pro nécessitant une présence web claire et professionnelle.</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <div class="section-label">Niveau de maîtrise estimé</div>
+                <div class="niveau-grid">
+                    <div class="niveau-option">
+                        ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de base</span>
+                    </div>
+                    <div class="niveau-option">
+                        ⭐⭐ En cours<br><span style="font-size:11px; margin-top:4px; display:block;">En développement</span>
+                    </div>
+                    <div class="niveau-option selected">
+                        ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
+                    </div>
+                    <div class="niveau-option">
+                        ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut enseigner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="sae-nav">
+        <a href="sae-1.html" class="btn btn-outline">← Projet 1.2</a>
+        <a href="sae-3.html" class="btn btn-primary">Projet 1.5 →</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="saes.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="bilan.html">Bilan global</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
+            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+            <div class="footer-social">
+                <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Nathan Duval — Tous droits réservés</span>
+        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+    </div>
+</footer>
+
+<button id="back-to-top" aria-label="Retour en haut">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

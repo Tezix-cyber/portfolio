@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences — Portfolio BUT R&T · Nathan Duval</title>
+    <meta name="description" content="Développement et acquisition des compétences du référentiel BUT R&T. Tableau de bord interactif par Nathan Duval.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .comp-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+        }
+
+        .comp-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comp-num {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .c1 { background: rgba(14,165,233,.15); color: #0ea5e9; }
+        .c2 { background: rgba(139,92,246,.15); color: #8b5cf6; }
+        .c3 { background: rgba(16,185,129,.15); color: #10b981; }
+        .c4 { background: rgba(245,158,11,.15); color: #f59e0b; }
+
+        .comp-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .comp-header p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .comp-body {
+            padding: 28px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .comp-body .inner-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .inner-block { display: flex; flex-direction: column; gap: 8px; }
+
+        .inner-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: var(--teal);
+        }
+
+        @media (max-width: 640px) {
+            .comp-body .inner-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-badge">ND</span>
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="saes.html">Projets</a></li>
+            <li><a href="competences.html">Compétences</a></li>
+            <li><a href="bilan.html">Bilan</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="page-header fade-up">
+        <div class="breadcrumb">Accueil / Compétences</div>
+        <h1>Bilan par <span>Compétence</span></h1>
+        <p class="lead">Synthèse de mes apprentissages organisée par compétence du référentiel BUT R&T.</p>
+    </div>
+
+    <!-- COMPÉTENCE 1 -->
+    <div class="comp-section fade-up fade-up-1">
+        <div class="comp-header">
+            <div class="comp-num c1">C1</div>
+            <div>
+                <h2>🌐 Administrer les réseaux et l'Internet</h2>
+                <p>Configuration, supervision, dépannage et optimisation des infrastructures réseau</p>
+            </div>
+        </div>
+        <div class="comp-body">
+            <div class="inner-grid">
+                <div class="inner-block">
+                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                    <div class="placeholder">
+                        SAÉ 1.2 — S'initier au réseau informatique
+                    </div>
+                </div>
+                <div class="inner-block">
+                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                    <div class="placeholder">
+                        AC 1.1 ✓ — Comprendre l'architecture d'un réseau local<br>
+                        AC 1.2 ✓ — Configurer l'adressage IP (routeurs, switchs)<br>
+                        AC 1.3 (en cours) — Diagnostiquer une panne simple
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="inner-label">Analyse de progression</span>
+                <div class="placeholder" style="margin-top: 8px;">
+                    Je gère bien la configuration de base (IP, masques, passerelles) et le câblage d'un petit réseau local. Je dois encore m'entraîner sur le routage complexe et les VLANs. C'est la base pour mes futurs projets et stages en infra.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCE 2 -->
+    <div class="comp-section fade-up fade-up-2">
+        <div class="comp-header">
+            <div class="comp-num c2">C2</div>
+            <div>
+                <h2>🔗 Connecter les entreprises et les usagers</h2>
+                <p>Mise en œuvre de solutions de connectivité pour entreprises et usagers</p>
+            </div>
+        </div>
+        <div class="comp-body">
+            <div class="inner-grid">
+                <div class="inner-block">
+                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                    <div class="placeholder">
+                        SAÉ 1.2 — S'initier au réseau informatique (et divers TP de téléphonie)
+                    </div>
+                </div>
+                <div class="inner-block">
+                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                    <div class="placeholder">
+                        AC 2.1 ✓ — Différencier les supports physiques (cuivre, fibre)<br>
+                        AC 2.2 (en cours) — Comprendre la transmission des signaux<br>
+                        AC 2.3 (en cours) — Réaliser un câblage propre
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="inner-label">Analyse de progression</span>
+                <div class="placeholder" style="margin-top: 8px;">
+                    Je comprends bien les différents supports physiques et leurs contraintes. J'ai besoin de plus de pratique sur le paramétrage des équipements télécoms spécifiques.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCE 3 -->
+    <div class="comp-section fade-up fade-up-3">
+        <div class="comp-header">
+            <div class="comp-num c3">C3</div>
+            <div>
+                <h2>💻 Créer des outils et des applications</h2>
+                <p>Développement d'outils et d'applications adaptés aux besoins R&T</p>
+            </div>
+        </div>
+        <div class="comp-body">
+            <div class="inner-grid">
+                <div class="inner-block">
+                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                    <div class="placeholder">
+                        SAÉ 1.4 — Se présenter sur Internet<br>
+                        SAÉ 1.5 — Traitement de données
+                    </div>
+                </div>
+                <div class="inner-block">
+                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                    <div class="placeholder">
+                        AC 3.1 ✓ — Développer des scripts Python pour traiter de la donnée<br>
+                        AC 3.2 ✓ — Créer un site web statique en HTML/CSS<br>
+                        AC 3.3 (en cours) — Versionner et publier du code avec Git
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="inner-label">Analyse de progression</span>
+                <div class="placeholder" style="margin-top: 8px;">
+                    J'ai un bon niveau en HTML/CSS et sur les bases de Python (requêter une API, filtrer des infos). La prochaine étape pour moi : m'améliorer en JavaScript.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMPÉTENCE 4 -->
+    <div class="comp-section fade-up fade-up-4">
+        <div class="comp-header">
+            <div class="comp-num c4">C4</div>
+            <div>
+                <h2>🔒 Administrer un SI sécurisé</h2>
+                <p>Administration et sécurisation des systèmes d'information (à partir de la 2e année)</p>
+            </div>
+        </div>
+        <div class="comp-body">
+            <div class="inner-grid">
+                <div class="inner-block">
+                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                    <div class="placeholder">
+                        En attente des projets de 2ème année (spécialisation Cybersécurité).
+                    </div>
+                </div>
+                <div class="inner-block">
+                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                    <div class="placeholder">
+                        Les Apprentissages Critiques seront validés l'an prochain.
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="inner-label">Analyse de progression</span>
+                <div class="placeholder" style="margin-top: 8px;">
+                    On abordera vraiment la cyber en 2ème année (c'est la spé que je vise !). En attendant, je m'y intéresse de mon côté en apprenant les bases de Linux et quelques bonnes pratiques de sécurité.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top: 8px;">
+        <a href="saes.html" class="btn btn-outline">← Mes projets (SAÉ)</a>
+        <a href="bilan.html" class="btn btn-primary">Bilan global →</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="logo-text">Portfolio <span>R&T</span></span>
+            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="saes.html">Projets</a></li>
+                <li><a href="competences.html">Compétences</a></li>
+                <li><a href="bilan.html">Bilan global</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
+            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+            <div class="footer-social">
+                <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Nathan Duval — Tous droits réservés</span>
+        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+    </div>
+</footer>
+
+<button id="back-to-top" aria-label="Retour en haut">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
