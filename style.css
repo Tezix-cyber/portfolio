@@ -677,7 +677,7 @@ body.dark .footer-col h4 {
     left: 0;
     width: 0%;
     height: 4px;
-    background: linear-gradient(90deg, var(--teal), var(--blue));
+    background: linear-gradient(90deg, var(--teal), var(--cyan));
     z-index: 9999;
     transition: width 0.1s ease-out;
 }
