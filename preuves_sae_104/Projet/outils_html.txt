@@ -1,0 +1,7 @@
+﻿W3C validator (HTML/CSS)
+Achecks (Achecker)
+Extension Wave Accessibility
+(Chrome) Lighthouse -> inspecter -> >>> -> lighthouse
+undesign
+gitmoji
+Cssfx.vercel.app

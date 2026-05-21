@@ -212,8 +212,98 @@
             margin-top: 32px;
         }
 
+        /* ---- PROOFS GRID & CARDS ---- */
+        .proofs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .proof-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow);
+        }
+
+        .proof-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .proof-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        .proof-card-icon {
+            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .proof-card-info {
+            flex: 1;
+        }
+
+        .proof-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+
+        .proof-card-subtitle {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .proof-card-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .proof-card-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .proof-card-actions a {
+            flex: 1;
+            min-width: 120px;
+            justify-content: center;
+            font-size: 12.5px;
+            padding: 8px 14px;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
         @media (max-width: 640px) {
             .niveau-grid { grid-template-columns: repeat(2, 1fr); }
+            .proofs-grid { grid-template-columns: 1fr; }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -271,9 +361,15 @@
             </div>
         </div>
         <div class="block-body">
-            <div class="placeholder">
-                L'objectif de cette SAÉ était plutôt sympa : coder un site web complet en partant de zéro. J'ai choisi de faire mon site sur la Musique Assistée par Ordinateur (MAO), un sujet qui me passionne. C'était l'occasion d'associer un projet perso avec ce que j'apprenais en HTML et CSS. L'enjeu, c'était de faire un site au design propre, techniquement solide et surtout bien adapté aux écrans de smartphones.
-            </div>
+            <p style="margin-bottom:14px; line-height:1.7;">
+                La <strong>SAÉ 1.4 — Se présenter sur Internet</strong> est un projet individuel de validation de ressources dont l'objectif est la conception et le développement intégral d'un site web vitrine multipages (3 pages minimum), codé à la main en HTML5 et CSS3.
+            </p>
+            <p style="margin-bottom:14px; line-height:1.7;">
+                Le thème étant libre, j'ai choisi de présenter ma passion pour la <strong>Musique Assistée par Ordinateur (MAO)</strong>, en créant un site qui expose les principes de la synthèse sonore, de la production musicale en home-studio, et mes projets personnels de création.
+            </p>
+            <p style="line-height:1.7;">
+                L'enjeu technique consistait à respecter un cahier des charges strict : utilisation exclusive de techniques de positionnement modernes (<strong>Flexbox et CSS Grid</strong>), conception <strong>adaptative</strong> (Responsive Web Design), intégration d'<strong>animations CSS</strong> fluides, respect des standards du Web de validation <strong>W3C</strong> et de la norme d'accessibilité numérique <strong>WCAG 2.0 niveau AA</strong>. Le code source devait être suivi sur Git, hébergé sur GitHub, et publié sur GitHub Pages.
+            </p>
         </div>
     </div>
 
@@ -287,17 +383,37 @@
             </div>
         </div>
         <div class="block-body">
-            <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
-                Compétences mobilisées autour du développement front-end, de l'organisation du contenu et de la mise en ligne.
+            <p style="font-size:14px; color:var(--muted); margin-bottom:18px;">
+                Ce projet pluridisciplinaire combine des compétences de développement front-end, d'accessibilité numérique et de gestion de projet (ressource R1.15).
             </p>
             <div class="ac-grid">
-                <div class="ac-chip">Structurer un site multipages clair et navigable</div>
-                <div class="ac-chip">Concevoir une interface cohérente et responsive</div>
-                <div class="ac-chip">Publier et versionner un projet web avec GitHub</div>
+                <div class="ac-chip">AC 1.1 — S'initier aux réseaux informatiques (Hébergement, DNS et publication Web)</div>
+                <div class="ac-chip">AC 1.5 — Communiquer et collaborer (Outils R1.15 : planification, WBS, Gantt, suivi Kanboard)</div>
+                <div class="ac-chip">AC 1.6 — Découvrir l'environnement professionnel (Accessibilité WCAG 2.0 AA et normes sémantiques W3C)</div>
             </div>
-            <div style="margin-top: 20px;">
-                <div class="placeholder">
-                    J'ai pu gérer le projet du début à la fin, de la création des premières maquettes jusqu'à l'hébergement en ligne. J'ai structuré plusieurs pages (accueil, présentation, réalisations) et j'ai surtout appris à utiliser GitHub pour publier mon code. C'est toujours cool de voir son travail concrétisé par un vrai lien accessible sur le web !
+            <div class="tech-details-grid" style="margin-top: 24px;">
+                <div class="tech-card">
+                    <h3>🎨 Design & Responsive</h3>
+                    <ul>
+                        <li>Structure adaptative <em>mobile-first</em> avec media queries CSS.</li>
+                        <li>Système de navigation fluide et cohérence visuelle de la charte graphique sombre (univers MAO).</li>
+                        <li>Animations micro-interactions (survol, boutons, cartes).</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>🛠️ Standards & Accessibilité</h3>
+                    <ul>
+                        <li>Vérification de la validité du code HTML5 et CSS3 via les outils du W3C.</li>
+                        <li>Contraste des couleurs et accessibilité des lecteurs d'écran conformes aux recommandations WCAG 2.0 AA.</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>📈 Gestion de Projet (R1.15)</h3>
+                    <ul>
+                        <li>Hiérarchisation des tâches (MindMap et organigramme technique WBS).</li>
+                        <li>Planification temporelle et respect des jalons (diagramme de Gantt).</li>
+                        <li>Suivi agile du projet sur Kanboard (Trello).</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -313,14 +429,30 @@
             </div>
         </div>
         <div class="block-body">
-            <div class="placeholder">
-                <strong>Les étapes de mon travail :</strong><br>
-                1) Réflexion sur le contenu (présentation de la MAO, de mes productions et de mon parcours).<br>
-                2) Création de maquettes simples pour imaginer la structure visuelle des pages.<br>
-                3) Développement pur en HTML pour l'ossature, et en CSS (Flexbox/Grid) pour le style.<br>
-                4) Gros focus sur le mode responsive pour que l'affichage soit parfait sur mobile.<br>
-                5) Ajout d'animations légères en CSS pour dynamiser un peu la navigation.<br>
-                6) Déploiement du code final sur GitHub Pages pour le mettre en ligne.
+            <p style="margin-bottom:16px; line-height:1.7;">
+                Afin de mener à bien le développement de ce site vitrine dans le temps imparti (rendu fixé au 19 décembre 2025), j'ai suivi une méthodologie rigoureuse de gestion de projet et d'intégration web :
+            </p>
+            <div style="display:flex; flex-direction:column; gap:16px; font-size:14px; color:var(--muted);">
+                <div>
+                    <strong style="color:var(--text);">1. Cadrage et Planification (Ressource R1.15) :</strong>
+                    <p style="margin-top:4px;">Définition de l'arborescence des tâches via une MindMap et un WBS. Établissement d'un rétroplanning détaillé (diagramme de Gantt) pour planifier les phases de conception, maquettage, codage, tests et déploiement. Initialisation d'un tableau Kanban (Trello) pour le suivi quotidien.</p>
+                </div>
+                <div>
+                    <strong style="color:var(--text);">2. Conception visuelle & Charte graphique :</strong>
+                    <p style="margin-top:4px;">Création de wireframes et maquettes papier de l'interface. Choix d'une charte graphique immersive (fonds sombres, nuances de violets profonds et d'éclats néon inspirés des stations de travail audionumériques) avec des polices lisibles et des contrastes élevés.</p>
+                </div>
+                <div>
+                    <strong style="color:var(--text);">3. Développement Front-End HTML5 / CSS3 :</strong>
+                    <p style="margin-top:4px;">Codage sémantique des trois pages : page d'accueil (visuelle et synthétique), page thématique MAO (riche en explications techniques sur la synthèse et les effets) et page à propos (présentation de l'auteur, Nathan Duval). Positionnement des éléments via Flexbox et CSS Grid, et intégration de keyframes CSS pour les transitions.</p>
+                </div>
+                <div>
+                    <strong style="color:var(--text);">4. Audit d'accessibilité et validation de conformité :</strong>
+                    <p style="margin-top:4px;">Tests de contrastes de couleurs, validation de la présence de balises d'accessibilité (attributs ARIA, textes alternatifs d'images) et passage du code sous les validateurs officiels W3C pour corriger d'éventuelles erreurs de syntaxe.</p>
+                </div>
+                <div>
+                    <strong style="color:var(--text);">5. Versioning et Déploiement :</strong>
+                    <p style="margin-top:4px;">Suivi de versioning rigoureux sur un dépôt GitHub public, avec des commits atomiques décrivant précisément les ajouts. Configuration du déploiement continu via GitHub Pages et rédaction d'un fichier README.md exhaustif.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -330,23 +462,147 @@
         <div class="block-header">
             <div class="bh-icon">📎</div>
             <div>
-                <h2>Résultats & Preuves</h2>
-                <p>Livrables, captures d'écran, extraits de configurations</p>
+                <h2>Résultats & Preuves de Travail</h2>
+                <p>Documents de gestion de projet (R1.15) et codes sources du site</p>
             </div>
         </div>
         <div class="block-body">
-            <div class="placeholder" style="margin-bottom: 16px;">
-                <strong>Livrables produits :</strong><br>
-                - Site web multipages fonctionnel (accueil, contenu, auteur).<br>
-                - Charte graphique cohérente sur l'ensemble des pages.<br>
-                - Code source versionné avec plusieurs commits explicites.<br>
-                - README détaillé (objectif, technologies, structure, accès).<br>
-                - Publication du projet sur GitHub/GitHub Pages.
+            <p style="margin-bottom:20px; line-height:1.7;">
+                Conformément aux exigences et aux consignes, seules les preuves officielles fournies pour la validation de la SAÉ 1.4 et de la ressource R1.15 sont présentées ci-dessous. Vous pouvez consulter directement les sites web interactifs développés en local ou télécharger les documents originaux de planification et de conception.
+            </p>
+
+            <div class="proofs-grid">
+                <!-- 1. Site Univers MAO -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">🌐</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">Site Web principal "Univers MAO"</h3>
+                                <span class="proof-card-subtitle">Livrable Final SAÉ 1.4</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Site multipages complet structuré avec Flexbox et CSS Grid. Charte graphique sombre immersive avec micro-animations et design responsive optimal (mobile, tablette, PC). Entièrement validé W3C et conforme WCAG 2.0 AA.
+                        </p>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/Projet/site/index.html" target="_blank" class="btn btn-outline">Lancer local</a>
+                        <a href="https://tezix-cyber.github.io/site/" target="_blank" class="btn btn-primary" style="color: white;">Voir en ligne</a>
+                    </div>
+                </div>
+
+                <!-- 2. TP1 MicroLover -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">⚡</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">TP1 — Site d'entraînement MicroLover</h3>
+                                <span class="proof-card-subtitle">Initiation HTML & CSS</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Premier site web d'apprentissage réalisé en travaux pratiques. Il a servi à maîtriser les bases du code sémantique HTML5, la cascade CSS et les premiers schémas de positionnement.
+                        </p>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/TP1 MicroLover/index.html" target="_blank" class="btn btn-outline" style="width: 100%;">Consulter le TP local</a>
+                    </div>
+                </div>
+
+                <!-- 3. Analyse de la Commande -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">📋</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">Analyse de la Commande</h3>
+                                <span class="proof-card-subtitle">Livrable de Cadrage (R1.15)</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Document de cadrage détaillant l'expression du besoin, les contraintes techniques, les cibles utilisateurs et la spécification des exigences fonctionnelles pour la réussite du projet.
+                        </p>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/Projet/ANALYSE DE LA COMMANDE.docx" download class="btn btn-outline" style="width: 100%;">Télécharger (.docx · 25 Ko)</a>
+                    </div>
+                </div>
+
+                <!-- 4. WBS -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">📊</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">Structure des Tâches (WBS)</h3>
+                                <span class="proof-card-subtitle">Organigramme Technique (R1.15)</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Découpage hiérarchique exhaustif des lots de travail (conception, structure, style, accessibilité, validation, déploiement) sous format OpenDocument Drawing (.odg).
+                        </p>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/Projet/WBS.odg" download class="btn btn-outline" style="width: 100%;">Télécharger (.odg · 36 Ko)</a>
+                    </div>
+                </div>
+
+                <!-- 5. Gantt -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">📅</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">Rétroplanning (Gantt)</h3>
+                                <span class="proof-card-subtitle">Planification temporelle (R1.15)</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Diagramme de Gantt structurant l'ordre chronologique d'exécution des tâches sur 8 semaines, avec définition des dépendances et placement des jalons intermédiaires clés.
+                        </p>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/Projet/Rétroplaning.ods" download class="btn btn-outline" style="width: 100%;">Télécharger (.ods · 16 Ko)</a>
+                    </div>
+                </div>
+
+                <!-- 6. Outils et Diagnostics -->
+                <div class="proof-card">
+                    <div>
+                        <div class="proof-card-header">
+                            <div class="proof-card-icon">🛠️</div>
+                            <div class="proof-card-info">
+                                <h3 class="proof-card-title">Outils de validation & normes</h3>
+                                <span class="proof-card-subtitle">Standards & Qualité</span>
+                            </div>
+                        </div>
+                        <p class="proof-card-desc">
+                            Documentation des outils utilisés pour l'audit de qualité et d'accessibilité :
+                        </p>
+                        <ul style="font-size: 12px; color: var(--muted); margin-left: 16px; margin-bottom: 20px; line-height: 1.5;">
+                            <li>W3C Validators (HTML & CSS)</li>
+                            <li>Achecker & WAVE Extension</li>
+                            <li>Chrome Lighthouse</li>
+                            <li>CSSFX (micro-animations)</li>
+                        </ul>
+                    </div>
+                    <div class="proof-card-actions">
+                        <a href="preuves_sae_104/Projet/outils_html.txt" target="_blank" class="btn btn-outline" style="width: 100%;">Consulter la liste (.txt)</a>
+                    </div>
+                </div>
             </div>
-            <div class="traces-zone">
-                <div class="tz-icon">🖼️</div>
-                <p>Lien du projet final :<br>
-                   <a href="https://github.com/Tezix-cyber/site" target="_blank" rel="noopener noreferrer">https://github.com/Tezix-cyber/site</a></p>
+
+            <div style="margin: 20px 0 10px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 32px;">🐙</div>
+                    <div style="text-align: left;">
+                        <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">Dépôt GitHub du Projet</h5>
+                        <p style="font-size:12px; color:var(--muted);">Code source versionné sous Git avec historique des commits de gestion</p>
+                    </div>
+                </div>
+                <a href="https://github.com/Tezix-cyber/site" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Visiter le Repository</a>
             </div>
         </div>
     </div>
@@ -364,19 +620,19 @@
             <div class="autoeval-questions">
                 <div class="ae-q">
                     <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                    <div class="ae-q-answer">La principale difficulté a été de conserver une cohérence visuelle entre les pages tout en gardant un contenu riche et lisible sur mobile.</div>
+                    <div class="ae-q-answer">La principale difficulté a été de respecter scrupuleusement les exigences de la norme d'accessibilité WCAG 2.0 AA (notamment les ratios de contraste pour le texte sur fond sombre) tout en maintenant le design sombre inspiré des séquenceurs audio (DAW). La gestion du positionnement adaptatif avec CSS Grid pour la galerie d'instruments et le respect des délais serrés de planification R1.15 ont également représenté de réels défis.</div>
                 </div>
                 <div class="ae-q">
                     <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                    <div class="ae-q-answer">J'ai harmonisé les composants réutilisables (navigation, sections, cartes), puis ajusté progressivement les styles avec des tests sur plusieurs tailles d'écran.</div>
+                    <div class="ae-q-answer">J'ai utilisé des outils de diagnostic comme Lighthouse et l'extension WAVE pour ajuster dynamiquement les couleurs de contraste et corriger la sémantique HTML. Pour la gestion du temps, le diagramme de Gantt (rétroplanning) et notre suivi de tâches Kanban (Trello) ont permis de repérer les retards de maquettage et de redéployer mes efforts sur la phase d'intégration technique.</div>
                 </div>
                 <div class="ae-q">
                     <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                    <div class="ae-q-answer">J'ai consolidé mes compétences HTML/CSS, le responsive design, la structuration d'un projet web et le workflow GitHub (commits, documentation, publication).</div>
+                    <div class="ae-q-answer">Ce projet m'a permis de maîtriser l'architecture responsive mobile-first et d'appréhender pour la première fois les contraintes d'accessibilité numérique (normes WCAG). J'ai également consolidé l'utilisation d'outils de gestion de projet (WBS, Gantt, Kanban) et le workflow de publication professionnelle avec Git et GitHub Pages.</div>
                 </div>
                 <div class="ae-q">
                     <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                    <div class="ae-q-answer">Ces acquis seront utiles pour mes prochains projets académiques, mes projets personnels et mes futures expériences pro nécessitant une présence web claire et professionnelle.</div>
+                    <div class="ae-q-answer">Ces compétences de développement sémantique, d'audit d'accessibilité et de pilotage de projet sont directement réutilisables pour toutes mes réalisations web futures (notamment dans la création de nos prochains livrables de SAÉ et portfolios) ainsi que dans le monde professionnel.</div>
                 </div>
             </div>
 
@@ -402,7 +658,7 @@
 
     <!-- NAVIGATION -->
     <div class="sae-nav">
-        <a href="sae-102.html" class="btn btn-outline">← Projet 1.2</a>
+        <a href="sae-103.html" class="btn btn-outline">← Projet 1.3</a>
         <a href="sae-105.html" class="btn btn-primary">Projet 1.5 →</a>
     </div>
 </main>
