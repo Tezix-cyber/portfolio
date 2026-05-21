@@ -1,0 +1,11 @@
+[out:json][timeout:300];
+
+area["name"="France"]["admin_level"="2"]->.zone;
+
+(
+  node["amenity"="nightclub"](area.zone);
+  way["amenity"="nightclub"](area.zone);
+  relation["amenity"="nightclub"](area.zone);
+);
+
+out geom;

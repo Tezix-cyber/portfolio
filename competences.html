@@ -73,6 +73,54 @@
             color: var(--teal);
         }
 
+        .comp-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            font-size: 13.5px;
+            color: var(--text);
+            line-height: 1.7;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .comp-box a {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .comp-box a:hover {
+            text-decoration: underline;
+        }
+
+        .comp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .comp-list li {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .comp-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .comp-list li.progress::before {
+            content: '⏳';
+            color: #f59e0b;
+        }
+
         @media (max-width: 640px) {
             .comp-body .inner-grid { grid-template-columns: 1fr; }
         }
@@ -120,23 +168,29 @@
             <div class="inner-grid">
                 <div class="inner-block">
                     <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="placeholder">
-                        SAÉ 1.2 — S'initier au réseau informatique
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Conception et maquettage du LAN sécurisé de Fibre&Company.</li>
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> : Localisation de défauts physiques de lignes.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="inner-block">
                     <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="placeholder">
-                        AC 1.1 ✓ — Comprendre l'architecture d'un réseau local<br>
-                        AC 1.2 ✓ — Configurer l'adressage IP (routeurs, switchs)<br>
-                        AC 1.3 (en cours) — Diagnostiquer une panne simple
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><strong>AC 1.1 — S'initier aux réseaux informatiques</strong> : Compréhension des topologies de réseaux, modèles OSI/TCP-IP et adressage.</li>
+                            <li><strong>AC 1.2 — Configurer les équipements actifs</strong> : Commutation Cisco (VLANs, trunks, agrégation LACP, RSTP) et routage statique.</li>
+                            <li><strong>AC 1.3 — Déploiement de services système d'infrastructure</strong> : Configuration de serveurs de services réseau (DNS Bind9, DHCP, Samba) sous Debian 13.</li>
+                            <li><strong>AC 1.4 — Securiser et diagnostiquer</strong> : Audit avec Wireshark et Iperf3, Port-Security (filtrage MAC) et durcissement SSH selon les guides ANSSI.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div>
                 <span class="inner-label">Analyse de progression</span>
-                <div class="placeholder" style="margin-top: 8px;">
-                    Je gère bien la configuration de base (IP, masques, passerelles) et le câblage d'un petit réseau local. Je dois encore m'entraîner sur le routage complexe et les VLANs. C'est la base pour mes futurs projets et stages en infra.
+                <div class="comp-box" style="margin-top: 8px;">
+                    Grâce aux travaux pratiques et aux réalisations concrètes de la SAÉ 1.2, j'ai acquis une solide autonomie sur la configuration matérielle d'équipements Cisco et le déploiement de services Linux. Je suis capable de configurer des réseaux redondants et sécurisés de niveau 2 et 3. La prochaine étape sera d'aborder des protocoles de routage dynamique comme OSPF et d'apprendre à utiliser des outils de supervision automatisée.
                 </div>
             </div>
         </div>
@@ -155,23 +209,28 @@
             <div class="inner-grid">
                 <div class="inner-block">
                     <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="placeholder">
-                        SAÉ 1.2 — S'initier au réseau informatique (et divers TP de téléphonie)
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> : Caractérisation expérimentale de supports de transmission cuivre et fibre.</li>
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Dimensionnement du support physique (câblage LAN, liaisons montantes).</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="inner-block">
                     <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="placeholder">
-                        AC 2.1 ✓ — Différencier les supports physiques (cuivre, fibre)<br>
-                        AC 2.2 (en cours) — Comprendre la transmission des signaux<br>
-                        AC 2.3 (en cours) — Réaliser un câblage propre
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><strong>AC 2.1 — Différencier les supports physiques</strong> : Analyse des spécifications du cuivre coaxial/paire torsadée et de la fibre monomode (FTTH)/multimode.</li>
+                            <li><strong>AC 2.2 — Caractériser la transmission des signaux</strong> : Mesure de vitesse de propagation (NVP) à l'oscilloscope, réflectométrie temporelle (DTF) et photométrie optique (pertes en dB).</li>
+                            <li><strong>AC 2.3 — Mettre en œuvre des liaisons de télécommunication</strong> : Raccordement physique de jarretières optiques, soudure de fibre, câblage RJ45 et testeurs réseau.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div>
                 <span class="inner-label">Analyse de progression</span>
-                <div class="placeholder" style="margin-top: 8px;">
-                    Je comprends bien les différents supports physiques et leurs contraintes. J'ai besoin de plus de pratique sur le paramétrage des équipements télécoms spécifiques.
+                <div class="comp-box" style="margin-top: 8px;">
+                    La SAÉ 1.3 m'a permis d'assimiler la théorie physique des ondes de télécommunications. Je sais étalonner un photomètre optique pour valider une ligne FTTH et localiser avec précision des défauts physiques de ligne par réflectométrie (DTF). Je maîtrise désormais le choix des supports physiques selon les contraintes de distance et de débit. Je souhaite acquérir plus d'expérience pratique sur le raccordement et la soudure de fibre optique sur le terrain.
                 </div>
             </div>
         </div>
@@ -190,24 +249,28 @@
             <div class="inner-grid">
                 <div class="inner-block">
                     <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="placeholder">
-                        SAÉ 1.4 — Se présenter sur Internet<br>
-                        SAÉ 1.5 — Traitement de données
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-105.html">SAÉ 1.5 — Traitement de données</a> : Récupération d'API, compilation de statistiques et génération dynamique de fiches en HTML/CSS.</li>
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-104.html">SAÉ 1.4 — Se présenter sur Internet</a> : Conception et intégration d'un site web multipage sur la MAO.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="inner-block">
                     <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="placeholder">
-                        AC 3.1 ✓ — Développer des scripts Python pour traiter de la donnée<br>
-                        AC 3.2 ✓ — Créer un site web statique en HTML/CSS<br>
-                        AC 3.3 (en cours) — Versionner et publier du code avec Git
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><strong>AC 3.1 — Développer des applications simples en Python</strong> : Requêtes API Overpass/Nominatim, parsing de fichiers JSON complexes, manipulation d'images (Pillow) et gestion des exceptions réseau.</li>
+                            <li><strong>AC 3.2 — Concevoir des interfaces web statiques et adaptatives</strong> : Intégration HTML5/CSS3 fluide (Flexbox, CSS Grid), design responsive, thèmes clair/sombre, conformité W3C et accessibilité WCAG 2.0 AA.</li>
+                            <li><strong>AC 3.3 — Gérer et versionner des projets de code</strong> : Suivi rigoureux de projets via Git (commits précis, branches, gestion de dépôts).</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div>
                 <span class="inner-label">Analyse de progression</span>
-                <div class="placeholder" style="margin-top: 8px;">
-                    J'ai un bon niveau en HTML/CSS et sur les bases de Python (requêter une API, filtrer des infos). La prochaine étape pour moi : m'améliorer en JavaScript.
+                <div class="comp-box" style="margin-top: 8px;">
+                    Le développement de mes projets SAÉ 1.4 et 1.5 m'a permis d'acquérir une véritable méthodologie de développement. Je suis capable d'automatiser des flux de traitement de données (de l'API réseau au rendu final en HTML/CSS). L'utilisation quotidienne de Git m'a fait comprendre l'importance de la rigueur et du versionnage. Pour aller plus loin, je prévois d'apprendre JavaScript pour rendre mes interfaces Web interactives et d'explorer le scripting d'automatisation réseau (Netmiko, Ansible).
                 </div>
             </div>
         </div>
@@ -226,21 +289,27 @@
             <div class="inner-grid">
                 <div class="inner-block">
                     <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="placeholder">
-                        En attente des projets de 2ème année (spécialisation Cybersécurité).
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li><a href="file:///c:/Users/adminetu/Downloads/portfolio/sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Sécurisation système & réseau (SSH ANSSI, Port-Security, virtualisation Debian/Proxmox).</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="inner-block">
                     <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="placeholder">
-                        Les Apprentissages Critiques seront validés l'an prochain.
+                    <div class="comp-box">
+                        <ul class="comp-list">
+                            <li class="progress"><strong>AC 4.1 — Installer et configurer un système d'exploitation serveur</strong> (en cours) : Virtualisation de serveurs Debian 13 sous hyperviseur Proxmox VE, gestion des disques et sauvegardes.</li>
+                            <li class="progress"><strong>AC 4.2 — Appliquer des politiques de sécurité système et réseau</strong> (en cours) : Durcissement des accès distants (guides ANSSI pour SSH), contrôle d'accès réseau MAC par Port-Security.</li>
+                            <li class="progress"><strong>AC 4.3 — Sauvegarder des données et assurer la résilience</strong> (en cours) : Création de scripts de sauvegarde et archivage système (xfsdump/xfsrestore).</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div>
                 <span class="inner-label">Analyse de progression</span>
-                <div class="placeholder" style="margin-top: 8px;">
-                    On abordera vraiment la cyber en 2ème année (c'est la spé que je vise !). En attendant, je m'y intéresse de mon côté en apprenant les bases de Linux et quelques bonnes pratiques de sécurité.
+                <div class="comp-box" style="margin-top: 8px;">
+                    Bien que la compétence d'administration système sécurisée soit le pilier de ma deuxième année, la SAÉ 1.2 m'a offert une première immersion concrète. J'ai pris conscience des enjeux de sécurité en appliquant des règles strictes sur la configuration SSH et en cloisonnant nos réseaux par des politiques de sécurité commutée. C'est le domaine qui me passionne le plus et je compte mettre à profit ma future spécialisation en Cybersécurité pour apprendre à auditer des réseaux et configurer des firewalls de nouvelle génération (PFSense, Fortinet).
                 </div>
             </div>
         </div>
