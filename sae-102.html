@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAÉ 1.2 — S'initier au réseau informatique · Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Détails du projet SAÉ 1.2 par Nathan Duval : contexte, missions, défis techniques et compétences mobilisées.">
+    <meta name="description"
+        content="Détails du projet SAÉ 1.2 par Nathan Duval : contexte, missions, défis techniques et compétences mobilisées.">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root { --accent: #0ea5e9; --accent-bg: rgba(14,165,233,.12); --accent-border: rgba(14,165,233,.25); }
+        :root {
+            --accent: #0ea5e9;
+            --accent-bg: rgba(14, 165, 233, .12);
+            --accent-border: rgba(14, 165, 233, .25);
+        }
 
         .sae-hero {
             background: var(--navy);
@@ -22,10 +28,12 @@
         .sae-hero::before {
             content: '';
             position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(14,165,233,.12), transparent 70%);
+            background: radial-gradient(circle, rgba(14, 165, 233, .12), transparent 70%);
         }
 
         .sae-hero .badge {
@@ -36,9 +44,9 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
-            background: rgba(14,165,233,.12);
+            background: rgba(14, 165, 233, .12);
             color: #0ea5e9;
-            border: 1px solid rgba(14,165,233,.25);
+            border: 1px solid rgba(14, 165, 233, .25);
             margin-bottom: 14px;
         }
 
@@ -73,7 +81,9 @@
             color: #64748b;
         }
 
-        .sae-hero .meta-item strong { color: #e2e8f0; }
+        .sae-hero .meta-item strong {
+            color: #e2e8f0;
+        }
 
         /* ---- SECTION BLOCKS ---- */
         .block {
@@ -95,11 +105,14 @@
         }
 
         .block-header .bh-icon {
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
-            background: rgba(14,165,233,.12);
-            border: 1px solid rgba(14,165,233,.25);
-            display: flex; align-items: center; justify-content: center;
+            background: rgba(14, 165, 233, .12);
+            border: 1px solid rgba(14, 165, 233, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 17px;
         }
 
@@ -147,8 +160,15 @@
             color: var(--muted);
         }
 
-        .traces-zone .tz-icon { font-size: 32px; margin-bottom: 10px; }
-        .traces-zone p { font-size: 14px; line-height: 1.7; }
+        .traces-zone .tz-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .traces-zone p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
         /* ---- AUTOEVAL ---- */
         .autoeval-questions {
@@ -199,7 +219,7 @@
 
         .niveau-option.selected {
             border-color: #0ea5e9;
-            background: rgba(14,165,233,.12);
+            background: rgba(14, 165, 233, .12);
             color: #0ea5e9;
             font-weight: 600;
         }
@@ -213,235 +233,379 @@
         }
 
         @media (max-width: 640px) {
-            .niveau-grid { grid-template-columns: repeat(2, 1fr); }
+            .niveau-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up" style="margin-bottom: 24px;">
-        <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> / SAÉ 1.2</div>
-    </div>
-
-    <!-- HERO SAÉ -->
-    <div class="sae-hero fade-up">
-        <div class="badge">📂 SAÉ 1.2</div>
-        <h1>SAÉ 1.2<br><span style="color:#64748b; font-weight:400; font-size:22px;">S'initier au réseau informatique</span></h1>
-        <p class="sae-subtitle">
-            Première SAÉ orientée réseaux : prise en main des fondamentaux d'une infrastructure locale,
-            configuration de base des équipements et validation du fonctionnement du LAN.
-        </p>
-        <div class="sae-meta">
-            <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025</div>
-            <div class="meta-item">👥 <strong>Travail</strong> : individuel et binôme selon les activités</div>
-            <div class="meta-item">🧰 <strong>Outils</strong> : Cisco Packet Tracer / terminal réseau</div>
-            <div class="meta-item">🛠️ <strong>Technologies</strong> : IPv4, switching, tests de connectivité</div>
-            <div class="meta-item">🎯 <strong>Focus</strong> : bases réseau, adressage, tests de connectivité</div>
-        </div>
-    </div>
-
-    <!-- 1. DESCRIPTION -->
-    <div class="block fade-up fade-up-1">
-        <div class="block-header">
-            <div class="bh-icon">📋</div>
-            <div>
-                <h2>Description & Objectifs</h2>
-                <p>Contexte du projet et compétences visées</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="placeholder">
-                Cette SAÉ, c’était ma première vraie approche du monde des réseaux. C'était l'occasion de passer de la théorie à la pratique en montant un réseau local (LAN) complet. J'ai appris à configurer des routeurs et des switchs, et à comprendre concrètement comment les machines communiquent. Le but n'était pas de recracher un cours, mais de choper de bons réflexes techniques et une logique de résolution de problèmes qui me serviront pour la suite de mes études.
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. APPRENTISSAGES CRITIQUES -->
-    <div class="block fade-up fade-up-2">
-        <div class="block-header">
-            <div class="bh-icon">🎯</div>
-            <div>
-                <h2>Apprentissages Critiques mobilisés</h2>
-                <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
-                Compétences mobilisées autour de la mise en place d'un réseau local et du diagnostic de premier niveau.
-            </p>
-            <div class="ac-grid">
-                <div class="ac-chip">Identifier les composants d'une architecture réseau simple</div>
-                <div class="ac-chip">Configurer l'adressage IP et les paramètres de base</div>
-                <div class="ac-chip">Tester et valider la connectivité entre équipements</div>
-            </div>
-            <div style="margin-top: 20px;">
-                <div class="placeholder">
-                    Le gros point fort, c'est que j'ai pu tester tout ça sur du vrai matériel et des simulateurs. C’est toujours satisfaisant de voir qu'un réseau tourne bien après avoir tout configuré soi-même. Surtout, j'ai appris à ne pas paniquer au premier message d'erreur et à vérifier chaque étape (câblage, adressage IP, routage) pour identifier précisément d'où vient la panne.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. TÂCHES -->
-    <div class="block fade-up fade-up-3">
-        <div class="block-header">
-            <div class="bh-icon">🔧</div>
-            <div>
-                <h2>Tâches réalisées</h2>
-                <p>Ta contribution personnelle et les étapes du travail</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="placeholder">
-                <strong>Le déroulement du projet :</strong><br>
-                1) Analyse de l'architecture réseau demandée avant de commencer.<br>
-                2) Câblage de la maquette (PC, switchs, routeurs) et configuration de base.<br>
-                3) Attribution des adresses IP, masques et passerelles sur chaque équipement.<br>
-                4) Lancement des tests de connectivité (les fameux ping) pour s'assurer que tout communique.<br>
-                5) Diagnostic et correction des erreurs de configuration quand un test ne passait pas.
-            </div>
-        </div>
-    </div>
-
-    <!-- 4. PREUVES -->
-    <div class="block fade-up fade-up-4">
-        <div class="block-header">
-            <div class="bh-icon">📎</div>
-            <div>
-                <h2>Résultats & Preuves</h2>
-                <p>Livrables, captures d'écran, extraits de configurations</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="placeholder" style="margin-bottom: 16px;">
-                <strong>Éléments de preuve mobilisables :</strong><br>
-                - Schéma de topologie réseau réalisé pendant le projet.<br>
-                - Captures de configuration (adressage, interfaces, paramètres réseau).<br>
-                - Résultats de tests de connectivité attestant du bon fonctionnement.<br>
-                - Synthèse des incidents rencontrés et des corrections apportées.
-            </div>
-            <div class="traces-zone">
-                <div class="tz-icon">🖼️</div>
-                <p>Zone dédiée aux captures du projet 1.2 (topologie, configs, tests).<br>
-                   Ex : <code>&lt;img src="captures/sae1-topologie.png" alt="Topologie réseau SAÉ 1.2"&gt;</code></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. AUTOÉVALUATION -->
-    <div class="block fade-up">
-        <div class="block-header">
-            <div class="bh-icon">🔍</div>
-            <div>
-                <h2>Autoévaluation réflexive</h2>
-                <p>Analyse critique de ton expérience et de ta progression</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="autoeval-questions">
-                <div class="ae-q">
-                    <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                    <div class="ae-q-answer">Les principales difficultés concernaient la compréhension de l'adressage IP et l'identification rapide des erreurs de paramétrage.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                    <div class="ae-q-answer">J'ai adopté une méthode de vérification étape par étape (configurations, tests, correction), en m'appuyant sur les supports de TP et les retours enseignants.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                    <div class="ae-q-answer">J'ai acquis de bons réflexes pour configurer un réseau local simple et diagnostiquer les problèmes de connectivité de premier niveau.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                    <div class="ae-q-answer">Ces acquis sont réutilisables dans les projets suivants, en stage et en contexte professionnel pour l'installation, la maintenance et le support réseau.</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 24px;">
-                <div class="section-label">Niveau de maîtrise estimé</div>
-                <div class="niveau-grid">
-                    <div class="niveau-option">
-                        ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de base</span>
-                    </div>
-                    <div class="niveau-option selected">
-                        ⭐⭐ En cours<br><span style="font-size:11px; margin-top:4px; display:block;">En développement</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut enseigner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <div class="sae-nav">
-        <a href="saes.html" class="btn btn-outline">← Retour aux projets</a>
-        <a href="sae-104.html" class="btn btn-primary">Projet 1.4 →</a>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up" style="margin-bottom: 24px;">
+            <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> /
+                SAÉ 1.2</div>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <!-- HERO SAÉ -->
+        <div class="sae-hero fade-up">
+            <div class="badge">📂 SAÉ 1.2</div>
+            <h1>SAÉ 1.2<br><span style="color:#64748b; font-weight:400; font-size:22px;">S'initier au réseau
+                    informatique</span></h1>
+            <p class="sae-subtitle">
+                Première SAÉ orientée réseaux : prise en main des fondamentaux d'une infrastructure locale,
+                configuration de base des équipements et validation du fonctionnement du LAN.
+            </p>
+            <div class="sae-meta">
+                <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025</div>
+                <div class="meta-item">👥 <strong>Travail</strong> : individuel et binôme selon les activités</div>
+                <div class="meta-item">🧰 <strong>Outils</strong> : Cisco Packet Tracer / terminal réseau</div>
+                <div class="meta-item">🛠️ <strong>Technologies</strong> : IPv4, switching, tests de connectivité</div>
+                <div class="meta-item">🎯 <strong>Focus</strong> : bases réseau, adressage, tests de connectivité</div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- 1. DESCRIPTION -->
+        <div class="block fade-up fade-up-1">
+            <div class="block-header">
+                <div class="bh-icon">📋</div>
+                <div>
+                    <h2>Description & Objectifs</h2>
+                    <p>Contexte du projet et compétences visées</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;">
+                    Dans le cadre de cette SAÉ, nous avons été recrutés en tant que techniciens réseau pour la société
+                    <strong>Fibre&Company</strong>, une entreprise spécialisée dans le déploiement de la fibre optique.
+                    Son réseau initial très basique (60 postes utilisateurs, switchs non paramétrables, adressage à
+                    plat, box ADSL gérant les services de DNS cache, DHCP et routage sans cloisonnement) devenait un
+                    frein et un risque de sécurité majeur, d'autant que l'entreprise projetait de <strong>doubler ses
+                        effectifs</strong> (passage à plus de 120 postes).
+                </p>
+                <p style="margin-bottom:14px;">
+                    L'objectif principal était de **concevoir et réaliser un prototype sécurisé et redondant** sur
+                    maquette avant le passage en production. Il s'agissait de segmenter le trafic en VLANs, de
+                    configurer le routage inter-VLANs, d'agréger les liaisons commutées et d'installer un serveur de
+                    services Debian 13 virtualisé sur un hyperviseur **Proxmox VE**.
+                </p>
+                <p>
+                    Ce projet a permis de mobiliser des compétences transverses en adressage IPv4, en protocoles de
+                    niveau 2 (RSTP, LACP), en routage de niveau 3, ainsi qu'en administration système Linux (DNS
+                    récursif, serveurs de fichiers Samba, transferts de configuration TFTP et politiques de sécurité de
+                    l'ANSSI).
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. APPRENTISSAGES CRITIQUES -->
+        <div class="block fade-up fade-up-2">
+            <div class="block-header">
+                <div class="bh-icon">🎯</div>
+                <div>
+                    <h2>Apprentissages Critiques mobilisés</h2>
+                    <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
+                    Compétences théoriques et pratiques mobilisées pour la restructuration globale de l'architecture LAN
+                    et de ses services.
+                </p>
+                <div class="ac-grid" style="margin-bottom: 20px;">
+                    <div class="ac-chip">AC 1.1 — S'initier aux réseaux informatiques (Adressage IP, topologies)</div>
+                    <div class="ac-chip">AC 1.2 — Configurer les équipements actifs (VLANs, LACP, RSTP, routage L3
+                        Cisco)</div>
+                    <div class="ac-chip">AC 1.3 — Déploiement de services système d'infrastructure (Debian, DHCP, DNS
+                        Bind9, SMB)</div>
+                    <div class="ac-chip">AC 1.4 — Sécuriser et diagnostiquer (SSH ANSSI, Port-Security, Iperf3, xfsdump)
+                    </div>
+                </div>
+
+                <div class="tech-details-grid">
+                    <div class="tech-card">
+                        <h3>🌐 Administration & Commutation</h3>
+                        <ul>
+                            <li>Segmentation en 6 VLANs métiers pour isoler les flux.</li>
+                            <li>Spanning Tree RSTP pour éliminer les boucles (3750 configuré en Root).</li>
+                            <li>Liaisons agrégées LACP (EtherChannel) pour la redondance et la bande passante.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🐧 Systèmes & Services</h3>
+                        <ul>
+                            <li>Debian 13 VM multi-disques (XFS pour le /home et Ext4 pour le reste).</li>
+                            <li>Automatisation de l'intégration utilisateurs via <code>newusers</code> et
+                                <code>pwgen</code>.</li>
+                            <li>DNS récursif cache (Bind9), serveur web (Apache2) et serveur TFTP.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🔒 Sécurité & Robustesse</h3>
+                        <ul>
+                            <li>Port-Security sur les switchs, protection contre les tempêtes de broadcast.</li>
+                            <li>Désactivation de Telnet/HTTP, accès SSH sécurisé par clés RSA 4096 bits (ANSSI).</li>
+                            <li>Sauvegardes incrémentales du disque utilisateur via <code>xfsdump</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. TÂCHES -->
+        <div class="block fade-up fade-up-3">
+            <div class="block-header">
+                <div class="bh-icon">🔧</div>
+                <div>
+                    <h2>Tâches réalisées</h2>
+                    <p>Déroulement technique et méthodologie appliquée</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;"><strong>1. Conception du plan d'adressage IPv4 sans VLSM</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Pour héberger 150 machines par VLAN, nous avons dimensionné les masques au plus près. Le masque
+                    requis est un <strong>/24 (255.255.255.0)</strong>, offrant 254 adresses utiles (le /25 étant limité
+                    à 126 hôtes).
+                    Nous avons découpé le réseau privé <code>172.16.0.0/16</code> de la manière suivante :
+                    <br>• VLAN 200 (Serveurs) : <code>172.16.0.0/24</code> (IP serveur : <code>172.16.0.10</code>)
+                    <br>• VLAN 210 (Comptabilité) : <code>172.16.1.0/24</code>
+                    <br>• VLAN 220 (Administratif) : <code>172.16.2.0/24</code>
+                    <br>• VLAN 230 (Vente) : <code>172.16.3.0/24</code>
+                    <br>• VLAN 240 (Supervision) : <code>172.16.4.0/24</code>
+                    <br>• VLAN 250 (Admin Informatique) : <code>172.16.5.0/24</code>
+                    <br>• VLAN 696 (Non utilisé / Natif) : <code>172.16.96.0/24</code>
+                    <br>• Lien point-à-point L3 (Switch L3 ↔ Routeur 2911) : <code>172.16.254.0/30</code>
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>2. Déploiement et configuration des équipements actifs
+                        Cisco</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Sur le switch L3 (Catalyst 3750), nous avons activé le routage IP et configuré les interfaces
+                    virtuelles (SVI). Nous y avons déployé le serveur DHCP pour l'ensemble des VLANs (sauf le VLAN 200)
+                    avec attribution du serveur DNS de l'entreprise.
+                    Les switchs d'accès ont été reliés au commutateur racine par des liaisons EtherChannel LACP
+                    redondantes.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>3. Installation et partitionnement Debian 13 VM</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    La machine virtuelle Debian 13 a été installée sous Proxmox VE en mode UEFI avec 4 disques virtuels
+                    distincts :
+                    <br>• <strong>Disque 1 (50 Go)</strong> : <code>/boot/efi</code> (500 Mo FAT), <code>/</code> (40 Go
+                    Ext4), swap (6 Go), <code>/tmp</code> (4 Go Ext4)
+                    <br>• <strong>Disque 2 (60 Go)</strong> : <code>/var</code> (Ext4) pour les données variables (logs,
+                    sites)
+                    <br>• <strong>Disque 3 (70 Go)</strong> : <code>/home</code> (XFS) pour les répertoires personnels
+                    <br>• <strong>Disque 4 (80 Go)</strong> : <code>/BackupHome</code> (Ext4) pour héberger les fichiers
+                    de sauvegarde
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>4. Provisionnement automatique et restriction d'accès</strong>
+                </p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Pour créer les comptes sans utiliser de boucles Bash (exigence du responsable), nous avons utilisé
+                    l'utilitaire <code>newusers</code> couplé à <code>pwgen</code> pour générer des mots de passe
+                    robustes de 10 caractères avec symboles. Seuls les 5 premiers utilisateurs (groupe <em>Admin
+                        Informatique</em>) ont reçu un interpréteur <code>/bin/bash</code>, les autres étant redirigés
+                    vers <code>/usr/sbin/nologin</code>.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>5. Services applicatifs & Sécurité globale</strong></p>
+                <p style="color:var(--muted); font-size:14px;">
+                    • <strong>DNS Cache (Bind9)</strong> : Résolution récursive réactive locale.
+                    <br>• <strong>Partage Samba</strong> : Accès invité en lecture seule. Dépôt autorisé aux groupes
+                    <em>Administratif</em> et <em>Admin Informatique</em>. Protection des données par l'activation du
+                    Sticky Bit (<code>chmod +t</code>) sur les dossiers partagés, empêchant la suppression des fichiers
+                    par un tiers.
+                    <br>• <strong>Web (Apache2)</strong> & <strong>Sauvegarde TFTP</strong> (stockage d'IOS Cisco et de
+                    fichiers de configuration).
+                    <br>• <strong>Durcissement</strong> : Clés SSH RSA de 4096 bits (conforme ANSSI), désactivation de
+                    SSHv1, masquage des bannières de version, limitation des ciphers aux plus sécurisés (AES-GCM et
+                    ChaCha20-Poly1305).
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. PREUVES -->
+        <div class="block fade-up fade-up-4">
+            <div class="block-header">
+                <div class="bh-icon">📎</div>
+                <div>
+                    <h2>Résultats & Preuves</h2>
+                    <p>Livrables, topologie et configurations techniques réelles du prototype</p>
+                </div>
+            </div>
+            <div class="block-body">
+
+                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Topologie
+                    Réseau Logique (Fibre&Company)</h4>
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <img src="preuves_sae_102/VIsio.png" alt="Topologie réseau Fibre&Company"
+                        style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 1 : Maquette réseau Cisco &
+                        Hyperviseur Proxmox VE (VLANs & routage L3)</p>
+                </div>
+
+                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Schéma de
+                    partitionnement des disques Debian 13 VM</h4>
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <img src="preuves_sae_102/sae12_disks.png" alt="Partitionnement disque Debian VM"
+                        style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 2 : Architecture multi-disques
+                        et points de montage système/données/sauvegardes</p>
+                </div>
+
+                <div class="code-title">Configuration Switch Catalyst 3750 L3 (Routage Inter-VLAN & DHCP)</div>
+                <pre><code>! Routage Inter-VLAN et passerelle
+ip routing
+interface Vlan210
+ ip address 172.16.1.254 255.255.255.0
+!
+! Pool DHCP (Exclusion des 5 dernieres IP)
+ip dhcp excluded-address 172.16.1.250 172.16.1.254
+ip dhcp pool Pool-Compta
+ network 172.16.1.0 255.255.255.0
+ default-router 172.16.1.254
+ dns-server 172.16.0.10</code></pre>
+
+                <div class="code-title">Configuration Routeur 2911 (Routage statique LAN & WAN)</div>
+                <pre><code>! Routage statique local & default route vers Box
+ip route 0.0.0.0 0.0.0.0 192.168.1.1
+ip route 172.16.0.0 255.255.0.0 172.16.254.1</code></pre>
+            </div>
+        </div>
+
+        <!-- 5. AUTOÉVALUATION -->
+        <div class="block fade-up">
+            <div class="block-header">
+                <div class="bh-icon">🔍</div>
+                <div>
+                    <h2>Autoévaluation réflexive</h2>
+                    <p>Analyse critique de mon expérience et de ma progression</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <div class="autoeval-questions">
+                    <div class="ae-q">
+                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
+                        <div class="ae-q-answer">La principale difficulté résidait dans l'intégration globale de
+                            l'adressage IP sans VLSM pour satisfaire le besoin de 150 postes tout en évitant le
+                            gaspillage d'adresses, ainsi que la configuration fine de Samba pour restreindre la
+                            modification et la suppression de fichiers aux seuls propriétaires.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
+                        <div class="ae-q-answer">J'ai structuré l'adressage en blocs /24 contigus au sein de
+                            172.16.0.0/16. Pour Samba, j'ai combiné les directives de partage Samba (write list) avec le
+                            sticky bit POSIX (chmod +t) sur le répertoire partagé sous Debian pour garantir que seuls
+                            les propriétaires puissent supprimer ou modifier leurs fichiers.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-answer">J'ai appris à concevoir un réseau d'entreprise de A à Z (commutation
+                            L2, routage L3 Cisco), à manipuler des techniques avancées d'administration Debian (gestion
+                            multi-disque, xfsdump, newusers pour le provisionnement en masse) et à appliquer les règles
+                            de durcissement de l'ANSSI (SSHv2, clés asymétriques RSA 4096 bits).</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-answer">Ces compétences fondamentales de switching, routing et de durcissement
+                            Linux constituent le socle technique indispensable pour mon projet professionnel orienté
+                            vers la cybersécurité et l'administration système sécurisée.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <div class="section-label">Niveau de maîtrise estimé</div>
+                    <div class="niveau-grid">
+                        <div class="niveau-option">
+                            ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de
+                                base</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐ En cours<br><span style="font-size:11px; margin-top:4px; display:block;">En
+                                développement</span>
+                        </div>
+                        <div class="niveau-option selected">
+                            ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut
+                                enseigner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="sae-nav">
+            <a href="saes.html" class="btn btn-outline">← Retour aux projets</a>
+            <a href="sae-104.html" class="btn btn-primary">Projet 1.4 →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>
