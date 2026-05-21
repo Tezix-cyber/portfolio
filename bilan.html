@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bilan — Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Bilan global du parcours en BUT Réseaux & Télécommunications de Nathan Duval. Analyse de la progression, retours d'expérience et projections.">
+    <meta name="description"
+        content="Bilan global du parcours en BUT Réseaux & Télécommunications de Nathan Duval. Analyse de la progression, retours d'expérience et projections.">
     <link rel="stylesheet" href="style.css">
     <style>
         .bilan-cols {
@@ -30,7 +32,9 @@
             gap: 10px;
         }
 
-        .bilan-block-header .ico { font-size: 20px; }
+        .bilan-block-header .ico {
+            font-size: 20px;
+        }
 
         .bilan-block-header h2 {
             font-family: 'Outfit', sans-serif;
@@ -38,7 +42,9 @@
             font-weight: 700;
         }
 
-        .bilan-block-body { padding: 20px 24px; }
+        .bilan-block-body {
+            padding: 20px 24px;
+        }
 
         .full-block {
             background: var(--card);
@@ -63,7 +69,9 @@
             font-weight: 700;
         }
 
-        .full-block-body { padding: 24px 28px; }
+        .full-block-body {
+            padding: 24px 28px;
+        }
 
         .projection-card {
             background: var(--navy);
@@ -86,10 +94,10 @@
         }
 
         .proj-item {
-            border: 1px solid rgba(255,255,255,.07);
+            border: 1px solid rgba(255, 255, 255, .07);
             border-radius: 12px;
             padding: 18px;
-            background: rgba(255,255,255,.04);
+            background: rgba(255, 255, 255, .04);
         }
 
         .proj-item .proj-label {
@@ -102,197 +110,242 @@
         }
 
         .proj-item .placeholder {
-            background: rgba(255,255,255,.04);
-            border-color: rgba(255,255,255,.1);
+            background: rgba(255, 255, 255, .04);
+            border-color: rgba(255, 255, 255, .1);
             color: #64748b;
         }
 
         @media (max-width: 768px) {
-            .bilan-cols { grid-template-columns: 1fr; }
-            .projection-card { grid-template-columns: 1fr; }
+            .bilan-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .projection-card {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up">
-        <div class="breadcrumb">Accueil / Bilan</div>
-        <h1>Bilan <span>Global</span></h1>
-        <p class="lead">Synthèse de mon parcours, points forts, axes d'amélioration et projection professionnelle.</p>
-    </div>
-
-    <!-- SYNTHÈSE -->
-    <div class="full-block fade-up fade-up-1">
-        <div class="full-block-header">
-            <span style="font-size:22px;">📊</span>
-            <h2>Synthèse de mon parcours</h2>
-        </div>
-        <div class="full-block-body">
-            <div class="placeholder">
-                <strong>À compléter en fin d'année :</strong>
-                Quels sont tes principaux progrès depuis le début de la formation ?
-                Quelles compétences techniques et transversales as-tu développées ?
-                Comment ton regard sur le métier R&T a-t-il évolué depuis septembre ?
-                Y a-t-il des domaines qui t'ont particulièrement surpris ou passionné ?
-            </div>
-        </div>
-    </div>
-
-    <!-- POINTS FORTS & AXES -->
-    <div class="bilan-cols fade-up fade-up-2">
-        <div class="bilan-block">
-            <div class="bilan-block-header">
-                <span class="ico">✅</span>
-                <h2>Points forts identifiés</h2>
-            </div>
-            <div class="bilan-block-body">
-                <div class="placeholder">
-                    Dans quels domaines te sens-tu à l'aise ?
-                    Quelles réussites peux-tu mettre en avant ?
-                    Quels retours positifs as-tu reçus (enseignants, équipe) ?
-                </div>
-            </div>
-        </div>
-        <div class="bilan-block">
-            <div class="bilan-block-header">
-                <span class="ico">🔧</span>
-                <h2>Axes d'amélioration</h2>
-            </div>
-            <div class="bilan-block-body">
-                <div class="placeholder">
-                    Quelles compétences souhaites-tu renforcer ?
-                    Quels apprentissages restent à consolider ?
-                    Quelle stratégie pour combler ces lacunes ?
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPÉTENCES TRANSVERSALES -->
-    <div class="full-block fade-up fade-up-3">
-        <div class="full-block-header">
-            <span style="font-size:22px;">🤝</span>
-            <h2>Compétences transversales développées</h2>
-        </div>
-        <div class="full-block-body">
-            <div class="grid-3" style="margin-bottom: 16px;">
-                <div class="card-sm" style="text-align:center;">
-                    <div style="font-size:24px; margin-bottom:8px;">🗣️</div>
-                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Communication</div>
-                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
-                </div>
-                <div class="card-sm" style="text-align:center;">
-                    <div style="font-size:24px; margin-bottom:8px;">👥</div>
-                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Travail en équipe</div>
-                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
-                </div>
-                <div class="card-sm" style="text-align:center;">
-                    <div style="font-size:24px; margin-bottom:8px;">🔍</div>
-                    <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Autonomie</div>
-                    <div class="placeholder" style="font-size:12px; padding:10px;">À évaluer</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PROJECTION -->
-    <div class="projection-card fade-up fade-up-4">
-        <h2>🚀 Projection professionnelle</h2>
-        <div class="proj-item">
-            <div class="proj-label">Poursuite d'études envisagée</div>
-            <div class="placeholder">
-                Quelle école d'ingénieur vises-tu après le BUT ?
-                ESIEA, EPITA, INSA, autre ?
-                Quels critères guident ce choix ?
-            </div>
-        </div>
-        <div class="proj-item">
-            <div class="proj-label">Secteur & métier visé</div>
-            <div class="placeholder">
-                Cybersécurité, SOC analyst, pentesteur, architecte sécurité…
-                Quel type d'entreprise t'attire (ESN, institution, startup) ?
-            </div>
-        </div>
-        <div class="proj-item">
-            <div class="proj-label">Technologies à approfondir</div>
-            <div class="placeholder">
-                Quelles technologies ou certifications souhaites-tu obtenir
-                (CCNA, CEH, Linux+, Python avancé…) ?
-            </div>
-        </div>
-        <div class="proj-item">
-            <div class="proj-label">Environnement de travail idéal</div>
-            <div class="placeholder">
-                Secteur public ou privé ? Grand groupe ou structure à taille humaine ?
-                Télétravail, international, sédentaire… ?
-            </div>
-        </div>
-    </div>
-
-    <div style="display:flex; justify-content:space-between; margin-top: 8px;">
-        <a href="competences.html" class="btn btn-outline">← Compétences</a>
-        <a href="index.html" class="btn btn-primary">Accueil →</a>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up">
+            <div class="breadcrumb">Accueil / Bilan</div>
+            <h1>Bilan <span>Global</span></h1>
+            <p class="lead">Synthèse de mon parcours, points forts, axes d'amélioration et projection professionnelle.
+            </p>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <!-- SYNTHÈSE -->
+        <div class="full-block fade-up fade-up-1">
+            <div class="full-block-header">
+                <span style="font-size:22px;">📊</span>
+                <h2>Synthèse de mon parcours</h2>
+            </div>
+            <div class="full-block-body">
+                <p style="font-size:14px; line-height:1.85; color:var(--text);">
+                    Cette première année de BUT R&T a été pour moi une véritable révélation. Arrivé avec des bases en
+                    algorithmique et en électronique acquises en NSI et SI, j'ai dû rapidement élargir mon spectre de
+                    compétences vers des domaines que je ne maîtrisais pas encore : la configuration d'équipements
+                    réseau Cisco, l'administration système Linux, la physique des signaux de transmission et le
+                    développement de scripts Python orientés données réseau.
+                </p>
+                <p style="font-size:14px; line-height:1.85; color:var(--text); margin-top:12px;">
+                    Le projet qui m'a le plus marqué est sans conteste la <strong>SAÉ 1.2</strong>, qui m'a demandé de
+                    concevoir en équipe une infrastructure réseau complète (VLANs, LACP, RSTP, DNS, DHCP, Samba) pour
+                    une entreprise fictive en croissance. C'était la première fois que je touchais à du matériel Cisco
+                    réel et que je déployais une VM Linux en production simulée. Cette SAÉ a confirmé mon attrait pour
+                    la sécurisation des systèmes d'information.
+                </p>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- POINTS FORTS & AXES -->
+        <div class="bilan-cols fade-up fade-up-2">
+            <div class="bilan-block">
+                <div class="bilan-block-header">
+                    <span class="ico">✅</span>
+                    <h2>Points forts identifiés</h2>
+                </div>
+                <div class="bilan-block-body">
+                    <ul
+                        style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:var(--text);">
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#10b981;font-weight:bold;">✓</span>
+                            <strong>Administration réseau Cisco</strong> — Configuration de VLANs, trunks, LACP, RSTP et
+                            routage inter-VLANs sans documentation annexe.
+                        </li>
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#10b981;font-weight:bold;">✓</span>
+                            <strong>Développement Python</strong> — Conception de scripts robustes interrogeant des APIs
+                            réseau (Overpass, Nominatim, OSM) avec gestion d'erreurs HTTP et parsing JSON.
+                        </li>
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#10b981;font-weight:bold;">✓</span>
+                            <strong>Intégration Web</strong> — Création d'un portfolio multipage responsive, valide W3C
+                            et accessible WCAG 2.0 AA, en HTML5/CSS3 sans framework.
+                        </li>
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#10b981;font-weight:bold;">✓</span>
+                            <strong>Autonomie et initiative</strong> — Capacité à rechercher, lire des documentations
+                            techniques en anglais et à produire des solutions sans aide directe.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bilan-block">
+                <div class="bilan-block-header">
+                    <span class="ico">🔧</span>
+                    <h2>Axes d'amélioration</h2>
+                </div>
+                <div class="bilan-block-body">
+                    <ul
+                        style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:var(--text);">
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#f59e0b;">⏳</span> <strong>Routage
+                                dynamique</strong> — OSPF et BGP restent à approfondir ; j'ai uniquement pratiqué le
+                            routage statique cette année.</li>
+                        <li style="padding-left:22px; position:relative;"><span
+                                style="position:absolute;left:0;color:#f59e0b;">⏳</span> <strong>JavaScript</strong> —
+                            Mes interfaces web sont actuellement statiques ; l'ajout d'interactivité côté client est une
+                            priorité pour la suite.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPÉTENCES TRANSVERSALES -->
+        <div class="full-block fade-up fade-up-3">
+            <div class="full-block-header">
+                <span style="font-size:22px;">🤝</span>
+                <h2>Compétences transversales développées</h2>
+            </div>
+            <div class="full-block-body">
+                <div class="grid-3" style="margin-bottom: 16px;">
+                    <div class="card-sm" style="text-align:center;">
+                        <div style="font-size:24px; margin-bottom:8px;">🗣️</div>
+                        <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Communication</div>
+                        <div style="font-size:12px; padding:8px; color:var(--muted); line-height:1.6;">Rédaction de
+                            rapports techniques clairs (SAÉ 1.3), présentation de livrables devant les enseignants et
+                            adaptation du discours selon l'interlocuteur (AC 12.05).</div>
+                    </div>
+                    <div class="card-sm" style="text-align:center;">
+                        <div style="font-size:24px; margin-bottom:8px;">👥</div>
+                        <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Travail en équipe</div>
+                        <div style="font-size:12px; padding:8px; color:var(--muted); line-height:1.6;">Travail en binôme
+                            sur les SAÉ 1.2 et 1.3 : répartition des tâches, relecture croisée des configurations et
+                            livrables communs respectant les délais.</div>
+                    </div>
+                    <div class="card-sm" style="text-align:center;">
+                        <div style="font-size:24px; margin-bottom:8px;">🔍</div>
+                        <div style="font-weight:600; font-size:14px; margin-bottom:6px;">Autonomie</div>
+                        <div style="font-size:12px; padding:8px; color:var(--muted); line-height:1.6;">Lecture et
+                            exploitation de documentations techniques en anglais (RFCs, guides ANSSI, spécifications
+                            constructeurs) sans aide directe pour implémenter des solutions.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTION -->
+        <div class="projection-card fade-up fade-up-4">
+            <h2>🚀 Projection professionnelle</h2>
+            <div class="proj-item">
+                <div class="proj-label">Poursuite d'études envisagée</div>
+                <p style="font-size:13.5px; line-height:1.8; color:#94a3b8;"></p>
+            </div>
+            <div class="proj-item">
+                <div class="proj-label">Secteur & métier visé</div>
+                <p style="font-size:13.5px; line-height:1.8; color:#94a3b8;">Le métier qui m'attire le plus est celui de
+                    <strong style="color:#e2e8f0;">pentesteur / auditeur sécurité</strong> (tests d'intrusion réseau et
+                    applicatif). À plus long terme, un poste d'<strong style="color:#e2e8f0;">architecte
+                        sécurité</strong> dans un environnement à enjeux élevés : défense nationale, infrastructures
+                    critiques ou institutions publiques (SGDSN, DGA-MI, ANSSI).
+                </p>
+            </div>
+            <div class="proj-item">
+                <div class="proj-label">Technologies à approfondir</div>
+                <div class="placeholder">
+                    Quelles technologies ou certifications souhaites-tu obtenir
+                    (CCNA, CEH, Linux+, Python avancé…) ?
+                </div>
+            </div>
+            <div class="proj-item">
+                <div class="proj-label">Environnement de travail idéal</div>
+                <div class="placeholder">
+                    Secteur public ou privé ? Grand groupe ou structure à taille humaine ?
+                    Télétravail, international, sédentaire… ?
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top: 8px;">
+            <a href="competences.html" class="btn btn-outline">← Compétences</a>
+            <a href="index.html" class="btn btn-primary">Accueil →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>
