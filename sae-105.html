@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAÉ 1.5 — Traiter des données · Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Détails du projet SAÉ 1.5 par Nathan Duval : contexte, missions, défis techniques et compétences mobilisées.">
+    <meta name="description"
+        content="Détails du projet SAÉ 1.5 par Nathan Duval : contexte, missions, défis techniques et compétences mobilisées.">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root { --accent: #10b981; --accent-bg: rgba(16,185,129,.12); --accent-border: rgba(16,185,129,.25); }
+        :root {
+            --accent: #10b981;
+            --accent-bg: rgba(16, 185, 129, .12);
+            --accent-border: rgba(16, 185, 129, .25);
+        }
 
         .sae-hero {
             background: var(--navy);
@@ -22,10 +28,12 @@
         .sae-hero::before {
             content: '';
             position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(16,185,129,.12), transparent 70%);
+            background: radial-gradient(circle, rgba(16, 185, 129, .12), transparent 70%);
         }
 
         .sae-hero .badge {
@@ -36,9 +44,9 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
-            background: rgba(16,185,129,.12);
+            background: rgba(16, 185, 129, .12);
             color: #10b981;
-            border: 1px solid rgba(16,185,129,.25);
+            border: 1px solid rgba(16, 185, 129, .25);
             margin-bottom: 14px;
         }
 
@@ -73,7 +81,9 @@
             color: #64748b;
         }
 
-        .sae-hero .meta-item strong { color: #e2e8f0; }
+        .sae-hero .meta-item strong {
+            color: #e2e8f0;
+        }
 
         /* ---- SECTION BLOCKS ---- */
         .block {
@@ -95,11 +105,14 @@
         }
 
         .block-header .bh-icon {
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
-            background: rgba(16,185,129,.12);
-            border: 1px solid rgba(16,185,129,.25);
-            display: flex; align-items: center; justify-content: center;
+            background: rgba(16, 185, 129, .12);
+            border: 1px solid rgba(16, 185, 129, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 17px;
         }
 
@@ -147,8 +160,15 @@
             color: var(--muted);
         }
 
-        .traces-zone .tz-icon { font-size: 32px; margin-bottom: 10px; }
-        .traces-zone p { font-size: 14px; line-height: 1.7; }
+        .traces-zone .tz-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .traces-zone p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
         /* ---- AUTOEVAL ---- */
         .autoeval-questions {
@@ -199,7 +219,7 @@
 
         .niveau-option.selected {
             border-color: #10b981;
-            background: rgba(16,185,129,.12);
+            background: rgba(16, 185, 129, .12);
             color: #10b981;
             font-weight: 600;
         }
@@ -315,7 +335,7 @@
         }
 
         .proof-btn-outline:hover {
-            background: rgba(16,185,129,.2);
+            background: rgba(16, 185, 129, .2);
             border-color: var(--accent);
         }
 
@@ -426,344 +446,429 @@
         }
 
         @media (max-width: 640px) {
-            .niveau-grid { grid-template-columns: repeat(2, 1fr); }
-            .proofs-grid { grid-template-columns: 1fr; }
-            .tech-details-grid { grid-template-columns: 1fr; }
+            .niveau-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .proofs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-details-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up" style="margin-bottom: 24px;">
-        <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> / SAÉ 1.5</div>
-    </div>
-
-    <!-- HERO SAÉ -->
-    <div class="sae-hero fade-up">
-        <div class="badge">📂 SAÉ 1.5</div>
-        <h1>SAÉ 1.5<br><span style="color:#64748b; font-weight:400; font-size:22px;">Traitement de données</span></h1>
-        <p class="sae-subtitle">
-            Projet Python orienté OpenStreetMap : récupération de données via API OSM/Overpass,
-            production de statistiques et génération de fiches aux formats Markdown et HTML.
-        </p>
-        <div class="sae-meta">
-            <div class="meta-item">📅 <strong>Année</strong> : 2025-2026</div>
-            <div class="meta-item">👥 <strong>Travail</strong> : binôme (ou autonomie si effectif impair)</div>
-            <div class="meta-item">🛠️ <strong>Technologies</strong> : Python, JSON, API OSM/Overpass, Markdown</div>
-            <div class="meta-item">🐍 <strong>Langage</strong> : Python 3.11 (salle TP)</div>
-            <div class="meta-item">⏳ <strong>Rendu</strong> : déc. 2025 / janv. 2026 selon statut</div>
-        </div>
-    </div>
-
-    <!-- 1. DESCRIPTION -->
-    <div class="block fade-up fade-up-1">
-        <div class="block-header">
-            <div class="bh-icon">📋</div>
-            <div>
-                <h2>Description & Objectifs</h2>
-                <p>Contexte du projet et compétences visées</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="margin-bottom:14px;">
-                La <strong>SAÉ 1.5 (Traitement de données)</strong> avait pour objectif d'automatiser l'acquisition, la modélisation, le traitement et la restitution d'informations géographiques issues d'<strong>OpenStreetMap (OSM)</strong>. En s'appuyant sur le langage de programmation <strong>Python</strong>, ce projet visait à manipuler des formats de données semi-structurés (JSON, XML) issus d'API Web (Overpass, Nominatim, tuiles cartographiques d'OSM) et à les restructurer sous forme de documents formatés (Markdown et HTML).
-            </p>
-            <p style="margin-bottom:14px;">
-                Dans le cadre de mon sujet d'étude libre, j'ai choisi de <strong>répertorier et d'analyser l'intégralité des boîtes de nuit à l'échelle de la France</strong>, soit un ensemble de données représentant environ <strong>1 150 établissements</strong>. L'objectif sous-jacent était de mettre en lumière la complétude (ou le manque) de métadonnées géographiques critiques sur OpenStreetMap pour un secteur d'activité spécifique.
-            </p>
-            <p>
-                Ce projet a servi d'évaluation pratique pour valider nos compétences en <strong>algorithmie</strong>, en manipulation de flux de données réseau via des protocoles HTTP, en écriture de fichiers locaux, et en génération dynamique de pages web statiques respectant une charte graphique définie.
-            </p>
-        </div>
-    </div>
-
-    <!-- 2. APPRENTISSAGES CRITIQUES -->
-    <div class="block fade-up fade-up-2">
-        <div class="block-header">
-            <div class="bh-icon">🎯</div>
-            <div>
-                <h2>Apprentissages Critiques mobilisés</h2>
-                <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
-                Compétences mobilisées en acquisition de données, traitement, restitution et documentation de code.
-            </p>
-            <div class="ac-grid" style="margin-bottom: 20px;">
-                <div class="ac-chip">AC 1.5 — Se présenter professionnellement (valorisation des livrables)</div>
-                <div class="ac-chip">API REST & Requêtes HTTP (Requests, Overpass QL)</div>
-                <div class="ac-chip">Parsing de structures complexes (JSON, Dictionnaires imbriqués)</div>
-                <div class="ac-chip">Production automatisée de livrables (Markdown, Markdown-it/Python-Markdown)</div>
-            </div>
-
-            <div class="tech-details-grid">
-                <div class="tech-card">
-                    <h3>📡 Acquisition & Requêtage Réseau</h3>
-                    <ul>
-                        <li><strong>Requêtes API Overpass</strong> : Rédaction de requêtes Overpass QL complexes avec filtrage sur zone géopolitique (France) et critères de tags.</li>
-                        <li><strong>Géocodage inverse</strong> : Interrogation de l'API Nominatim pour convertir les coordonnées géographiques brutes (latitude/longitude) en adresses structurées.</li>
-                        <li><strong>Téléchargement de tuiles</strong> : Récupération dynamique d'images raster (.png) depuis le serveur de tuiles OSM.</li>
-                    </ul>
-                </div>
-                <div class="tech-card">
-                    <h3>🐍 Algorithmique & Traitement Python</h3>
-                    <ul>
-                        <li><strong>Gestion de la complétude</strong> : Implémentation de tests de présence de clés pour éviter les plantages lors de la lecture de tags optionnels (wheelchair, opening_hours, fee).</li>
-                        <li><strong>Résilience réseau</strong> : Gestion des limites d'appels API (code HTTP 429 et 504) par des boucles d'attente exponentielle.</li>
-                        <li><strong>Statistiques descriptives</strong> : Calcul automatisé des taux de présence de données sur un large échantillon de nœuds (1 150 points d'intérêt).</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. TÂCHES -->
-    <div class="block fade-up fade-up-3">
-        <div class="block-header">
-            <div class="bh-icon">🔧</div>
-            <div>
-                <h2>Tâches réalisées</h2>
-                <p>Déroulement technique et étapes de développement</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="margin-bottom:18px;"><strong>1. Développement du convertisseur Markdown vers HTML (<code>md_to_html.py</code>)</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                Afin de restituer des rapports lisibles, j'ai développé un script autonome qui exploite le package Python <code>markdown</code> pour convertir du balisage brut en fichier HTML5. J'y ai intégré l'injection d'une feuille de style CSS embarquée (gestion de la typographie, ombres de boîte, boutons de navigation et surbrillance au survol) pour s'assurer que les rapports générés soient soignés, lisibles et modernes.
-            </p>
-
-            <p style="margin-bottom:18px;"><strong>2. Conception du générateur de fiches locales (<code>fiche_osm.py</code>)</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                Ce script interroge l'API standard d'OpenStreetMap (endpoint <code>/api/0.6/node/[id].json</code>) pour extraire l'ensemble des tags associés à un nœud spécifique. Il convertit ensuite les coordonnées du nœud en identifiant de tuile cartographique (formules trigonométriques basées sur la projection de Mercator), télécharge la tuile OSM correspondante, dessine un marqueur rouge (pin) à l'emplacement précis avec la bibliothèque Pillow (PIL), puis génère une fiche d'information complète en Markdown avant de la compiler en HTML.
-            </p>
-
-            <p style="margin-bottom:18px;"><strong>3. Acquisition globale des données par Overpass QL (<code>code overpass</code>)</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                Pour cibler l'ensemble des boîtes de nuit à l'échelle de la France métropolitaine, j'ai conçu une requête structurée en langage Overpass QL. La requête recherche récursivement les objets de type <code>node</code>, <code>way</code> et <code>relation</code> portant le tag <code>[amenity=nightclub]</code> dans la zone géographique délimitée par la frontière française (référencée par son code d'aire administrative globale).
-            </p>
-
-            <p style="margin-bottom:18px;"><strong>4. Analyse statistique et interface interactive (<code>infos_locales.py</code>)</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                J'ai programmé le script d'analyse statistique globale qui demande à l'utilisateur de saisir via la console la zone d'étude de son choix (ex. Caen, Normandie, France). Il construit la requête Overpass à la volée, l'exécute auprès de l'API Overpass, et calcule en Python le taux de remplissage pour six tags cruciaux : horaires d'ouverture (<code>opening_hours</code>), site internet (<code>website</code>), tarification (<code>fee</code>), droit de fumer (<code>smoking</code>), présence de karaoké (<code>karaoke</code>) et accessibilité handicapé (<code>wheelchair</code>).
-            </p>
-
-            <p style="margin-bottom:0;"><strong>5. Intégration de la robustesse réseau & Gestion d'erreurs</strong></p>
-            <p style="color:var(--muted); font-size:14px; margin-top:4px;">
-                J'ai mis en place un mécanisme de tentatives successives (jusqu'à 5 essais) pour gérer les codes de retour HTTP transitoires (429 Trop de requêtes, 504 Timeout) fréquemment rencontrés sur les serveurs publics d'Overpass. Le programme utilise <code>sys.exit()</code> avec un message explicite lorsque la requête ne renvoie aucun élément afin d'éviter les erreurs de division par zéro dans le calcul des moyennes.
-            </p>
-        </div>
-    </div>
-
-    <!-- 4. PREUVES -->
-    <div class="block fade-up fade-up-4">
-        <div class="block-header">
-            <div class="bh-icon">📎</div>
-            <div>
-                <h2>Résultats & Preuves</h2>
-                <p>Livrables, scripts de traitement et requêtes Overpass réelles</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="font-size:14px; color:var(--muted); margin-bottom:18px;">
-                Voici les livrables finaux issus du projet. Vous pouvez les télécharger directement ou les consulter pour analyser la logique du code.
-            </p>
-
-            <div class="proofs-grid" style="margin-bottom: 30px;">
-                <!-- Cahier des charges -->
-                <div class="proof-card">
-                    <div class="proof-header">
-                        <span class="proof-icon">📋</span>
-                        <div class="proof-title">Cahier des charges</div>
-                    </div>
-                    <div class="proof-desc">
-                        Document officiel spécifiant les exigences fonctionnelles et techniques de la SAÉ 1.5.
-                    </div>
-                    <div class="proof-meta">Format : PDF (968 Ko)</div>
-                    <div class="proof-actions">
-                        <a href="preuves_sae_105/sae15-cahier-des-charges.pdf" target="_blank" class="proof-btn proof-btn-outline">Consulter</a>
-                        <a href="preuves_sae_105/sae15-cahier-des-charges.pdf" download class="proof-btn proof-btn-primary">Télécharger</a>
-                    </div>
-                </div>
-
-                <!-- Rapport final -->
-                <div class="proof-card">
-                    <div class="proof-header">
-                        <span class="proof-icon">📝</span>
-                        <div class="proof-title">Rapport d'évaluation</div>
-                    </div>
-                    <div class="proof-desc">
-                        Rapport complet de Nathan Duval détaillant ses choix de conception, les statistiques extraites et les compromis techniques.
-                    </div>
-                    <div class="proof-meta">Format : PDF (76 Ko)</div>
-                    <div class="proof-actions">
-                        <a href="preuves_sae_105/Saé%20105%20-%20R107%20-%20Rendu/rapport_sae_Nathan_Duval.pdf" target="_blank" class="proof-btn proof-btn-outline">Consulter</a>
-                        <a href="preuves_sae_105/Saé%20105%20-%20R107%20-%20Rendu/rapport_sae_Nathan_Duval.pdf" download class="proof-btn proof-btn-primary">Télécharger</a>
-                    </div>
-                </div>
-
-
-                <!-- Fiche OSM -->
-                <div class="proof-card">
-                    <div class="proof-header">
-                        <span class="proof-icon">🗺️</span>
-                        <div class="proof-title">fiche_osm.py</div>
-                    </div>
-                    <div class="proof-desc">
-                        Script Python extrayant les tags d'un nœud, calculant sa tuile et ajoutant un marqueur graphique rouge sur la carte.
-                    </div>
-                    <div class="proof-meta">Format : Python (5.8 Ko)</div>
-                    <div class="proof-actions">
-                        <a href="preuves_sae_105/fiche_osm.py" download class="proof-btn proof-btn-primary" style="width: 100%;">Télécharger</a>
-                    </div>
-                </div>
-
-                <!-- Infos locales -->
-                <div class="proof-card">
-                    <div class="proof-header">
-                        <span class="proof-icon">📈</span>
-                        <div class="proof-title">infos_locales.py</div>
-                    </div>
-                    <div class="proof-desc">
-                        Script interactif de requêtage par console de zones géopolitiques et de compilation des statistiques de tags.
-                    </div>
-                    <div class="proof-meta">Format : Python (10.7 Ko)</div>
-                    <div class="proof-actions">
-                        <a href="preuves_sae_105/infos_locales.py" download class="proof-btn proof-btn-primary" style="width: 100%;">Télécharger</a>
-                    </div>
-                </div>
-
-                <!-- Md to Html -->
-                <div class="proof-card">
-                    <div class="proof-header">
-                        <span class="proof-icon">⚙️</span>
-                        <div class="proof-title">md_to_html.py</div>
-                    </div>
-                    <div class="proof-desc">
-                        Parseur Markdown-vers-HTML personnalisé injectant les règles CSS de lisibilité et de mise en page réactive.
-                    </div>
-                    <div class="proof-meta">Format : Python (4.5 Ko)</div>
-                    <div class="proof-actions">
-                        <a href="preuves_sae_105/md_to_html.py" download class="proof-btn proof-btn-primary" style="width: 100%;">Télécharger</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. AUTOÉVALUATION -->
-    <div class="block fade-up">
-        <div class="block-header">
-            <div class="bh-icon">🔍</div>
-            <div>
-                <h2>Autoévaluation réflexive</h2>
-                <p>Analyse critique de ton expérience et de ta progression</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="autoeval-questions">
-                <div class="ae-q">
-                    <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                    <div class="ae-q-answer">Les principales difficultés ont été la prise en main d'Overpass QL, la variabilité des attributs OSM selon les objets et le choix de statistiques vraiment pertinentes.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                    <div class="ae-q-answer">J'ai testé progressivement les requêtes dans l'interpréteur Overpass, comparé les résultats JSON et ajusté le traitement Python avec des contrôles sur les champs absents.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                    <div class="ae-q-answer">J'ai renforcé ma maîtrise de Python pour l'exploitation d'API, la structuration modulaire de scripts et la transformation de données en livrables lisibles (Markdown/HTML).</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                    <div class="ae-q-answer">Ces compétences seront utiles pour des projets data, la supervision de services, l'automatisation de rapports et plus globalement pour tout besoin d'analyse de données ouvertes.</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 24px;">
-                <div class="section-label">Niveau de maîtrise estimé</div>
-                <div class="niveau-grid">
-                    <div class="niveau-option">
-                        ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de base</span>
-                    </div>
-                    <div class="niveau-option selected">⭐⭐ En cours<br><span style="font-size:11px; margin-top:4px; display:block;">En développement</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut enseigner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <div class="sae-nav">
-        <a href="sae-104.html" class="btn btn-outline">← Projet 1.4</a>
-        <a href="saes.html" class="btn btn-primary">Retour aux projets →</a>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up" style="margin-bottom: 24px;">
+            <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> /
+                SAÉ 1.5</div>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <!-- HERO SAÉ -->
+        <div class="sae-hero fade-up">
+            <div class="badge">📂 SAÉ 1.5</div>
+            <h1>SAÉ 1.5<br><span style="color:#64748b; font-weight:400; font-size:22px;">Traitement de données</span>
+            </h1>
+            <p class="sae-subtitle">
+                Projet Python orienté OpenStreetMap : récupération de données via API OSM/Overpass,
+                production de statistiques et génération de fiches aux formats Markdown et HTML.
+            </p>
+            <div class="sae-meta">
+                <div class="meta-item">📅 <strong>Année</strong> : 2025-2026</div>
+                <div class="meta-item">👥 <strong>Travail</strong> : binôme (ou autonomie si effectif impair)</div>
+                <div class="meta-item">🛠️ <strong>Technologies</strong> : Python, JSON, API OSM/Overpass, Markdown
+                </div>
+                <div class="meta-item">🐍 <strong>Langage</strong> : Python 3.11 (salle TP)</div>
+                <div class="meta-item">⏳ <strong>Rendu</strong> : déc. 2025 / janv. 2026 selon statut</div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- 1. DESCRIPTION -->
+        <div class="block fade-up fade-up-1">
+            <div class="block-header">
+                <div class="bh-icon">📋</div>
+                <div>
+                    <h2>Description & Objectifs</h2>
+                    <p>Contexte du projet et compétences visées</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;">
+                    La <strong>SAÉ 1.5 (Traitement de données)</strong> avait pour objectif d'automatiser l'acquisition,
+                    la modélisation, le traitement et la restitution d'informations géographiques issues
+                    d'<strong>OpenStreetMap (OSM)</strong>. En s'appuyant sur le langage de programmation
+                    <strong>Python</strong>, ce projet visait à manipuler des formats de données semi-structurés (JSON,
+                    XML) issus d'API Web (Overpass, Nominatim, tuiles cartographiques d'OSM) et à les restructurer sous
+                    forme de documents formatés (Markdown et HTML).
+                </p>
+                <p style="margin-bottom:14px;">
+                    Dans le cadre de mon sujet d'étude libre, j'ai choisi de <strong>répertorier et d'analyser
+                        l'intégralité des boîtes de nuit à l'échelle de la France</strong>, soit un ensemble de données
+                    représentant environ <strong>1 150 établissements</strong>. L'objectif sous-jacent était de mettre
+                    en lumière la complétude (ou le manque) de métadonnées géographiques critiques sur OpenStreetMap
+                    pour un secteur d'activité spécifique.
+                </p>
+                <p>
+                    Ce projet a servi d'évaluation pratique pour valider nos compétences en
+                    <strong>algorithmie</strong>, en manipulation de flux de données réseau via des protocoles HTTP, en
+                    écriture de fichiers locaux, et en génération dynamique de pages web statiques respectant une charte
+                    graphique définie.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. APPRENTISSAGES CRITIQUES -->
+        <div class="block fade-up fade-up-2">
+            <div class="block-header">
+                <div class="bh-icon">🎯</div>
+                <div>
+                    <h2>Apprentissages Critiques mobilisés</h2>
+                    <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
+                    Compétences mobilisées en acquisition de données, traitement, restitution et documentation de code.
+                </p>
+                <div class="ac-grid" style="margin-bottom: 20px;">
+                    <div class="ac-chip">AC 1.5 — Se présenter professionnellement (valorisation des livrables)</div>
+                    <div class="ac-chip">API REST & Requêtes HTTP (Requests, Overpass QL)</div>
+                    <div class="ac-chip">Parsing de structures complexes (JSON, Dictionnaires imbriqués)</div>
+                    <div class="ac-chip">Production automatisée de livrables (Markdown, Markdown-it/Python-Markdown)
+                    </div>
+                </div>
+
+                <div class="tech-details-grid">
+                    <div class="tech-card">
+                        <h3>📡 Acquisition & Requêtage Réseau</h3>
+                        <ul>
+                            <li><strong>Requêtes API Overpass</strong> : Rédaction de requêtes Overpass QL complexes
+                                avec filtrage sur zone géopolitique (France) et critères de tags.</li>
+                            <li><strong>Géocodage inverse</strong> : Interrogation de l'API Nominatim pour convertir les
+                                coordonnées géographiques brutes (latitude/longitude) en adresses structurées.</li>
+                            <li><strong>Téléchargement de tuiles</strong> : Récupération dynamique d'images raster
+                                (.png) depuis le serveur de tuiles OSM.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🐍 Algorithmique & Traitement Python</h3>
+                        <ul>
+                            <li><strong>Gestion de la complétude</strong> : Implémentation de tests de présence de clés
+                                pour éviter les plantages lors de la lecture de tags optionnels (wheelchair,
+                                opening_hours, fee).</li>
+                            <li><strong>Résilience réseau</strong> : Gestion des limites d'appels API (code HTTP 429 et
+                                504) par des boucles d'attente exponentielle.</li>
+                            <li><strong>Statistiques descriptives</strong> : Calcul automatisé des taux de présence de
+                                données sur un large échantillon de nœuds (1 150 points d'intérêt).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. TÂCHES -->
+        <div class="block fade-up fade-up-3">
+            <div class="block-header">
+                <div class="bh-icon">🔧</div>
+                <div>
+                    <h2>Tâches réalisées</h2>
+                    <p>Déroulement technique et étapes de développement</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:18px;"><strong>1. Développement du convertisseur Markdown vers HTML
+                        (<code>md_to_html.py</code>)</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Afin de restituer des rapports lisibles, j'ai développé un script autonome qui exploite le package
+                    Python <code>markdown</code> pour convertir du balisage brut en fichier HTML5. J'y ai intégré
+                    l'injection d'une feuille de style CSS embarquée (gestion de la typographie, ombres de boîte,
+                    boutons de navigation et surbrillance au survol) pour s'assurer que les rapports générés soient
+                    soignés, lisibles et modernes.
+                </p>
+
+                <p style="margin-bottom:18px;"><strong>2. Conception du générateur de fiches locales
+                        (<code>fiche_osm.py</code>)</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Ce script interroge l'API standard d'OpenStreetMap (endpoint <code>/api/0.6/node/[id].json</code>)
+                    pour extraire l'ensemble des tags associés à un nœud spécifique. Il convertit ensuite les
+                    coordonnées du nœud en identifiant de tuile cartographique (formules trigonométriques basées sur la
+                    projection de Mercator), télécharge la tuile OSM correspondante, dessine un marqueur rouge (pin) à
+                    l'emplacement précis avec la bibliothèque Pillow (PIL), puis génère une fiche d'information complète
+                    en Markdown avant de la compiler en HTML.
+                </p>
+
+                <p style="margin-bottom:18px;"><strong>3. Acquisition globale des données par Overpass QL
+                        (<code>code overpass</code>)</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Pour cibler l'ensemble des boîtes de nuit à l'échelle de la France métropolitaine, j'ai conçu une
+                    requête structurée en langage Overpass QL. La requête recherche récursivement les objets de type
+                    <code>node</code>, <code>way</code> et <code>relation</code> portant le tag
+                    <code>[amenity=nightclub]</code> dans la zone géographique délimitée par la frontière française
+                    (référencée par son code d'aire administrative globale).
+                </p>
+
+                <p style="margin-bottom:18px;"><strong>4. Analyse statistique et interface interactive
+                        (<code>infos_locales.py</code>)</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    J'ai programmé le script d'analyse statistique globale qui demande à l'utilisateur de saisir via la
+                    console la zone d'étude de son choix (ex. Caen, Normandie, France). Il construit la requête Overpass
+                    à la volée, l'exécute auprès de l'API Overpass, et calcule en Python le taux de remplissage pour six
+                    tags cruciaux : horaires d'ouverture (<code>opening_hours</code>), site internet
+                    (<code>website</code>), tarification (<code>fee</code>), droit de fumer (<code>smoking</code>),
+                    présence de karaoké (<code>karaoke</code>) et accessibilité handicapé (<code>wheelchair</code>).
+                </p>
+
+                <p style="margin-bottom:0;"><strong>5. Intégration de la robustesse réseau & Gestion d'erreurs</strong>
+                </p>
+                <p style="color:var(--muted); font-size:14px; margin-top:4px;">
+                    J'ai mis en place un mécanisme de tentatives successives (jusqu'à 5 essais) pour gérer les codes de
+                    retour HTTP transitoires (429 Trop de requêtes, 504 Timeout) fréquemment rencontrés sur les serveurs
+                    publics d'Overpass. Le programme utilise <code>sys.exit()</code> avec un message explicite lorsque
+                    la requête ne renvoie aucun élément afin d'éviter les erreurs de division par zéro dans le calcul
+                    des moyennes.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. PREUVES -->
+        <div class="block fade-up fade-up-4">
+            <div class="block-header">
+                <div class="bh-icon">📎</div>
+                <div>
+                    <h2>Résultats & Preuves</h2>
+                    <p>Livrables, scripts de traitement et requêtes Overpass réelles</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:14px; color:var(--muted); margin-bottom:18px;">
+                    Voici les livrables finaux issus du projet. Vous pouvez les télécharger directement ou les consulter
+                    pour analyser la logique du code.
+                </p>
+
+                <div class="proofs-grid" style="margin-bottom: 30px;">
+                    <!-- Cahier des charges -->
+                    <div class="proof-card">
+                        <div class="proof-header">
+                            <span class="proof-icon">📋</span>
+                            <div class="proof-title">Cahier des charges</div>
+                        </div>
+                        <div class="proof-desc">
+                            Document officiel spécifiant les exigences fonctionnelles et techniques de la SAÉ 1.5.
+                        </div>
+                        <div class="proof-meta">Format : PDF (968 Ko)</div>
+                        <div class="proof-actions">
+                            <a href="preuves_sae_105/sae15-cahier-des-charges.pdf" target="_blank"
+                                class="proof-btn proof-btn-outline">Consulter</a>
+                            <a href="preuves_sae_105/sae15-cahier-des-charges.pdf" download
+                                class="proof-btn proof-btn-primary">Télécharger</a>
+                        </div>
+                    </div>
+
+                    <!-- Rapport final -->
+                    <div class="proof-card">
+                        <div class="proof-header">
+                            <span class="proof-icon">📝</span>
+                            <div class="proof-title">Rapport d'évaluation</div>
+                        </div>
+                        <div class="proof-desc">
+                            Rapport complet de Nathan Duval détaillant ses choix de conception, les statistiques
+                            extraites et les compromis techniques.
+                        </div>
+                        <div class="proof-meta">Format : PDF (76 Ko)</div>
+                        <div class="proof-actions">
+                            <a href="preuves_sae_105/Saé%20105%20-%20R107%20-%20Rendu/rapport_sae_Nathan_Duval.pdf"
+                                target="_blank" class="proof-btn proof-btn-outline">Consulter</a>
+                            <a href="preuves_sae_105/Saé%20105%20-%20R107%20-%20Rendu/rapport_sae_Nathan_Duval.pdf"
+                                download class="proof-btn proof-btn-primary">Télécharger</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Fiche OSM -->
+                    <div class="proof-card">
+                        <div class="proof-header">
+                            <span class="proof-icon">🗺️</span>
+                            <div class="proof-title">fiche_osm.py</div>
+                        </div>
+                        <div class="proof-desc">
+                            Script Python extrayant les tags d'un nœud, calculant sa tuile et ajoutant un marqueur
+                            graphique rouge sur la carte.
+                        </div>
+                        <div class="proof-meta">Format : Python (5.8 Ko)</div>
+                        <div class="proof-actions">
+                            <a href="preuves_sae_105/fiche_osm.py" download class="proof-btn proof-btn-primary"
+                                style="width: 100%;">Télécharger</a>
+                        </div>
+                    </div>
+
+                    <!-- Infos locales -->
+                    <div class="proof-card">
+                        <div class="proof-header">
+                            <span class="proof-icon">📈</span>
+                            <div class="proof-title">infos_locales.py</div>
+                        </div>
+                        <div class="proof-desc">
+                            Script interactif de requêtage par console de zones géopolitiques et de compilation des
+                            statistiques de tags.
+                        </div>
+                        <div class="proof-meta">Format : Python (10.7 Ko)</div>
+                        <div class="proof-actions">
+                            <a href="preuves_sae_105/infos_locales.py" download class="proof-btn proof-btn-primary"
+                                style="width: 100%;">Télécharger</a>
+                        </div>
+                    </div>
+
+                    <!-- Md to Html -->
+                    <div class="proof-card">
+                        <div class="proof-header">
+                            <span class="proof-icon">⚙️</span>
+                            <div class="proof-title">md_to_html.py</div>
+                        </div>
+                        <div class="proof-desc">
+                            Parseur Markdown-vers-HTML personnalisé injectant les règles CSS de lisibilité et de mise en
+                            page réactive.
+                        </div>
+                        <div class="proof-meta">Format : Python (4.5 Ko)</div>
+                        <div class="proof-actions">
+                            <a href="preuves_sae_105/md_to_html.py" download class="proof-btn proof-btn-primary"
+                                style="width: 100%;">Télécharger</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. AUTOÉVALUATION -->
+        <div class="block fade-up">
+            <div class="block-header">
+                <div class="bh-icon">🔍</div>
+                <div>
+                    <h2>Autoévaluation réflexive</h2>
+                    <p>Analyse critique de ton expérience et de ta progression</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <div class="autoeval-questions">
+                    <div class="ae-q">
+                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
+                        <div class="ae-q-answer">Les principales difficultés ont été la prise en main d'Overpass QL, la
+                            variabilité des attributs OSM selon les objets et le choix de statistiques vraiment
+                            pertinentes.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
+                        <div class="ae-q-answer">J'ai testé progressivement les requêtes dans l'interpréteur Overpass,
+                            comparé les résultats JSON et ajusté le traitement Python avec des contrôles sur les champs
+                            absents.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-answer">J'ai renforcé ma maîtrise de Python pour l'exploitation d'API, la
+                            structuration modulaire de scripts et la transformation de données en livrables lisibles
+                            (Markdown/HTML).</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-answer">Ces compétences seront utiles pour des projets data, la supervision de
+                            services, l'automatisation de rapports et plus globalement pour tout besoin d'analyse de
+                            données ouvertes.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <div class="section-label">Niveau de maîtrise estimé</div>
+                    <div class="niveau-grid">
+                        <div class="niveau-option">
+                            ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de
+                                base</span>
+                        </div>
+                        <div class="niveau-option selected">⭐⭐ En cours<br><span
+                                style="font-size:11px; margin-top:4px; display:block;">En développement</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut
+                                enseigner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="sae-nav">
+            <a href="sae-104.html" class="btn btn-outline">← Projet 1.4</a>
+            <a href="saes.html" class="btn btn-primary">Retour aux projets →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>

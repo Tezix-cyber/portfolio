@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences — Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Développement et acquisition des compétences du référentiel BUT R&T. Tableau de bord interactif par Nathan Duval.">
+    <meta name="description"
+        content="Développement et acquisition des compétences du référentiel BUT R&T. Tableau de bord interactif par Nathan Duval.">
     <link rel="stylesheet" href="style.css">
     <style>
         .comp-section {
@@ -25,19 +27,37 @@
         }
 
         .comp-num {
-            width: 48px; height: 48px;
+            width: 48px;
+            height: 48px;
             border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-family: 'Outfit', sans-serif;
             font-size: 20px;
             font-weight: 800;
             flex-shrink: 0;
         }
 
-        .c1 { background: rgba(14,165,233,.15); color: #0ea5e9; }
-        .c2 { background: rgba(139,92,246,.15); color: #8b5cf6; }
-        .c3 { background: rgba(16,185,129,.15); color: #10b981; }
-        .c4 { background: rgba(245,158,11,.15); color: #f59e0b; }
+        .c1 {
+            background: rgba(14, 165, 233, .15);
+            color: #0ea5e9;
+        }
+
+        .c2 {
+            background: rgba(139, 92, 246, .15);
+            color: #8b5cf6;
+        }
+
+        .c3 {
+            background: rgba(16, 185, 129, .15);
+            color: #10b981;
+        }
+
+        .c4 {
+            background: rgba(245, 158, 11, .15);
+            color: #f59e0b;
+        }
 
         .comp-header h2 {
             font-family: 'Outfit', sans-serif;
@@ -63,7 +83,11 @@
             gap: 20px;
         }
 
-        .inner-block { display: flex; flex-direction: column; gap: 8px; }
+        .inner-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
         .inner-label {
             font-size: 12px;
@@ -122,242 +146,296 @@
         }
 
         @media (max-width: 640px) {
-            .comp-body .inner-grid { grid-template-columns: 1fr; }
+            .comp-body .inner-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up">
-        <div class="breadcrumb">Accueil / Compétences</div>
-        <h1>Bilan par <span>Compétence</span></h1>
-        <p class="lead">Synthèse de mes apprentissages organisée par compétence du référentiel BUT R&T.</p>
-    </div>
-
-    <!-- COMPÉTENCE 1 -->
-    <div class="comp-section fade-up fade-up-1">
-        <div class="comp-header">
-            <div class="comp-num c1">C1</div>
-            <div>
-                <h2>🌐 Administrer les réseaux et l'Internet</h2>
-                <p>Configuration, supervision, dépannage et optimisation des infrastructures réseau</p>
-            </div>
-        </div>
-        <div class="comp-body">
-            <div class="inner-grid">
-                <div class="inner-block">
-                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Conception et maquettage du LAN sécurisé de Fibre&Company.</li>
-                            <li><a href="sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> : Localisation de défauts physiques de lignes.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="inner-block">
-                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><strong>AC 1.1 — S'initier aux réseaux informatiques</strong> : Compréhension des topologies de réseaux, modèles OSI/TCP-IP et adressage.</li>
-                            <li><strong>AC 1.2 — Configurer les équipements actifs</strong> : Commutation Cisco (VLANs, trunks, agrégation LACP, RSTP) et routage statique.</li>
-                            <li><strong>AC 1.3 — Déploiement de services système d'infrastructure</strong> : Configuration de serveurs de services réseau (DNS Bind9, DHCP, Samba) sous Debian 13.</li>
-                            <li><strong>AC 1.4 — Securiser et diagnostiquer</strong> : Audit avec Wireshark et Iperf3, Port-Security (filtrage MAC) et durcissement SSH selon les guides ANSSI.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="inner-label">Analyse de progression</span>
-                <div class="comp-box" style="margin-top: 8px;">
-                    Grâce aux travaux pratiques et aux réalisations concrètes de la SAÉ 1.2, j'ai acquis une solide autonomie sur la configuration matérielle d'équipements Cisco et le déploiement de services Linux. Je suis capable de configurer des réseaux redondants et sécurisés de niveau 2 et 3. La prochaine étape sera d'aborder des protocoles de routage dynamique comme OSPF et d'apprendre à utiliser des outils de supervision automatisée.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPÉTENCE 2 -->
-    <div class="comp-section fade-up fade-up-2">
-        <div class="comp-header">
-            <div class="comp-num c2">C2</div>
-            <div>
-                <h2>🔗 Connecter les entreprises et les usagers</h2>
-                <p>Mise en œuvre de solutions de connectivité pour entreprises et usagers</p>
-            </div>
-        </div>
-        <div class="comp-body">
-            <div class="inner-grid">
-                <div class="inner-block">
-                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><a href="sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> : Caractérisation expérimentale de supports de transmission cuivre et fibre.</li>
-                            <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Dimensionnement du support physique (câblage LAN, liaisons montantes).</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="inner-block">
-                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><strong>AC 2.1 — Différencier les supports physiques</strong> : Analyse des spécifications du cuivre coaxial/paire torsadée et de la fibre monomode (FTTH)/multimode.</li>
-                            <li><strong>AC 2.2 — Caractériser la transmission des signaux</strong> : Mesure de vitesse de propagation (NVP) à l'oscilloscope, réflectométrie temporelle (DTF) et photométrie optique (pertes en dB).</li>
-                            <li><strong>AC 2.3 — Mettre en œuvre des liaisons de télécommunication</strong> : Raccordement physique de jarretières optiques, soudure de fibre, câblage RJ45 et testeurs réseau.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="inner-label">Analyse de progression</span>
-                <div class="comp-box" style="margin-top: 8px;">
-                    La SAÉ 1.3 m'a permis d'assimiler la théorie physique des ondes de télécommunications. Je sais étalonner un photomètre optique pour valider une ligne FTTH et localiser avec précision des défauts physiques de ligne par réflectométrie (DTF). Je maîtrise désormais le choix des supports physiques selon les contraintes de distance et de débit. Je souhaite acquérir plus d'expérience pratique sur le raccordement et la soudure de fibre optique sur le terrain.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPÉTENCE 3 -->
-    <div class="comp-section fade-up fade-up-3">
-        <div class="comp-header">
-            <div class="comp-num c3">C3</div>
-            <div>
-                <h2>💻 Créer des outils et des applications</h2>
-                <p>Développement d'outils et d'applications adaptés aux besoins R&T</p>
-            </div>
-        </div>
-        <div class="comp-body">
-            <div class="inner-grid">
-                <div class="inner-block">
-                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><a href="sae-105.html">SAÉ 1.5 — Traitement de données</a> : Récupération d'API, compilation de statistiques et génération dynamique de fiches en HTML/CSS.</li>
-                            <li><a href="sae-104.html">SAÉ 1.4 — Se présenter sur Internet</a> : Conception et intégration d'un site web multipage sur la MAO.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="inner-block">
-                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><strong>AC 3.1 — Développer des applications simples en Python</strong> : Requêtes API Overpass/Nominatim, parsing de fichiers JSON complexes, manipulation d'images (Pillow) et gestion des exceptions réseau.</li>
-                            <li><strong>AC 3.2 — Concevoir des interfaces web statiques et adaptatives</strong> : Intégration HTML5/CSS3 fluide (Flexbox, CSS Grid), design responsive, thèmes clair/sombre, conformité W3C et accessibilité WCAG 2.0 AA.</li>
-                            <li><strong>AC 3.3 — Gérer et versionner des projets de code</strong> : Suivi rigoureux de projets via Git (commits précis, branches, gestion de dépôts).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="inner-label">Analyse de progression</span>
-                <div class="comp-box" style="margin-top: 8px;">
-                    Le développement de mes projets SAÉ 1.4 et 1.5 m'a permis d'acquérir une véritable méthodologie de développement. Je suis capable d'automatiser des flux de traitement de données (de l'API réseau au rendu final en HTML/CSS). L'utilisation quotidienne de Git m'a fait comprendre l'importance de la rigueur et du versionnage. Pour aller plus loin, je prévois d'apprendre JavaScript pour rendre mes interfaces Web interactives et d'explorer le scripting d'automatisation réseau (Netmiko, Ansible).
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPÉTENCE 4 -->
-    <div class="comp-section fade-up fade-up-4">
-        <div class="comp-header">
-            <div class="comp-num c4">C4</div>
-            <div>
-                <h2>🔒 Administrer un SI sécurisé</h2>
-                <p>Administration et sécurisation des systèmes d'information (à partir de la 2e année)</p>
-            </div>
-        </div>
-        <div class="comp-body">
-            <div class="inner-grid">
-                <div class="inner-block">
-                    <span class="inner-label">SAÉ mobilisant cette compétence</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Sécurisation système & réseau (SSH ANSSI, Port-Security, virtualisation Debian/Proxmox).</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="inner-block">
-                    <span class="inner-label">Apprentissages Critiques maîtrisés</span>
-                    <div class="comp-box">
-                        <ul class="comp-list">
-                            <li class="progress"><strong>AC 4.1 — Installer et configurer un système d'exploitation serveur</strong> (en cours) : Virtualisation de serveurs Debian 13 sous hyperviseur Proxmox VE, gestion des disques et sauvegardes.</li>
-                            <li class="progress"><strong>AC 4.2 — Appliquer des politiques de sécurité système et réseau</strong> (en cours) : Durcissement des accès distants (guides ANSSI pour SSH), contrôle d'accès réseau MAC par Port-Security.</li>
-                            <li class="progress"><strong>AC 4.3 — Sauvegarder des données et assurer la résilience</strong> (en cours) : Création de scripts de sauvegarde et archivage système (xfsdump/xfsrestore).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="inner-label">Analyse de progression</span>
-                <div class="comp-box" style="margin-top: 8px;">
-                    Bien que la compétence d'administration système sécurisée soit le pilier de ma deuxième année, la SAÉ 1.2 m'a offert une première immersion concrète. J'ai pris conscience des enjeux de sécurité en appliquant des règles strictes sur la configuration SSH et en cloisonnant nos réseaux par des politiques de sécurité commutée. C'est le domaine qui me passionne le plus et je compte mettre à profit ma future spécialisation en Cybersécurité pour apprendre à auditer des réseaux et configurer des firewalls de nouvelle génération (PFSense, Fortinet).
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="display:flex; justify-content:space-between; margin-top: 8px;">
-        <a href="saes.html" class="btn btn-outline">← Mes projets (SAÉ)</a>
-        <a href="bilan.html" class="btn btn-primary">Bilan global →</a>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up">
+            <div class="breadcrumb">Accueil / Compétences</div>
+            <h1>Bilan par <span>Compétence</span></h1>
+            <p class="lead">Synthèse de mes apprentissages organisée par compétence du référentiel BUT R&T.</p>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <!-- COMPÉTENCE 1 -->
+        <div class="comp-section fade-up fade-up-1">
+            <div class="comp-header">
+                <div class="comp-num c1">C1</div>
+                <div>
+                    <h2>🌐 Administrer les réseaux et l'Internet</h2>
+                    <p>Configuration, supervision, dépannage et optimisation des infrastructures réseau</p>
+                </div>
+            </div>
+            <div class="comp-body">
+                <div class="inner-grid">
+                    <div class="inner-block">
+                        <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Conception
+                                    et maquettage du LAN sécurisé de Fibre&Company.</li>
+                                <li><a href="sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> :
+                                    Localisation de défauts physiques de lignes.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner-block">
+                        <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><strong>AC 1.1 — S'initier aux réseaux informatiques</strong> : Compréhension des
+                                    topologies de réseaux, modèles OSI/TCP-IP et adressage.</li>
+                                <li><strong>AC 1.2 — Configurer les équipements actifs</strong> : Commutation Cisco
+                                    (VLANs, trunks, agrégation LACP, RSTP) et routage statique.</li>
+                                <li><strong>AC 1.3 — Déploiement de services système d'infrastructure</strong> :
+                                    Configuration de serveurs de services réseau (DNS Bind9, DHCP, Samba) sous Debian
+                                    13.</li>
+                                <li><strong>AC 1.4 — Securiser et diagnostiquer</strong> : Audit avec Wireshark et
+                                    Iperf3, Port-Security (filtrage MAC) et durcissement SSH selon les guides ANSSI.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="inner-label">Analyse de progression</span>
+                    <div class="comp-box" style="margin-top: 8px;">
+                        Grâce aux travaux pratiques et aux réalisations concrètes de la SAÉ 1.2, j'ai acquis une solide
+                        autonomie sur la configuration matérielle d'équipements Cisco et le déploiement de services
+                        Linux. Je suis capable de configurer des réseaux redondants et sécurisés de niveau 2 et 3. La
+                        prochaine étape sera d'aborder des protocoles de routage dynamique comme OSPF et d'apprendre à
+                        utiliser des outils de supervision automatisée.
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- COMPÉTENCE 2 -->
+        <div class="comp-section fade-up fade-up-2">
+            <div class="comp-header">
+                <div class="comp-num c2">C2</div>
+                <div>
+                    <h2>🔗 Connecter les entreprises et les usagers</h2>
+                    <p>Mise en œuvre de solutions de connectivité pour entreprises et usagers</p>
+                </div>
+            </div>
+            <div class="comp-body">
+                <div class="inner-grid">
+                    <div class="inner-block">
+                        <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><a href="sae-103.html">SAÉ 1.3 — Découverte d'un dispositif de transmission</a> :
+                                    Caractérisation expérimentale de supports de transmission cuivre et fibre.</li>
+                                <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> :
+                                    Dimensionnement du support physique (câblage LAN, liaisons montantes).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner-block">
+                        <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><strong>AC 2.1 — Différencier les supports physiques</strong> : Analyse des
+                                    spécifications du cuivre coaxial/paire torsadée et de la fibre monomode
+                                    (FTTH)/multimode.</li>
+                                <li><strong>AC 2.2 — Caractériser la transmission des signaux</strong> : Mesure de
+                                    vitesse de propagation (NVP) à l'oscilloscope, réflectométrie temporelle (DTF) et
+                                    photométrie optique (pertes en dB).</li>
+                                <li><strong>AC 2.3 — Mettre en œuvre des liaisons de télécommunication</strong> :
+                                    Raccordement physique de jarretières optiques, soudure de fibre, câblage RJ45 et
+                                    testeurs réseau.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="inner-label">Analyse de progression</span>
+                    <div class="comp-box" style="margin-top: 8px;">
+                        La SAÉ 1.3 m'a permis d'assimiler la théorie physique des ondes de télécommunications. Je sais
+                        étalonner un photomètre optique pour valider une ligne FTTH et localiser avec précision des
+                        défauts physiques de ligne par réflectométrie (DTF). Je maîtrise désormais le choix des supports
+                        physiques selon les contraintes de distance et de débit. Je souhaite acquérir plus d'expérience
+                        pratique sur le raccordement et la soudure de fibre optique sur le terrain.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPÉTENCE 3 -->
+        <div class="comp-section fade-up fade-up-3">
+            <div class="comp-header">
+                <div class="comp-num c3">C3</div>
+                <div>
+                    <h2>💻 Créer des outils et des applications</h2>
+                    <p>Développement d'outils et d'applications adaptés aux besoins R&T</p>
+                </div>
+            </div>
+            <div class="comp-body">
+                <div class="inner-grid">
+                    <div class="inner-block">
+                        <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><a href="sae-105.html">SAÉ 1.5 — Traitement de données</a> : Récupération d'API,
+                                    compilation de statistiques et génération dynamique de fiches en HTML/CSS.</li>
+                                <li><a href="sae-104.html">SAÉ 1.4 — Se présenter sur Internet</a> : Conception et
+                                    intégration d'un site web multipage sur la MAO.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner-block">
+                        <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><strong>AC 3.1 — Développer des applications simples en Python</strong> : Requêtes
+                                    API Overpass/Nominatim, parsing de fichiers JSON complexes, manipulation d'images
+                                    (Pillow) et gestion des exceptions réseau.</li>
+                                <li><strong>AC 3.2 — Concevoir des interfaces web statiques et adaptatives</strong> :
+                                    Intégration HTML5/CSS3 fluide (Flexbox, CSS Grid), design responsive, thèmes
+                                    clair/sombre, conformité W3C et accessibilité WCAG 2.0 AA.</li>
+                                <li><strong>AC 3.3 — Gérer et versionner des projets de code</strong> : Suivi rigoureux
+                                    de projets via Git (commits précis, branches, gestion de dépôts).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="inner-label">Analyse de progression</span>
+                    <div class="comp-box" style="margin-top: 8px;">
+                        Le développement de mes projets SAÉ 1.4 et 1.5 m'a permis d'acquérir une véritable méthodologie
+                        de développement. Je suis capable d'automatiser des flux de traitement de données (de l'API
+                        réseau au rendu final en HTML/CSS). L'utilisation quotidienne de Git m'a fait comprendre
+                        l'importance de la rigueur et du versionnage. Pour aller plus loin, je prévois d'apprendre
+                        JavaScript pour rendre mes interfaces Web interactives et d'explorer le scripting
+                        d'automatisation réseau (Netmiko, Ansible).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPÉTENCE 4 -->
+        <div class="comp-section fade-up fade-up-4">
+            <div class="comp-header">
+                <div class="comp-num c4">C4</div>
+                <div>
+                    <h2>🔒 Administrer un SI sécurisé</h2>
+                    <p>Administration et sécurisation des systèmes d'information (à partir de la 2e année)</p>
+                </div>
+            </div>
+            <div class="comp-body">
+                <div class="inner-grid">
+                    <div class="inner-block">
+                        <span class="inner-label">SAÉ mobilisant cette compétence</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li><a href="sae-102.html">SAÉ 1.2 — S'initier au réseau informatique</a> : Sécurisation
+                                    système & réseau (SSH ANSSI, Port-Security, virtualisation Debian/Proxmox).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="inner-block">
+                        <span class="inner-label">Apprentissages Critiques maîtrisés</span>
+                        <div class="comp-box">
+                            <ul class="comp-list">
+                                <li class="progress"><strong>AC 4.1 — Installer et configurer un système d'exploitation
+                                        serveur</strong> (en cours) : Virtualisation de serveurs Debian 13 sous
+                                    hyperviseur Proxmox VE, gestion des disques et sauvegardes.</li>
+                                <li class="progress"><strong>AC 4.2 — Appliquer des politiques de sécurité système et
+                                        réseau</strong> (en cours) : Durcissement des accès distants (guides ANSSI pour
+                                    SSH), contrôle d'accès réseau MAC par Port-Security.</li>
+                                <li class="progress"><strong>AC 4.3 — Sauvegarder des données et assurer la
+                                        résilience</strong> (en cours) : Création de scripts de sauvegarde et archivage
+                                    système (xfsdump/xfsrestore).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="inner-label">Analyse de progression</span>
+                    <div class="comp-box" style="margin-top: 8px;">
+                        Bien que la compétence d'administration système sécurisée soit le pilier de ma deuxième année,
+                        la SAÉ 1.2 m'a offert une première immersion concrète. J'ai pris conscience des enjeux de
+                        sécurité en appliquant des règles strictes sur la configuration SSH et en cloisonnant nos
+                        réseaux par des politiques de sécurité commutée. C'est le domaine qui me passionne le plus et je
+                        compte mettre à profit ma future spécialisation en Cybersécurité pour apprendre à auditer des
+                        réseaux et configurer des firewalls de nouvelle génération (PFSense, Fortinet).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; margin-top: 8px;">
+            <a href="saes.html" class="btn btn-outline">← Mes projets (SAÉ)</a>
+            <a href="bilan.html" class="btn btn-primary">Bilan global →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>

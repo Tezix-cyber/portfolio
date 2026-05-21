@@ -76,22 +76,22 @@ tiltElements.forEach(el => {
         const rect = el.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         // Coordonnées pour l'effet Glow
         el.style.setProperty('--mouse-x', `${x}px`);
         el.style.setProperty('--mouse-y', `${y}px`);
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = ((y - centerY) / centerY) * -4;
         const rotateY = ((x - centerX) / centerX) * 4;
-        
+
         el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
         el.style.transition = 'transform 0.1s';
         el.style.zIndex = '10';
     });
-    
+
     el.addEventListener('mouseleave', () => {
         el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
         el.style.transition = 'transform 0.5s ease-out';

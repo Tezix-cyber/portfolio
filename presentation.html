@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation — Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Présentation de Nathan Duval, étudiant en BUT Réseaux & Télécommunications. Parcours, objectifs et compétences en cybersécurité.">
+    <meta name="description"
+        content="Présentation de Nathan Duval, étudiant en BUT Réseaux & Télécommunications. Parcours, objectifs et compétences en cybersécurité.">
     <link rel="stylesheet" href="style.css">
     <style>
         /* ---- PROFILE HERO ---- */
@@ -27,13 +29,14 @@
         }
 
         .profile-avatar {
-            width: 100px; height: 100px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 16px;
             display: block;
-            border: 3px solid rgba(255,255,255,.12);
-            box-shadow: 0 8px 30px rgba(14,165,233,.3);
+            border: 3px solid rgba(255, 255, 255, .12);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, .3);
         }
 
         .profile-name {
@@ -51,7 +54,7 @@
 
         .profile-info {
             text-align: left;
-            border-top: 1px solid rgba(255,255,255,.08);
+            border-top: 1px solid rgba(255, 255, 255, .08);
             padding-top: 20px;
         }
 
@@ -60,12 +63,18 @@
             align-items: center;
             gap: 10px;
             padding: 9px 0;
-            border-bottom: 1px solid rgba(255,255,255,.05);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
         }
 
-        .profile-info-row:last-child { border-bottom: none; }
+        .profile-info-row:last-child {
+            border-bottom: none;
+        }
 
-        .profile-info-row .ico { font-size: 15px; width: 22px; text-align: center; }
+        .profile-info-row .ico {
+            font-size: 15px;
+            width: 22px;
+            text-align: center;
+        }
 
         .profile-info-row .lbl {
             font-size: 11px;
@@ -102,7 +111,7 @@
             text-decoration: none;
             font-size: 12px;
             font-weight: 600;
-            border: 1px solid rgba(255,255,255,.1);
+            border: 1px solid rgba(255, 255, 255, .1);
             color: #94a3b8;
             transition: all .2s;
         }
@@ -110,7 +119,7 @@
         .profile-links a:hover {
             border-color: var(--teal);
             color: var(--teal);
-            background: rgba(14,165,233,.08);
+            background: rgba(14, 165, 233, .08);
         }
 
         /* ---- MAIN CONTENT ---- */
@@ -138,7 +147,9 @@
             gap: 14px;
         }
 
-        .bio-header .bio-ico { font-size: 24px; }
+        .bio-header .bio-ico {
+            font-size: 24px;
+        }
 
         .bio-header h2 {
             font-family: 'Outfit', sans-serif;
@@ -166,7 +177,9 @@
             color: #e2e8f0;
         }
 
-        .objectif-card .section-label { color: var(--teal); }
+        .objectif-card .section-label {
+            color: var(--teal);
+        }
 
         .objectif-card h3 {
             font-family: 'Outfit', sans-serif;
@@ -198,7 +211,10 @@
             border-color: var(--teal);
         }
 
-        .comp-card .comp-icon { font-size: 26px; margin-bottom: 10px; }
+        .comp-card .comp-icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
 
         .comp-card h4 {
             font-family: 'Outfit', sans-serif;
@@ -207,222 +223,246 @@
             margin-bottom: 6px;
         }
 
-        .comp-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+        .comp-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
 
         @media (max-width: 900px) {
-            .profile-hero { grid-template-columns: 1fr; }
-            .profile-sidebar { position: static; }
+            .profile-hero {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                position: static;
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up">
-        <div class="breadcrumb">Accueil / Présentation</div>
-        <h1>Mon <span>Profil</span></h1>
-        <p class="lead">Parcours, compétences et projection professionnelle.</p>
-    </div>
-
-    <div class="profile-hero">
-
-        <!-- SIDEBAR -->
-        <aside class="profile-sidebar fade-up fade-up-1">
-            <img class="profile-avatar" src="image/photo_moi.png" alt="Photo de profil de Nathan Duval" loading="lazy">
-            <div class="profile-name">Nathan Duval</div>
-            <div class="profile-role">Étudiant BUT R&T</div>
-
-            <div class="profile-info">
-                <div class="profile-info-row">
-                    <span class="ico">🎓</span>
-                    <div>
-                        <span class="lbl">Formation</span>
-                        <span class="val">BUT Réseaux & Télécoms</span>
-                    </div>
-                </div>
-                <div class="profile-info-row">
-                    <span class="ico">📍</span>
-                    <div>
-                        <span class="lbl">Établissement</span>
-                        <span class="val">IUT d'Ifs (Campus 3, Université de Caen)</span>
-                    </div>
-                </div>
-                <div class="profile-info-row">
-                    <span class="ico">📅</span>
-                    <div>
-                        <span class="lbl">Promo</span>
-                        <span class="val">2025 – 2028</span>
-                    </div>
-                </div>
-                <div class="profile-info-row">
-                    <span class="ico">🔒</span>
-                    <div>
-                        <span class="lbl">Spécialisation visée</span>
-                        <span class="val">Cybersécurité</span>
-                    </div>
-                </div>
-                <div class="profile-info-row">
-                    <span class="ico">📚</span>
-                    <div>
-                        <span class="lbl">Bac</span>
-                        <span class="val">Général — NSI & SI</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="profile-tags">
-                <span class="tag">Réseaux</span>
-                <span class="tag">Cybersécurité</span>
-                <span class="tag tag-purple">HTML</span>
-                <span class="tag tag-green">Python</span>
-                <span class="tag tag-orange">Cisco</span>
-            </div>
-
-            <div class="profile-links">
-                <a href="CV.pdf" download>📄 CV</a>
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
-            </div>
-        </aside>
-
-        <!-- MAIN -->
-        <div class="profile-main">
-
-            <!-- BIO -->
-            <div class="bio-card fade-up fade-up-2">
-                <div class="bio-header">
-                    <span class="bio-ico">👤</span>
-                    <div>
-                        <h2>Qui suis-je ?</h2>
-                        <p>Mon parcours et ma motivation</p>
-                    </div>
-                </div>
-                <div class="bio-body">
-                    Venant d'un baccalauréat général avec les enseignements
-                    <strong>Numérique & Science Informatique (NSI)</strong> et
-                    <strong>Science de l'Ingénieur (SI)</strong>, j'ai intégré le BUT R&T en septembre 2025.
-                    Ces deux spécialités m'ont permis de développer une double culture, à la fois algorithmique
-                    et technique, que je mets aujourd'hui au service des réseaux et des télécommunications.
-                    <br><br>
-                    Passionné par la sécurité informatique depuis le lycée, mon objectif est de me spécialiser
-                    en <strong>cybersécurité</strong>, puis d'intégrer une école d'ingénieur afin d'acquérir
-                    les compétences nécessaires pour évoluer dans ce secteur en pleine croissance.
-                </div>
-            </div>
-
-            <!-- OBJECTIF -->
-            <div class="objectif-card fade-up fade-up-3">
-                <div class="section-label">Projection professionnelle</div>
-                <h3>Mon objectif à 5 ans</h3>
-                <p>
-                    Après le BUT, intégrer une école d'ingénieur spécialisée en cybersécurité,
-                    puis rejoindre un environnement professionnel exigeant — SOC, pentest, audit de sécurité ou
-                    architecture réseau sécurisée. Les secteurs qui m'intéressent particulièrement : défense,
-                    infrastructures critiques, et institutions publiques.
-                </p>
-                <div style="margin-top: 16px;">
-                    <p style="font-size:13.5px; line-height:1.85; color:#94a3b8;">
-                        En entrant en BUT R&T, ma vision du métier se limitait essentiellement au "hacker" et aux films de cyber. Cette année m'a révélé que la cybersécurité repose avant tout sur une maîtrise solide des réseaux et des systèmes.
-                    </p>
-                </div>
-            </div>
-
-            <!-- COMPETENCES -->
-            <div class="fade-up fade-up-4">
-                <div class="section-title">Compétences du référentiel BUT R&T</div>
-                <div class="grid-2">
-                    <div class="comp-card">
-                        <div class="comp-icon">🌐</div>
-                        <h4>Administrer les réseaux</h4>
-                        <p>Configuration, supervision et optimisation des infrastructures réseau LAN/WAN.</p>
-                    </div>
-                    <div class="comp-card">
-                        <div class="comp-icon">🔗</div>
-                        <h4>Connecter</h4>
-                        <p>Mise en œuvre de solutions de connectivité pour entreprises et usagers.</p>
-                    </div>
-                    <div class="comp-card">
-                        <div class="comp-icon">💻</div>
-                        <h4>Créer</h4>
-                        <p>Développement d'outils et d'applications pour les R&T.</p>
-                    </div>
-                    <div class="comp-card">
-                        <div class="comp-icon">🔒</div>
-                        <h4>Sécuriser</h4>
-                        <p>Administration de systèmes d'information sécurisés. Mon domaine de prédilection.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- EVOLUTION -->
-            <div class="card fade-up">
-                <div class="section-title">Évolutions observées</div>
-                <p style="font-size:13.5px; line-height:1.85; color:var(--muted);">
-                    En étude de ces quatre dernières années, je suis passé d'un profil «curieux en informatique» à un étudiant capable de concevoir et d'administrer des infrastructures réseau réelles. Sur le plan technique, je maîtrise désormais la configuration d'équipements Cisco (VLANs, LACP, routage), le déploiement de services Linux (DNS, DHCP, partage de fichiers) et l'écriture de scripts Python exploitant des APIs réseau. Sur le plan personnel, cette année m'a appris à travailler sous contrainte de temps, à documenter rigoureusement mon travail et à adapter mon discours technique selon mon interlocuteur — des compétences aussi importantes que les savoirs techniques.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up">
+            <div class="breadcrumb">Accueil / Présentation</div>
+            <h1>Mon <span>Profil</span></h1>
+            <p class="lead">Parcours, compétences et projection professionnelle.</p>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <div class="profile-hero">
+
+            <!-- SIDEBAR -->
+            <aside class="profile-sidebar fade-up fade-up-1">
+                <img class="profile-avatar" src="image/photo_moi.png" alt="Photo de profil de Nathan Duval"
+                    loading="lazy">
+                <div class="profile-name">Nathan Duval</div>
+                <div class="profile-role">Étudiant BUT R&T</div>
+
+                <div class="profile-info">
+                    <div class="profile-info-row">
+                        <span class="ico">🎓</span>
+                        <div>
+                            <span class="lbl">Formation</span>
+                            <span class="val">BUT Réseaux & Télécoms</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="ico">📍</span>
+                        <div>
+                            <span class="lbl">Établissement</span>
+                            <span class="val">IUT d'Ifs (Campus 3, Université de Caen)</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="ico">📅</span>
+                        <div>
+                            <span class="lbl">Promo</span>
+                            <span class="val">2025 – 2028</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="ico">🔒</span>
+                        <div>
+                            <span class="lbl">Spécialisation visée</span>
+                            <span class="val">Cybersécurité</span>
+                        </div>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="ico">📚</span>
+                        <div>
+                            <span class="lbl">Bac</span>
+                            <span class="val">Général — NSI & SI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-tags">
+                    <span class="tag">Réseaux</span>
+                    <span class="tag">Cybersécurité</span>
+                    <span class="tag tag-purple">HTML</span>
+                    <span class="tag tag-green">Python</span>
+                    <span class="tag tag-orange">Cisco</span>
+                </div>
+
+                <div class="profile-links">
+                    <a href="CV.pdf" download>📄 CV</a>
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </aside>
+
+            <!-- MAIN -->
+            <div class="profile-main">
+
+                <!-- BIO -->
+                <div class="bio-card fade-up fade-up-2">
+                    <div class="bio-header">
+                        <span class="bio-ico">👤</span>
+                        <div>
+                            <h2>Qui suis-je ?</h2>
+                            <p>Mon parcours et ma motivation</p>
+                        </div>
+                    </div>
+                    <div class="bio-body">
+                        Venant d'un baccalauréat général avec les enseignements
+                        <strong>Numérique & Science Informatique (NSI)</strong> et
+                        <strong>Science de l'Ingénieur (SI)</strong>, j'ai intégré le BUT R&T en septembre 2025.
+                        Ces deux spécialités m'ont permis de développer une double culture, à la fois algorithmique
+                        et technique, que je mets aujourd'hui au service des réseaux et des télécommunications.
+                        <br><br>
+                        Passionné par la sécurité informatique depuis le lycée, mon objectif est de me spécialiser
+                        en <strong>cybersécurité</strong>, puis d'intégrer une école d'ingénieur afin d'acquérir
+                        les compétences nécessaires pour évoluer dans ce secteur en pleine croissance.
+                    </div>
+                </div>
+
+                <!-- OBJECTIF -->
+                <div class="objectif-card fade-up fade-up-3">
+                    <div class="section-label">Projection professionnelle</div>
+                    <h3>Mon objectif à 5 ans</h3>
+                    <p>
+                        Après le BUT, intégrer une école d'ingénieur spécialisée en cybersécurité,
+                        puis rejoindre un environnement professionnel exigeant — SOC, pentest, audit de sécurité ou
+                        architecture réseau sécurisée. Les secteurs qui m'intéressent particulièrement : défense,
+                        infrastructures critiques, et institutions publiques.
+                    </p>
+                    <div style="margin-top: 16px;">
+                        <p style="font-size:13.5px; line-height:1.85; color:#94a3b8;">
+                            En entrant en BUT R&T, ma vision du métier se limitait essentiellement au "hacker" et aux
+                            films de cyber. Cette année m'a révélé que la cybersécurité repose avant tout sur une
+                            maîtrise solide des réseaux et des systèmes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- COMPETENCES -->
+                <div class="fade-up fade-up-4">
+                    <div class="section-title">Compétences du référentiel BUT R&T</div>
+                    <div class="grid-2">
+                        <div class="comp-card">
+                            <div class="comp-icon">🌐</div>
+                            <h4>Administrer les réseaux</h4>
+                            <p>Configuration, supervision et optimisation des infrastructures réseau LAN/WAN.</p>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-icon">🔗</div>
+                            <h4>Connecter</h4>
+                            <p>Mise en œuvre de solutions de connectivité pour entreprises et usagers.</p>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-icon">💻</div>
+                            <h4>Créer</h4>
+                            <p>Développement d'outils et d'applications pour les R&T.</p>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-icon">🔒</div>
+                            <h4>Sécuriser</h4>
+                            <p>Administration de systèmes d'information sécurisés. Mon domaine de prédilection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EVOLUTION -->
+                <div class="card fade-up">
+                    <div class="section-title">Évolutions observées</div>
+                    <p style="font-size:13.5px; line-height:1.85; color:var(--muted);">
+                        En étude de ces quatre dernières années, je suis passé d'un profil «curieux en informatique» à
+                        un étudiant capable de concevoir et d'administrer des infrastructures réseau réelles. Sur le
+                        plan technique, je maîtrise désormais la configuration d'équipements Cisco (VLANs, LACP,
+                        routage), le déploiement de services Linux (DNS, DHCP, partage de fichiers) et l'écriture de
+                        scripts Python exploitant des APIs réseau. Sur le plan personnel, cette année m'a appris à
+                        travailler sous contrainte de temps, à documenter rigoureusement mon travail et à adapter mon
+                        discours technique selon mon interlocuteur — des compétences aussi importantes que les savoirs
+                        techniques.
+                    </p>
+                </div>
+
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
+    </main>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>

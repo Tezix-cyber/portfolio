@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil — Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Portfolio de Nathan Duval, étudiant en BUT Réseaux & Télécommunications (R&T), spécialisé en cybersécurité. Découvrez mes projets, mes compétences et mon CV.">
+    <meta name="description"
+        content="Portfolio de Nathan Duval, étudiant en BUT Réseaux & Télécommunications (R&T), spécialisé en cybersécurité. Découvrez mes projets, mes compétences et mon CV.">
     <link rel="stylesheet" href="style.css">
     <style>
         /* ---- HERO ---- */
@@ -56,19 +58,22 @@
         .hero-card::before {
             content: '';
             position: absolute;
-            top: -60px; right: -60px;
-            width: 200px; height: 200px;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(14,165,233,.3), transparent 70%);
+            background: radial-gradient(circle, rgba(14, 165, 233, .3), transparent 70%);
         }
 
         .avatar {
-            width: 90px; height: 90px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 16px;
             display: block;
-            border: 3px solid rgba(255,255,255,.15);
+            border: 3px solid rgba(255, 255, 255, .15);
         }
 
         .hero-card h2 {
@@ -92,8 +97,8 @@
         }
 
         .hero-stat {
-            background: rgba(255,255,255,.06);
-            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .08);
             border-radius: 10px;
             padding: 12px;
         }
@@ -178,136 +183,163 @@
         }
 
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; }
-            .hero-card { display: none; }
-            .hero-title { font-size: 40px; }
-            .sections-grid { grid-template-columns: 1fr 1fr; }
-            .section-card { min-height: 200px; }
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .sections-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section-card {
+                min-height: 200px;
+            }
         }
 
         @media (max-width: 600px) {
-            .sections-grid { grid-template-columns: 1fr; }
-            .hero-sub { font-size: 16px; line-height: 1.7; }
-            .section-card { min-height: auto; }
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-sub {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .section-card {
+                min-height: auto;
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="hero fade-up">
-        <div>
-            <div class="section-label">BUT Réseaux & Télécommunications</div>
-            <h1 class="hero-title">
-                Bonjour,<br>je suis <span class="highlight">Nathan<br>Duval</span>
-            </h1>
-            <p class="hero-sub">
-                Étudiant en BUT R&T, spécialisé en cybersécurité. Ce portfolio documente mon parcours,
-                mes projets (SAÉ) et ma progression dans les compétences du référentiel national.
-            </p>
-            <div class="hero-actions">
-                <a href="presentation.html" class="btn btn-primary">Mon profil →</a>
-            </div>
-        </div>
-
-        <div class="hero-card fade-up fade-up-2">
-            <img class="avatar" src="image/photo_moi.png" alt="Photo de profil de Nathan Duval" loading="lazy">
-            <h2>Nathan Duval</h2>
-            <div class="role">Étudiant BUT R&T · Promo 2025–2028</div>
-            <div class="hero-stat-grid">
-                <div class="hero-stat">
-                    <div class="lbl">Projets réalisés</div>
-                    <div class="num">4</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="lbl">Année de BUT en cours</div>
-                    <div class="num">1</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nav sections -->
-    <div class="sections-grid">
-        <a href="saes.html" class="section-card fade-up fade-up-2">
-            <div class="icon">📂</div>
-            <h3>Mes projets (SAÉ)</h3>
-            <p>Les 4 projets académiques réalisés, avec analyses réflexives détaillées.</p>
-            <div class="arrow">Voir les projets <span>→</span></div>
-        </a>
-        <div class="section-card fade-up fade-up-3">
-            <div class="icon">🎯</div>
-            <h3>Compétences & Bilan</h3>
-            <p>Synthèse de mes apprentissages par compétences et bilan global de mon parcours.</p>
-            <a href="competences.html" class="arrow">Voir compétences <span>→</span></a>
-            <a href="bilan.html" class="arrow">Voir bilan global <span>→</span></a>
-        </div>
-        <div class="section-card fade-up fade-up-4">
-            <div class="icon">📄</div>
-            <h3>Mon CV</h3>
-            <p>Télécharger mes documents de candidature.</p>
-            <a href="CV.pdf" class="arrow" download>Télécharger le CV <span>→</span></a>
-        </div>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero fade-up">
+            <div>
+                <div class="section-label">BUT Réseaux & Télécommunications</div>
+                <h1 class="hero-title">
+                    Bonjour,<br>je suis <span class="highlight">Nathan<br>Duval</span>
+                </h1>
+                <p class="hero-sub">
+                    Étudiant en BUT R&T, spécialisé en cybersécurité. Ce portfolio documente mon parcours,
+                    mes projets (SAÉ) et ma progression dans les compétences du référentiel national.
+                </p>
+                <div class="hero-actions">
+                    <a href="presentation.html" class="btn btn-primary">Mon profil →</a>
+                </div>
+            </div>
+
+            <div class="hero-card fade-up fade-up-2">
+                <img class="avatar" src="image/photo_moi.png" alt="Photo de profil de Nathan Duval" loading="lazy">
+                <h2>Nathan Duval</h2>
+                <div class="role">Étudiant BUT R&T · Promo 2025–2028</div>
+                <div class="hero-stat-grid">
+                    <div class="hero-stat">
+                        <div class="lbl">Projets réalisés</div>
+                        <div class="num">4</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="lbl">Année de BUT en cours</div>
+                        <div class="num">1</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- Nav sections -->
+        <div class="sections-grid">
+            <a href="saes.html" class="section-card fade-up fade-up-2">
+                <div class="icon">📂</div>
+                <h3>Mes projets (SAÉ)</h3>
+                <p>Les 4 projets académiques réalisés, avec analyses réflexives détaillées.</p>
+                <div class="arrow">Voir les projets <span>→</span></div>
+            </a>
+            <div class="section-card fade-up fade-up-3">
+                <div class="icon">🎯</div>
+                <h3>Compétences & Bilan</h3>
+                <p>Synthèse de mes apprentissages par compétences et bilan global de mon parcours.</p>
+                <a href="competences.html" class="arrow">Voir compétences <span>→</span></a>
+                <a href="bilan.html" class="arrow">Voir bilan global <span>→</span></a>
+            </div>
+            <div class="section-card fade-up fade-up-4">
+                <div class="icon">📄</div>
+                <h3>Mon CV</h3>
+                <p>Télécharger mes documents de candidature.</p>
+                <a href="CV.pdf" class="arrow" download>Télécharger le CV <span>→</span></a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>

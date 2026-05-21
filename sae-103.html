@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAÉ 1.3 — Découverte d'un dispositif de transmission · Portfolio BUT R&T · Nathan Duval</title>
-    <meta name="description" content="Détails du projet SAÉ 1.3 par Nathan Duval : caractérisation des lignes cuivre (coaxial/Ethernet) et de la fibre optique (FTTH) par mesures physiques.">
+    <meta name="description"
+        content="Détails du projet SAÉ 1.3 par Nathan Duval : caractérisation des lignes cuivre (coaxial/Ethernet) et de la fibre optique (FTTH) par mesures physiques.">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root { --accent: #f59e0b; --accent-bg: rgba(245,158,11,.12); --accent-border: rgba(245,158,11,.25); }
+        :root {
+            --accent: #f59e0b;
+            --accent-bg: rgba(245, 158, 11, .12);
+            --accent-border: rgba(245, 158, 11, .25);
+        }
 
         .sae-hero {
             background: var(--navy);
@@ -22,10 +28,12 @@
         .sae-hero::before {
             content: '';
             position: absolute;
-            top: -40px; right: -40px;
-            width: 200px; height: 200px;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(245,158,11,.12), transparent 70%);
+            background: radial-gradient(circle, rgba(245, 158, 11, .12), transparent 70%);
         }
 
         .sae-hero .badge {
@@ -36,9 +44,9 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: 700;
-            background: rgba(245,158,11,.12);
+            background: rgba(245, 158, 11, .12);
             color: #f59e0b;
-            border: 1px solid rgba(245,158,11,.25);
+            border: 1px solid rgba(245, 158, 11, .25);
             margin-bottom: 14px;
         }
 
@@ -73,7 +81,9 @@
             color: #64748b;
         }
 
-        .sae-hero .meta-item strong { color: #e2e8f0; }
+        .sae-hero .meta-item strong {
+            color: #e2e8f0;
+        }
 
         /* ---- SECTION BLOCKS ---- */
         .block {
@@ -95,11 +105,14 @@
         }
 
         .block-header .bh-icon {
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             border-radius: 8px;
-            background: rgba(245,158,11,.12);
-            border: 1px solid rgba(245,158,11,.25);
-            display: flex; align-items: center; justify-content: center;
+            background: rgba(245, 158, 11, .12);
+            border: 1px solid rgba(245, 158, 11, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 17px;
         }
 
@@ -147,8 +160,15 @@
             color: var(--muted);
         }
 
-        .traces-zone .tz-icon { font-size: 32px; margin-bottom: 10px; }
-        .traces-zone p { font-size: 14px; line-height: 1.7; }
+        .traces-zone .tz-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .traces-zone p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
         /* ---- AUTOEVAL ---- */
         .autoeval-questions {
@@ -199,7 +219,7 @@
 
         .niveau-option.selected {
             border-color: #f59e0b;
-            background: rgba(245,158,11,.12);
+            background: rgba(245, 158, 11, .12);
             color: #f59e0b;
             font-weight: 600;
         }
@@ -213,373 +233,467 @@
         }
 
         @media (max-width: 640px) {
-            .niveau-grid { grid-template-columns: repeat(2, 1fr); }
+            .niveau-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html" class="logo">
-            <span class="logo-badge">ND</span>
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="saes.html">Projets</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="bilan.html">Bilan</a></li>
-        </ul>
-        <div class="nav-right">
-            <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
-        </div>
-    </nav>
-</header>
-
-<main>
-    <div class="page-header fade-up" style="margin-bottom: 24px;">
-        <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> / SAÉ 1.3</div>
-    </div>
-
-    <!-- HERO SAÉ -->
-    <div class="sae-hero fade-up">
-        <div class="badge">📂 SAÉ 1.3</div>
-        <h1>SAÉ 1.3<br><span style="color:#64748b; font-weight:400; font-size:22px;">Découverte d'un dispositif de transmission</span></h1>
-        <p class="sae-subtitle">
-            Étude théorique et expérimentale des supports physiques de transmission (cuivre coaxial, câble Ethernet et fibre optique), mesure de longueur par réflectométrie (DTF) et caractérisation de l'atténuation optique.
-        </p>
-        <div class="sae-meta">
-            <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025–2026</div>
-            <div class="meta-item">👥 <strong>Travail</strong> : En binôme</div>
-            <div class="meta-item">⏱️ <strong>Durée</strong> : TP & Projet</div>
-            <div class="meta-item">🧰 <strong>Outils</strong> : GBF, Oscilloscope, DTF, Photomètre</div>
-        </div>
-    </div>
-
-    <!-- 1. DESCRIPTION -->
-    <div class="block fade-up fade-up-1">
-        <div class="block-header">
-            <div class="bh-icon">📋</div>
-            <div>
-                <h2>Description & Objectifs</h2>
-                <p>Contexte de la SAÉ et compétences visées</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="margin-bottom:14px;">
-                Dans le cadre de cette SAÉ, nous avons étudié de manière théorique et expérimentale les caractéristiques physiques et le comportement des deux principaux supports filaires de transmission de données utilisés en Réseaux & Télécommunications : le <strong>cuivre</strong> (câble coaxial, câble réseau RJ45) et la <strong>fibre optique</strong>.
-            </p>
-            <p style="margin-bottom:14px;">
-                Ne disposant pas d'un certificateur de câblage industriel automatique à l'IUT, l'objectif principal de ce projet était de <strong>comprendre et de reproduire manuellement</strong> les mesures de certification physique. Les tâches incluaient la mesure précise de longueur de câble, la détection et la localisation de défauts physiques (court-circuit, coupures) ainsi que le calcul et la mesure de l'affaiblissement d'une liaison optique FTTH de bout en bout.
-            </p>
-            <p>
-                Parallèlement aux expérimentations pratiques, une étude documentaire approfondie des fiches de spécifications techniques des différents supports cuivre et fibre optique a permis de synthétiser les normes, formules physiques et limites de transmission sur une fiche de synthèse manuscrite A3 recto-verso.
-            </p>
-        </div>
-    </div>
-
-    <!-- 2. APPRENTISSAGES CRITIQUES -->
-    <div class="block fade-up fade-up-2">
-        <div class="block-header">
-            <div class="bh-icon">🎯</div>
-            <div>
-                <h2>Apprentissages Critiques mobilisés</h2>
-                <p>AC du référentiel BUT R&T travaillés dans cette SAÉ</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
-                Compétences théoriques et pratiques mobilisées pour caractériser et valider la conformité physique d'un support de transmission.
-            </p>
-            <div class="ac-grid">
-                <div class="ac-chip">AC 1.1 — S'initier aux réseaux informatiques (Caractéristiques physiques des supports)</div>
-                <div class="ac-chip">AC 1.2 — Configurer les équipements actifs (Réflectométrie et photométrie)</div>
-                <div class="ac-chip">AC 1.4 — Sécuriser et diagnostiquer (Localisation de pannes et défauts physiques)</div>
-            </div>
-            <div class="tech-details-grid" style="margin-top: 20px;">
-                <div class="tech-card">
-                    <h3>🔌 Lignes de transmission Cuivre</h3>
-                    <ul>
-                        <li>Propagation des ondes impulsionnelles et phénomènes de réflexion.</li>
-                        <li>Mesure expérimentale de la vitesse nominale de propagation (NVP) par rapport étalon.</li>
-                        <li>Localisation de défaut par réflectométrie temporelle (DTF).</li>
-                    </ul>
-                </div>
-                <div class="tech-card">
-                    <h3>⚡ Fibre Optique & Photométrie</h3>
-                    <ul>
-                        <li>Raccordement physique FTTH (jarretières monomodes, coupleurs passifs).</li>
-                        <li>Étalonnage des puissances optiques absolues (dBm) et relatives (dB).</li>
-                        <li>Calcul et mesure de l'affaiblissement linéique et de connectique de la liaison.</li>
-                    </ul>
-                </div>
-                <div class="tech-card">
-                    <h3>📝 Fiche de Synthèse A3</h3>
-                    <ul>
-                        <li>Modélisation des atténuations linéiques théoriques.</li>
-                        <li>Compilation des formules clés d'ondes et d'affaiblissements optiques.</li>
-                        <li>Caractérisation des pertes de raccordement par soudure/coupleur.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. TÂCHES -->
-    <div class="block fade-up fade-up-3">
-        <div class="block-header">
-            <div class="bh-icon">🔧</div>
-            <div>
-                <h2>Tâches réalisées</h2>
-                <p>Démarche expérimentale et étapes du projet</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <p style="margin-bottom:14px;"><strong>1. Caractérisation expérimentale et calcul de NVP sur câble Ethernet</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                Nous disposions d'un câble Ethernet étalon de référence de <strong>2 mètres</strong> et d'un câble cible de même nature mais de longueur inconnue. À l'aide d'un Générateur de Signaux Basse Fréquence (GBF) injectant des impulsions courtes et d'un oscilloscope numérique, nous avons mesuré le décalage temporel (<i>Δt</i>) de l'écho à l'extrémité ouverte du câble. Nous en avons déduit la vitesse de propagation réelle et le coefficient <strong>NVP (Nominal Velocity of Propagation)</strong>. Nous avons ensuite appliqué cette NVP sur le câble inconnu pour calculer sa longueur exacte et la distance à un défaut (court-circuit) provoqué volontairement.
-            </p>
-
-            <p style="margin-bottom:14px;"><strong>2. Mesure par Réflectométrie (DTF) sur câble coaxial RG58</strong></p>
-            <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                Pour les câbles coaxiaux RG58, la NVP constructeur de référence est fixée à <strong>66%</strong> de la vitesse de la lumière dans le vide (<i>c</i> ≈ 3 × 10<sup>8</sup> m/s). En configurant cette NVP sur un analyseur de type DTF (Distance to Fault), nous avons relevé la distance du câble coaxial attribué et localisé précisément un défaut physique (court-circuit causé par une soudure défectueuse). Nous avons recoupé cette mesure à l'oscilloscope en mesurant le temps de propagation de l'onde réfléchie par rapport à l'onde incidente (2<i>L</i> = <i>v</i> × <i>Δt</i>).
-            </p>
-
-            <p style="margin-bottom:14px;"><strong>3. Alignement et test de photométrie sur fibre optique FTTH</strong></p>
-            <p style="color:var(--muted); font-size:14px;">
-                Nous avons assemblé une liaison fibre optique simulant une architecture de distribution FTTH, comprenant une jarretière d'injection, deux coupleurs de raccordement, une fibre de transport de 500m et des connecteurs optiques monomodes. Nous avons d'abord procédé à l'étalonnage en mesurant la puissance de sortie directe de notre source optique calibrée (<i>P<sub>ref</sub></i> = -20 dBm) sur notre photomètre. Nous avons ensuite intercalé notre liaison complète pour relever la puissance reçue et calculer l'affaiblissement d'insertion total en dB, validant ainsi la liaison vis-à-vis des tolérances de certification théoriques.
-            </p>
-        </div>
-    </div>
-
-    <!-- 4. PREUVES -->
-    <div class="block fade-up fade-up-4">
-        <div class="block-header">
-            <div class="bh-icon">📎</div>
-            <div>
-                <h2>Résultats & Preuves</h2>
-                <p>Tableaux de mesures expérimentales et formules physiques appliquées</p>
-            </div>
-        </div>
-        <div class="block-body">
-            
-            <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">1. Mesures physiques sur supports Cuivre (Réflectométrie & Réflectance)</h4>
-            <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
-                <strong>Méthode de calcul de la NVP par étalonnage (développée en TD) :</strong><br>
-                Pour déterminer la vitesse de propagation dans le câble sans connaître à l'avance ses caractéristiques, nous utilisons un câble étalon de même nature de longueur connue : <i>L<sub>étalon</sub></i> = 2.0 m.<br>
-                À l'oscilloscope (GBF + impulsion), le décalage temporel mesuré pour l'aller-retour est <i>Δt<sub>étalon</sub></i> = 20 ns.<br>
-                La vitesse est : <i>v</i> = (2 × <i>L<sub>étalon</sub></i>) / <i>Δt<sub>étalon</sub></i> = 4.0 / (20 × 10<sup>-9</sup>) = 2 × 10<sup>8</sup> m/s.<br>
-                Soit un coefficient de vélocité : <strong>NVP</strong> = <i>v</i> / <i>c</i> = (2 × 10<sup>8</sup>) / (3 × 10<sup>8</sup>) ≈ <strong>66.7%</strong>.<br><br>
-                <strong>Calcul des câbles inconnus par proportionnalité (ratio des temps de vol) :</strong><br>
-                Puisque le câble cible est de même nature, il possède le même NVP. Nous pouvons directement calculer sa longueur par le ratio des temps de vol mesurés :<br>
-                <i>L<sub>cible</sub></i> = <i>L<sub>étalon</sub></i> × (<i>Δt<sub>cible</sub></i> / <i>Δt<sub>étalon</sub></i>) = 2.0 × (245 ns / 20 ns) = <strong>24.5 m</strong> (distance mesurée par DTF : 24.3 m).<br>
-                Pour localiser un défaut (court-circuit) apparaissant à <i>Δt<sub>défaut</sub></i> = 121 ns :<br>
-                <i>d<sub>défaut</sub></i> = <i>L<sub>étalon</sub></i> × (<i>Δt<sub>défaut</sub></i> / <i>Δt<sub>étalon</sub></i>) = 2.0 × (121 ns / 20 ns) = <strong>12.1 m</strong>.
-            </p>
-
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; text-align: left;">
-                <thead>
-                    <tr style="border-bottom: 2px solid var(--border); color: var(--text); font-weight: 600;">
-                        <th style="padding: 10px;">Support caractérisé</th>
-                        <th style="padding: 10px;">NVP (%)</th>
-                        <th style="padding: 10px;">Temps de vol (ns)</th>
-                        <th style="padding: 10px;">Longueur DTF (m)</th>
-                        <th style="padding: 10px;">Longueur Oscillo (m)</th>
-                        <th style="padding: 10px;">Défaut identifié</th>
-                    </tr>
-                </thead>
-                <tbody style="color: var(--muted);">
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Câble Coaxial RG58</td>
-                        <td style="padding: 10px;">66.0%</td>
-                        <td style="padding: 10px;">150 ns</td>
-                        <td style="padding: 10px;">14.8 m</td>
-                        <td style="padding: 10px;">14.85 m</td>
-                        <td style="padding: 10px;">Circuit ouvert (fin de câble)</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Coaxial RG58 avec défaut</td>
-                        <td style="padding: 10px;">66.0%</td>
-                        <td style="padding: 10px;">83 ns</td>
-                        <td style="padding: 10px;">8.2 m</td>
-                        <td style="padding: 10px;">8.22 m</td>
-                        <td style="padding: 10px; color: #ef4444;">Court-circuit (soudure) à 8.2m</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Câble Ethernet cible</td>
-                        <td style="padding: 10px;">66.7%</td>
-                        <td style="padding: 10px;">245 ns</td>
-                        <td style="padding: 10px;">24.3 m</td>
-                        <td style="padding: 10px;">24.50 m</td>
-                        <td style="padding: 10px; color: #ef4444;">Court-circuit à 12.1m</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <div style="font-size: 32px;">📄</div>
-                    <div style="text-align: left;">
-                        <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">Rapport de mesures Cuivre & Réflectométrie DTF</h5>
-                        <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de NVP et de distance aux défauts</p>
-                    </div>
-                </div>
-                <a href="preuves_sae_103/DTF-Photometrie-Aubriet-Echalard-Barroux-Duval--Wohlschlegel.pdf" target="_blank" class="btn btn-outline" style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Consulter le PDF (314 Ko)</a>
-            </div>
-
-            <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">2. Mesures d'atténuation optique relative (Photométrie)</h4>
-            <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
-                <strong>Établissement du bilan de puissance et atténuation de la liaison :</strong><br>
-                La référence de puissance optique absolue injectée est mesurée en sortie de jarretière d'injection : <i>P<sub>ref</sub></i> = -20.00 dBm.<br>
-                Après raccordement complet de la liaison FTTH de test, la puissance reçue en bout de ligne est : <i>P<sub>reçue</sub></i> = -22.45 dBm.<br>
-                L'atténuation totale mesurée est de : <i>A</i> = <i>P<sub>ref</sub></i> - <i>P<sub>reçue</sub></i> = -20.00 - (-22.45) = <strong>2.45 dB</strong>.
-            </p>
-
-            <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; text-align: left;">
-                <thead>
-                    <tr style="border-bottom: 2px solid var(--border); color: var(--text); font-weight: 600;">
-                        <th style="padding: 10px;">Composant de la liaison</th>
-                        <th style="padding: 10px;">Quantité / Longueur</th>
-                        <th style="padding: 10px;">Péréquation théorique</th>
-                        <th style="padding: 10px;">Atténuation cumulée</th>
-                    </tr>
-                </thead>
-                <tbody style="color: var(--muted);">
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Fibre optique monomode (G.652)</td>
-                        <td style="padding: 10px;">0.5 km (500 m)</td>
-                        <td style="padding: 10px;">0.4 dB / km à 1310 nm</td>
-                        <td style="padding: 10px;">0.20 dB</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Connecteurs optiques SC/UPC</td>
-                        <td style="padding: 10px;">3 connecteurs</td>
-                        <td style="padding: 10px;">0.50 dB max par raccord</td>
-                        <td style="padding: 10px;">1.50 dB</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 10px; font-weight: 600; color: var(--text);">Coupleur passif 1x2</td>
-                        <td style="padding: 10px;">1 module</td>
-                        <td style="padding: 10px;">0.70 dB d'atténuation</td>
-                        <td style="padding: 10px;">0.70 dB</td>
-                    </tr>
-                    <tr style="border-bottom: 2px solid var(--border); font-weight: 600;">
-                        <td style="padding: 10px; color: var(--text);">Bilan optique global</td>
-                        <td style="padding: 10px;">—</td>
-                        <td style="padding: 10px; color: var(--text);">Théorique : 2.40 dB</td>
-                        <td style="padding: 10px; color: var(--teal);">Réel mesuré : 2.45 dB</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 16px;">
-                    <div style="font-size: 32px;">📄</div>
-                    <div style="text-align: left;">
-                        <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">Rapport d'atténuation optique & Photométrie</h5>
-                        <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de bilan optique FTTH et photométrie</p>
-                    </div>
-                </div>
-                <a href="preuves_sae_103/Photometrie-Aubriet-Echalard-Barroux-Duval--Wohlschlegel.pdf" target="_blank" class="btn btn-outline" style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Consulter le PDF (571 Ko)</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. AUTOÉVALUATION -->
-    <div class="block fade-up">
-        <div class="block-header">
-            <div class="bh-icon">🔍</div>
-            <div>
-                <h2>Autoévaluation réflexive</h2>
-                <p>Analyse critique de mon expérience et de ma progression</p>
-            </div>
-        </div>
-        <div class="block-body">
-            <div class="autoeval-questions">
-                <div class="ae-q">
-                    <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                    <div class="ae-q-answer">La principale difficulté a été l'interprétation précise à l'oscilloscope de l'écho de l'onde incidente. Selon que le câble se terminait par un circuit ouvert ou par un court-circuit, l'impulsion était réfléchie en phase ou en opposition de phase, ce qui nécessitait une bonne maîtrise de la théorie. De plus, pour la photométrie, les mesures optiques se sont avérées très sensibles à la saleté sur la férule des connecteurs (poussière ou graisse), augmentant anormalement l'atténuation.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                    <div class="ae-q-answer">Nous avons utilisé les curseurs de l'oscilloscope numérique pour pointer avec précision le début du flanc de montée du signal réfléchi, éliminant les incertitudes visuelles. Pour la liaison optique, nous avons appliqué les règles de l'art en nettoyant systématiquement les connecteurs avec des lingettes spéciales sèches et des solvants adaptés (alcool isopropylique) avant chaque mesure, ce qui a stabilisé la valeur d'affaiblissement mesurée.</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                    <div class="ae-q-answer">J'ai acquis une solide compréhension de la théorie de propagation guidée dans les conducteurs métalliques et dans le verre. J'ai appris à manipuler des instruments de mesure indispensables comme le réflectomètre DTF et le couple photomètre/source lumineuse, tout en apprenant à calculer un bilan de puissance optique théorique (atténuation linéique en dB/km, pertes de connectique).</div>
-                </div>
-                <div class="ae-q">
-                    <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                    <div class="ae-q-answer">Ces connaissances sont directement applicables pour le diagnostic de dysfonctionnement sur des liaisons de télécommunication physiques (coupure d'une ligne ADSL/VDSL, problème sur une dorsale fibre optique inter-bâtiment FTTO/FTTH). C'est un prérequis indispensable pour tout travail d'audit d'infrastructure réseau physique.</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 24px;">
-                <div class="section-label">Niveau de maîtrise estimé</div>
-                <div class="niveau-grid">
-                    <div class="niveau-option">
-                        ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de base</span>
-                    </div>
-                    <div class="niveau-option selected">⭐⭐ En cours<br><span style="font-size:11px; margin-top:4px; display:block;">En développement</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
-                    </div>
-                    <div class="niveau-option">
-                        ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut enseigner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <div class="sae-nav">
-        <a href="sae-102.html" class="btn btn-outline">← Projet précédent (SAÉ 1.2)</a>
-        <a href="sae-104.html" class="btn btn-primary">Projet suivant (SAÉ 1.4) →</a>
-    </div>
-</main>
-
-<footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <span class="logo-text">Portfolio <span>R&T</span></span>
-            <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
-               IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigation</h4>
-            <ul>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="saes.html">Projets</a></li>
                 <li><a href="competences.html">Compétences</a></li>
-                <li><a href="bilan.html">Bilan global</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
             </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up" style="margin-bottom: 24px;">
+            <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> /
+                SAÉ 1.3</div>
         </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
-            <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
-            <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
-            <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a></div>
-            <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-                <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+
+        <!-- HERO SAÉ -->
+        <div class="sae-hero fade-up">
+            <div class="badge">📂 SAÉ 1.3</div>
+            <h1>SAÉ 1.3<br><span style="color:#64748b; font-weight:400; font-size:22px;">Découverte d'un dispositif de
+                    transmission</span></h1>
+            <p class="sae-subtitle">
+                Étude théorique et expérimentale des supports physiques de transmission (cuivre coaxial, câble Ethernet
+                et fibre optique), mesure de longueur par réflectométrie (DTF) et caractérisation de l'atténuation
+                optique.
+            </p>
+            <div class="sae-meta">
+                <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025–2026</div>
+                <div class="meta-item">👥 <strong>Travail</strong> : En binôme</div>
+                <div class="meta-item">⏱️ <strong>Durée</strong> : TP & Projet</div>
+                <div class="meta-item">🧰 <strong>Outils</strong> : GBF, Oscilloscope, DTF, Photomètre</div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Nathan Duval — Tous droits réservés</span>
-        <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
-    </div>
-</footer>
 
-<button id="back-to-top" aria-label="Retour en haut">↑</button>
-<script src="script.js"></script>
+        <!-- 1. DESCRIPTION -->
+        <div class="block fade-up fade-up-1">
+            <div class="block-header">
+                <div class="bh-icon">📋</div>
+                <div>
+                    <h2>Description & Objectifs</h2>
+                    <p>Contexte de la SAÉ et compétences visées</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;">
+                    Dans le cadre de cette SAÉ, nous avons étudié de manière théorique et expérimentale les
+                    caractéristiques physiques et le comportement des deux principaux supports filaires de transmission
+                    de données utilisés en Réseaux & Télécommunications : le <strong>cuivre</strong> (câble coaxial,
+                    câble réseau RJ45) et la <strong>fibre optique</strong>.
+                </p>
+                <p style="margin-bottom:14px;">
+                    Ne disposant pas d'un certificateur de câblage industriel automatique à l'IUT, l'objectif principal
+                    de ce projet était de <strong>comprendre et de reproduire manuellement</strong> les mesures de
+                    certification physique. Les tâches incluaient la mesure précise de longueur de câble, la détection
+                    et la localisation de défauts physiques (court-circuit, coupures) ainsi que le calcul et la mesure
+                    de l'affaiblissement d'une liaison optique FTTH de bout en bout.
+                </p>
+                <p>
+                    Parallèlement aux expérimentations pratiques, une étude documentaire approfondie des fiches de
+                    spécifications techniques des différents supports cuivre et fibre optique a permis de synthétiser
+                    les normes, formules physiques et limites de transmission sur une fiche de synthèse manuscrite A3
+                    recto-verso.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. APPRENTISSAGES CRITIQUES -->
+        <div class="block fade-up fade-up-2">
+            <div class="block-header">
+                <div class="bh-icon">🎯</div>
+                <div>
+                    <h2>Apprentissages Critiques mobilisés</h2>
+                    <p>AC du référentiel BUT R&T travaillés dans cette SAÉ</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
+                    Compétences théoriques et pratiques mobilisées pour caractériser et valider la conformité physique
+                    d'un support de transmission.
+                </p>
+                <div class="ac-grid">
+                    <div class="ac-chip">AC 1.1 — S'initier aux réseaux informatiques (Caractéristiques physiques des
+                        supports)</div>
+                    <div class="ac-chip">AC 1.2 — Configurer les équipements actifs (Réflectométrie et photométrie)
+                    </div>
+                    <div class="ac-chip">AC 1.4 — Sécuriser et diagnostiquer (Localisation de pannes et défauts
+                        physiques)</div>
+                </div>
+                <div class="tech-details-grid" style="margin-top: 20px;">
+                    <div class="tech-card">
+                        <h3>🔌 Lignes de transmission Cuivre</h3>
+                        <ul>
+                            <li>Propagation des ondes impulsionnelles et phénomènes de réflexion.</li>
+                            <li>Mesure expérimentale de la vitesse nominale de propagation (NVP) par rapport étalon.
+                            </li>
+                            <li>Localisation de défaut par réflectométrie temporelle (DTF).</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>⚡ Fibre Optique & Photométrie</h3>
+                        <ul>
+                            <li>Raccordement physique FTTH (jarretières monomodes, coupleurs passifs).</li>
+                            <li>Étalonnage des puissances optiques absolues (dBm) et relatives (dB).</li>
+                            <li>Calcul et mesure de l'affaiblissement linéique et de connectique de la liaison.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>📝 Fiche de Synthèse A3</h3>
+                        <ul>
+                            <li>Modélisation des atténuations linéiques théoriques.</li>
+                            <li>Compilation des formules clés d'ondes et d'affaiblissements optiques.</li>
+                            <li>Caractérisation des pertes de raccordement par soudure/coupleur.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. TÂCHES -->
+        <div class="block fade-up fade-up-3">
+            <div class="block-header">
+                <div class="bh-icon">🔧</div>
+                <div>
+                    <h2>Tâches réalisées</h2>
+                    <p>Démarche expérimentale et étapes du projet</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;"><strong>1. Caractérisation expérimentale et calcul de NVP sur câble
+                        Ethernet</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Nous disposions d'un câble Ethernet étalon de référence de <strong>2 mètres</strong> et d'un câble
+                    cible de même nature mais de longueur inconnue. À l'aide d'un Générateur de Signaux Basse Fréquence
+                    (GBF) injectant des impulsions courtes et d'un oscilloscope numérique, nous avons mesuré le décalage
+                    temporel (<i>Δt</i>) de l'écho à l'extrémité ouverte du câble. Nous en avons déduit la vitesse de
+                    propagation réelle et le coefficient <strong>NVP (Nominal Velocity of Propagation)</strong>. Nous
+                    avons ensuite appliqué cette NVP sur le câble inconnu pour calculer sa longueur exacte et la
+                    distance à un défaut (court-circuit) provoqué volontairement.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>2. Mesure par Réflectométrie (DTF) sur câble coaxial
+                        RG58</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Pour les câbles coaxiaux RG58, la NVP constructeur de référence est fixée à <strong>66%</strong> de
+                    la vitesse de la lumière dans le vide (<i>c</i> ≈ 3 × 10<sup>8</sup> m/s). En configurant cette NVP
+                    sur un analyseur de type DTF (Distance to Fault), nous avons relevé la distance du câble coaxial
+                    attribué et localisé précisément un défaut physique (court-circuit causé par une soudure
+                    défectueuse). Nous avons recoupé cette mesure à l'oscilloscope en mesurant le temps de propagation
+                    de l'onde réfléchie par rapport à l'onde incidente (2<i>L</i> = <i>v</i> × <i>Δt</i>).
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>3. Alignement et test de photométrie sur fibre optique
+                        FTTH</strong></p>
+                <p style="color:var(--muted); font-size:14px;">
+                    Nous avons assemblé une liaison fibre optique simulant une architecture de distribution FTTH,
+                    comprenant une jarretière d'injection, deux coupleurs de raccordement, une fibre de transport de
+                    500m et des connecteurs optiques monomodes. Nous avons d'abord procédé à l'étalonnage en mesurant la
+                    puissance de sortie directe de notre source optique calibrée (<i>P<sub>ref</sub></i> = -20 dBm) sur
+                    notre photomètre. Nous avons ensuite intercalé notre liaison complète pour relever la puissance
+                    reçue et calculer l'affaiblissement d'insertion total en dB, validant ainsi la liaison vis-à-vis des
+                    tolérances de certification théoriques.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. PREUVES -->
+        <div class="block fade-up fade-up-4">
+            <div class="block-header">
+                <div class="bh-icon">📎</div>
+                <div>
+                    <h2>Résultats & Preuves</h2>
+                    <p>Tableaux de mesures expérimentales et formules physiques appliquées</p>
+                </div>
+            </div>
+            <div class="block-body">
+
+                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">1. Mesures
+                    physiques sur supports Cuivre (Réflectométrie & Réflectance)</h4>
+                <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
+                    <strong>Méthode de calcul de la NVP par étalonnage (développée en TD) :</strong><br>
+                    Pour déterminer la vitesse de propagation dans le câble sans connaître à l'avance ses
+                    caractéristiques, nous utilisons un câble étalon de même nature de longueur connue :
+                    <i>L<sub>étalon</sub></i> = 2.0 m.<br>
+                    À l'oscilloscope (GBF + impulsion), le décalage temporel mesuré pour l'aller-retour est
+                    <i>Δt<sub>étalon</sub></i> = 20 ns.<br>
+                    La vitesse est : <i>v</i> = (2 × <i>L<sub>étalon</sub></i>) / <i>Δt<sub>étalon</sub></i> = 4.0 / (20
+                    × 10<sup>-9</sup>) = 2 × 10<sup>8</sup> m/s.<br>
+                    Soit un coefficient de vélocité : <strong>NVP</strong> = <i>v</i> / <i>c</i> = (2 × 10<sup>8</sup>)
+                    / (3 × 10<sup>8</sup>) ≈ <strong>66.7%</strong>.<br><br>
+                    <strong>Calcul des câbles inconnus par proportionnalité (ratio des temps de vol) :</strong><br>
+                    Puisque le câble cible est de même nature, il possède le même NVP. Nous pouvons directement calculer
+                    sa longueur par le ratio des temps de vol mesurés :<br>
+                    <i>L<sub>cible</sub></i> = <i>L<sub>étalon</sub></i> × (<i>Δt<sub>cible</sub></i> /
+                    <i>Δt<sub>étalon</sub></i>) = 2.0 × (245 ns / 20 ns) = <strong>24.5 m</strong> (distance mesurée par
+                    DTF : 24.3 m).<br>
+                    Pour localiser un défaut (court-circuit) apparaissant à <i>Δt<sub>défaut</sub></i> = 121 ns :<br>
+                    <i>d<sub>défaut</sub></i> = <i>L<sub>étalon</sub></i> × (<i>Δt<sub>défaut</sub></i> /
+                    <i>Δt<sub>étalon</sub></i>) = 2.0 × (121 ns / 20 ns) = <strong>12.1 m</strong>.
+                </p>
+
+                <table
+                    style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); color: var(--text); font-weight: 600;">
+                            <th style="padding: 10px;">Support caractérisé</th>
+                            <th style="padding: 10px;">NVP (%)</th>
+                            <th style="padding: 10px;">Temps de vol (ns)</th>
+                            <th style="padding: 10px;">Longueur DTF (m)</th>
+                            <th style="padding: 10px;">Longueur Oscillo (m)</th>
+                            <th style="padding: 10px;">Défaut identifié</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--muted);">
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Câble Coaxial RG58</td>
+                            <td style="padding: 10px;">66.0%</td>
+                            <td style="padding: 10px;">150 ns</td>
+                            <td style="padding: 10px;">14.8 m</td>
+                            <td style="padding: 10px;">14.85 m</td>
+                            <td style="padding: 10px;">Circuit ouvert (fin de câble)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Coaxial RG58 avec défaut
+                            </td>
+                            <td style="padding: 10px;">66.0%</td>
+                            <td style="padding: 10px;">83 ns</td>
+                            <td style="padding: 10px;">8.2 m</td>
+                            <td style="padding: 10px;">8.22 m</td>
+                            <td style="padding: 10px; color: #ef4444;">Court-circuit (soudure) à 8.2m</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Câble Ethernet cible</td>
+                            <td style="padding: 10px;">66.7%</td>
+                            <td style="padding: 10px;">245 ns</td>
+                            <td style="padding: 10px;">24.3 m</td>
+                            <td style="padding: 10px;">24.50 m</td>
+                            <td style="padding: 10px; color: #ef4444;">Court-circuit à 12.1m</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div
+                    style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="font-size: 32px;">📄</div>
+                        <div style="text-align: left;">
+                            <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">
+                                Rapport de mesures Cuivre & Réflectométrie DTF</h5>
+                            <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de
+                                NVP et de distance aux défauts</p>
+                        </div>
+                    </div>
+                    <a href="preuves_sae_103/DTF-Photometrie-Aubriet-Echalard-Barroux-Duval--Wohlschlegel.pdf"
+                        target="_blank" class="btn btn-outline"
+                        style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Consulter le PDF (314 Ko)</a>
+                </div>
+
+                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">2. Mesures
+                    d'atténuation optique relative (Photométrie)</h4>
+                <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
+                    <strong>Établissement du bilan de puissance et atténuation de la liaison :</strong><br>
+                    La référence de puissance optique absolue injectée est mesurée en sortie de jarretière d'injection :
+                    <i>P<sub>ref</sub></i> = -20.00 dBm.<br>
+                    Après raccordement complet de la liaison FTTH de test, la puissance reçue en bout de ligne est :
+                    <i>P<sub>reçue</sub></i> = -22.45 dBm.<br>
+                    L'atténuation totale mesurée est de : <i>A</i> = <i>P<sub>ref</sub></i> - <i>P<sub>reçue</sub></i> =
+                    -20.00 - (-22.45) = <strong>2.45 dB</strong>.
+                </p>
+
+                <table
+                    style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); color: var(--text); font-weight: 600;">
+                            <th style="padding: 10px;">Composant de la liaison</th>
+                            <th style="padding: 10px;">Quantité / Longueur</th>
+                            <th style="padding: 10px;">Péréquation théorique</th>
+                            <th style="padding: 10px;">Atténuation cumulée</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--muted);">
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Fibre optique monomode
+                                (G.652)</td>
+                            <td style="padding: 10px;">0.5 km (500 m)</td>
+                            <td style="padding: 10px;">0.4 dB / km à 1310 nm</td>
+                            <td style="padding: 10px;">0.20 dB</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Connecteurs optiques SC/UPC
+                            </td>
+                            <td style="padding: 10px;">3 connecteurs</td>
+                            <td style="padding: 10px;">0.50 dB max par raccord</td>
+                            <td style="padding: 10px;">1.50 dB</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Coupleur passif 1x2</td>
+                            <td style="padding: 10px;">1 module</td>
+                            <td style="padding: 10px;">0.70 dB d'atténuation</td>
+                            <td style="padding: 10px;">0.70 dB</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid var(--border); font-weight: 600;">
+                            <td style="padding: 10px; color: var(--text);">Bilan optique global</td>
+                            <td style="padding: 10px;">—</td>
+                            <td style="padding: 10px; color: var(--text);">Théorique : 2.40 dB</td>
+                            <td style="padding: 10px; color: var(--teal);">Réel mesuré : 2.45 dB</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div
+                    style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div style="font-size: 32px;">📄</div>
+                        <div style="text-align: left;">
+                            <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">
+                                Rapport d'atténuation optique & Photométrie</h5>
+                            <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de
+                                bilan optique FTTH et photométrie</p>
+                        </div>
+                    </div>
+                    <a href="preuves_sae_103/Photometrie-Aubriet-Echalard-Barroux-Duval--Wohlschlegel.pdf"
+                        target="_blank" class="btn btn-outline"
+                        style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Consulter le PDF (571 Ko)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. AUTOÉVALUATION -->
+        <div class="block fade-up">
+            <div class="block-header">
+                <div class="bh-icon">🔍</div>
+                <div>
+                    <h2>Autoévaluation réflexive</h2>
+                    <p>Analyse critique de mon expérience et de ma progression</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <div class="autoeval-questions">
+                    <div class="ae-q">
+                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
+                        <div class="ae-q-answer">La principale difficulté a été l'interprétation précise à
+                            l'oscilloscope de l'écho de l'onde incidente. Selon que le câble se terminait par un circuit
+                            ouvert ou par un court-circuit, l'impulsion était réfléchie en phase ou en opposition de
+                            phase, ce qui nécessitait une bonne maîtrise de la théorie. De plus, pour la photométrie,
+                            les mesures optiques se sont avérées très sensibles à la saleté sur la férule des
+                            connecteurs (poussière ou graisse), augmentant anormalement l'atténuation.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
+                        <div class="ae-q-answer">Nous avons utilisé les curseurs de l'oscilloscope numérique pour
+                            pointer avec précision le début du flanc de montée du signal réfléchi, éliminant les
+                            incertitudes visuelles. Pour la liaison optique, nous avons appliqué les règles de l'art en
+                            nettoyant systématiquement les connecteurs avec des lingettes spéciales sèches et des
+                            solvants adaptés (alcool isopropylique) avant chaque mesure, ce qui a stabilisé la valeur
+                            d'affaiblissement mesurée.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-answer">J'ai acquis une solide compréhension de la théorie de propagation
+                            guidée dans les conducteurs métalliques et dans le verre. J'ai appris à manipuler des
+                            instruments de mesure indispensables comme le réflectomètre DTF et le couple
+                            photomètre/source lumineuse, tout en apprenant à calculer un bilan de puissance optique
+                            théorique (atténuation linéique en dB/km, pertes de connectique).</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-answer">Ces connaissances sont directement applicables pour le diagnostic de
+                            dysfonctionnement sur des liaisons de télécommunication physiques (coupure d'une ligne
+                            ADSL/VDSL, problème sur une dorsale fibre optique inter-bâtiment FTTO/FTTH). C'est un
+                            prérequis indispensable pour tout travail d'audit d'infrastructure réseau physique.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <div class="section-label">Niveau de maîtrise estimé</div>
+                    <div class="niveau-grid">
+                        <div class="niveau-option">
+                            ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de
+                                base</span>
+                        </div>
+                        <div class="niveau-option selected">⭐⭐ En cours<br><span
+                                style="font-size:11px; margin-top:4px; display:block;">En développement</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut
+                                enseigner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="sae-nav">
+            <a href="sae-102.html" class="btn btn-outline">← Projet précédent (SAÉ 1.2)</a>
+            <a href="sae-104.html" class="btn btn-primary">Projet suivant (SAÉ 1.4) →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="script.js"></script>
 </body>
+
 </html>
