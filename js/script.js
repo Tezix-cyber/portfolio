@@ -27,8 +27,11 @@ if (themeBtn) {
 const page = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a, .footer-col ul a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) {
-        link.classList.add('active');
+    if (href) {
+        const hrefPage = href.split('/').pop();
+        if (hrefPage === page || (hrefPage === 'saes.html' && page.startsWith('sae-'))) {
+            link.classList.add('active');
+        }
     }
 });
 
@@ -102,7 +105,6 @@ tiltElements.forEach(el => {
 // ===== COPY EMAIL =====
 document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const email = link.getAttribute('href').replace('mailto:', '');
         navigator.clipboard.writeText(email).then(() => {
             const originalText = link.innerHTML;
