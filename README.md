@@ -1,20 +1,8 @@
 # 📂 Portfolio Universitaire — BUT Réseaux & Télécommunications
 
-Bienvenue sur le dépôt du portfolio numérique de **Nathan Duval**, étudiant en **BUT Réseaux & Télécommunications** (Promotion 2025–2028) à l'IUT d'Ifs (Campus 3, Université de Caen), spécialisé en **Cybersécurité**.
+Portfolio numérique de **Nathan Duval**, étudiant en **BUT Réseaux & Télécommunications** (Promotion 2025–2028) à l'IUT d'Ifs (Campus 3, Université de Caen), spécialisé en **Cybersécurité**.
 
-Ce portfolio documente mon parcours académique, mes compétences acquises selon le référentiel national BUT R&T, ainsi que mes travaux pratiques et projets phares (SAÉ).
-
----
-
-## 🌟 Caractéristiques & Fonctionnalités
-
-Le site a été conçu de A à Z en intégrant des standards web modernes :
-*   **Design Premium & Moderne** : Thème sombre/clair minimaliste et soigné, inspiré des interfaces professionnelles.
-*   **Mode Sombre Persistant** : Bascule du thème gérée en JavaScript avec sauvegarde automatique de la préférence dans le stockage local (`localStorage`).
-*   **Effet 3D Interactif & Glow** : Micro-animations dynamiques sur les cartes de compétences et de projets au survol de la souris (technologie CSS Grid & JS Variables).
-*   **Barre de Progression de Lecture** : Indication visuelle de la progression de défilement (Scroll Progress Bar) intégrée en haut de chaque page.
-*   **Copie Rapide d'E-mail** : Un clic sur un bouton de contact copie automatiquement l'adresse e-mail dans le presse-papiers tout en affichant un indicateur de succès.
-*   **Accessibilité et Standardisation** : Structure sémantique HTML5 validée par le W3C et respect des contrastes de lisibilité WCAG.
+Ce portfolio documente mon parcours académique, mes compétences acquises selon le référentiel national BUT R&T, ainsi que mes travaux pratiques et projets (SAÉ).
 
 ---
 
@@ -55,19 +43,6 @@ portfolio/
 2.  **[SAÉ 1.3 — Découverte d'un dispositif de transmission](SAES/sae-103.html)** : Caractérisation de lignes cuivre (coaxial, RJ45) par réflectométrie (DTF) et bilan de puissance d'une liaison fibre optique (photométrie).
 3.  **[SAÉ 1.4 — Se présenter sur Internet](SAES/sae-104.html)** : Création d'un site vitrine responsive et accessible sur la Musique Assistée par Ordinateur (MAO), avec gestion de projet (WBS, Gantt, Kanban).
 4.  **[SAÉ 1.5 — Traitement de données](SAES/sae-105.html)** : Scripting Python interrogeant l'API Overpass (OpenStreetMap) pour compiler des statistiques de complétude sur les établissements en France.
-
----
-
-## 🚀 Lancement Local
-
-Pour visualiser le portfolio en local :
-1.  Clonez ce dépôt ou téléchargez le ZIP :
-    ```bash
-    git clone https://github.com/Tezix-cyber/portfolio.git
-    ```
-2.  Ouvrez le fichier `index.html` dans le navigateur de votre choix.
-
----
 
 ## 👨‍💻 Auteur
 
