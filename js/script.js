@@ -23,6 +23,62 @@ if (themeBtn) {
     });
 }
 
+// ===== MOBILE MENU HAMBURGER =====
+const nav = document.querySelector('nav');
+const navLinks = document.querySelector('.nav-links');
+const navRight = document.querySelector('.nav-right');
+
+if (nav && navLinks && navRight) {
+    const burgerBtn = document.createElement('button');
+    burgerBtn.id = 'mobile-menu-toggle';
+    burgerBtn.setAttribute('aria-label', 'Ouvrir le menu');
+    burgerBtn.innerHTML = '<span></span><span></span><span></span>';
+    
+    // Insert burger before theme toggle button
+    const themeBtnElement = document.getElementById('theme-toggle');
+    if (themeBtnElement) {
+        navRight.insertBefore(burgerBtn, themeBtnElement);
+    } else {
+        navRight.appendChild(burgerBtn);
+    }
+
+    const toggleMenu = () => {
+        navLinks.classList.toggle('open');
+        burgerBtn.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('open');
+        document.body.classList.toggle('menu-open', isOpen);
+        burgerBtn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    };
+
+    burgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('open') && !nav.contains(e.target)) {
+            toggleMenu();
+        }
+    });
+
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu when resizing above mobile breakpoint (768px)
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('open')) {
+            toggleMenu();
+        }
+    });
+}
+
 // ===== ACTIVE NAV =====
 const page = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a, .footer-col ul a').forEach(link => {
