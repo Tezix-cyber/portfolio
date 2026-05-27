@@ -492,7 +492,10 @@
 
                 <div class="tech-details-grid">
                     <div class="tech-card">
-                        <h3>🎓 MOOC SecNumAcadémie</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC11.04</span>
+                            <h3 style="margin:0;">🎓 MOOC SecNumAcadémie</h3>
+                        </div>
                         <ul>
                             <li>Validation des 4 modules de l'ANSSI (SecNumAcadémie).</li>
                             <li>Compréhension des panoramas de menaces et des attaques par force brute / ingénierie sociale.</li>
@@ -500,7 +503,10 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🔑 Lot B — Sécurité & Accès SSH</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC11.02</span>
+                            <h3 style="margin:0;">🔑 Lot B — Sécurité & Accès SSH</h3>
+                        </div>
                         <ul>
                             <li>Étude théorique des mécanismes de chiffrement symétrique et asymétrique.</li>
                             <li>Configuration robuste du démon SSH (modification de ports, restriction des ciphers).</li>
@@ -508,7 +514,10 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🕹️ Scan Réseau & CTF</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC11.05</span>
+                            <h3 style="margin:0;">🕹️ Scan Réseau & CTF</h3>
+                        </div>
                         <ul>
                             <li>Découverte de machines et d'OS distants (fingerprinting) via Nmap sous Debian.</li>
                             <li>Analyse de ports ouverts et identification de versions de services obsolètes.</li>
@@ -568,20 +577,28 @@
             </div>
             <div class="block-body">
                 <div class="autoeval-questions">
+                <div style="overflow-x: auto; margin-bottom: 20px; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; background: var(--card);">
+                        <thead>
+                            <tr style="background: var(--bg); border-bottom: 1px solid var(--border); color: var(--text); font-weight: 600;">
+                                <th style="padding: 12px 16px; width: 50%; border-right: 1px solid var(--border);">💡 Problèmes rencontrés</th>
+                                <th style="padding: 12px 16px; width: 50%;">🔓 Solutions trouvées</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--muted); line-height: 1.7;">
+                            <tr>
+                                <td style="padding: 16px; border-right: 1px solid var(--border); vertical-align: top; font-style: italic;">La principale difficulté a été de comprendre théoriquement les échanges de clés Diffie-Hellman ; au début du projet, notre groupe appliquait des commandes de configuration du démon SSH de manière empirique sans maîtriser les mécanismes asymétriques, ce qui a provoqué des blocages d'accès et des erreurs de négociation de ciphers. De plus, lors du CTF pratique, un manque de méthodologie et des scans Nmap trop agressifs (mode trop rapide, bruit réseau) ont provoqué le bannissement temporaire de nos IPs par le pare-feu de test.</td>
+                                <td style="padding: 16px; vertical-align: top; font-style: italic;">Pour la théorie, j'ai modélisé et tracé manuellement les étapes d'échange de clés asymétriques et j'ai confronté notre configuration aux guides de recommandations officiels de l'ANSSI. Cela nous a permis d'isoler et de désactiver les algorithmes obsolètes (comme les chiffrements par blocs en mode CBC) tout en maintenant une compatibilité client acceptable. Pour le CTF, j'ai appris à temporiser mes scans (flags de vitesse `-T3` ou `-T2`) et à cibler précisément des ports identifiés plutôt que de balayer l'intégralité des plages aveuglément.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La principale difficulté a été de comprendre théoriquement les échanges de clés Diffie-Hellman ; au début du projet, notre groupe appliquait des commandes de configuration du démon SSH de manière empirique sans maîtriser les mécanismes asymétriques, ce qui a provoqué des blocages d'accès et des erreurs de négociation de ciphers. De plus, lors du CTF pratique, un manque de méthodologie et des scans Nmap trop agressifs (mode trop rapide, bruit réseau) ont provoqué le bannissement temporaire de nos IPs par le pare-feu de test.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">Pour la théorie, j'ai modélisé et tracé manuellement les étapes d'échange de clés asymétriques et j'ai confronté notre configuration aux guides de recommandations officiels de l'ANSSI. Cela nous a permis d'isoler et de désactiver les algorithmes obsolètes (comme les chiffrements par blocs en mode CBC) tout en maintenant une compatibilité client acceptable. Pour le CTF, j'ai appris à temporiser mes scans (flags de vitesse `-T3` ou `-T2`) et à cibler précisément des ports identifiés plutôt que de balayer l'intégralité des plages aveuglément.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-label">📚 Qu'ai-je appris de nouveau ?</div>
                         <div class="ae-q-answer">Sur le plan technique, j'ai maîtrisé les bases de la cryptographie appliquée (chiffrement symétrique, asymétrique, fonctions de hachage) et le fonctionnement interne du protocole SSH (négociation KEX, authentification par paire de clés). J'ai également appris à utiliser de manière offensive et défensive l'outil de scan réseau Nmap sous Linux Debian (compréhension des flags <code>-sS</code> pour les scans SYN discrets, <code>-sV</code> pour la détection de version de service, <code>-O</code> pour l'OS fingerprinting) pour analyser la surface d'attaque d'une machine distante. Enfin, l'auto-formation SecNumAcadémie m'a inculqué les principes clés de la sécurité des SI (gestion des identifiants, sécurité nomade, menaces courantes).</div>
                     </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-label">🔄 Comment pourrais-je réutiliser ces acquis ?</div>
                         <div class="ae-q-answer">Le durcissement du service SSH et la gestion des clés publiques/privées sont désormais mes standards de configuration pour toutes les machines virtuelles ou équipements que j'administre (notamment pour sécuriser les accès distants à nos commutateurs dans les SAÉ suivantes ou nos propres serveurs locaux). Les techniques de scan réseau avec Nmap constituent la base de mon apprentissage en audit de vulnérabilité et en tests d'intrusion (Pentest). Les principes de sécurité de l'ANSSI influencent directement ma posture quotidienne en termes de sécurité personnelle et professionnelle.</div>
                     </div>
                 </div>

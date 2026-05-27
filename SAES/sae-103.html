@@ -339,7 +339,10 @@
                 </div>
                 <div class="tech-details-grid" style="margin-top: 20px;">
                     <div class="tech-card">
-                        <h3>🔌 Lignes de transmission Cuivre</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC12.01</span>
+                            <h3 style="margin:0;">🔌 Lignes de transmission Cuivre</h3>
+                        </div>
                         <ul>
                             <li>Propagation des ondes impulsionnelles et phénomènes de réflexion.</li>
                             <li>Mesure expérimentale de la vitesse nominale de propagation (NVP) par rapport étalon.
@@ -348,7 +351,10 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>⚡ Fibre Optique & Photométrie</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC12.03</span>
+                            <h3 style="margin:0;">⚡ Fibre Optique & Photométrie</h3>
+                        </div>
                         <ul>
                             <li>Raccordement physique FTTH (jarretières monomodes, coupleurs passifs).</li>
                             <li>Étalonnage des puissances optiques absolues (dBm) et relatives (dB).</li>
@@ -356,7 +362,10 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>📝 Fiche de Synthèse A3</h3>
+                        <div style="margin-bottom:12px;">
+                            <span class="tag" style="font-size:10px; padding:2px 8px; display:inline-block; margin-bottom:6px;">AC12.05</span>
+                            <h3 style="margin:0;">📝 Fiche de Synthèse A3</h3>
+                        </div>
                         <ul>
                             <li>Modélisation des atténuations linéiques théoriques.</li>
                             <li>Compilation des formules clés d'ondes et d'affaiblissements optiques.</li>
@@ -386,7 +395,7 @@
                     temporel (<i>Δt</i>) de l'écho à l'extrémité ouverte du câble. Nous en avons déduit la vitesse de
                     propagation réelle et le coefficient <strong>NVP (Nominal Velocity of Propagation)</strong>. Nous
                     avons ensuite appliqué cette NVP sur le câble inconnu pour calculer sa longueur exacte et la
-                    distance à un défaut (court-circuit) provoqué volontairement.
+                    distance à un défaut (court-circuit) provoqué volontairement <a href="#preuve-1" style="color:var(--teal); font-weight:600;">(voir preuve n°1)</a>. Notre compte-rendu d'expérimentation détaille l'intégralité de cette démarche <a href="#preuve-2" style="color:var(--teal); font-weight:600;">(voir preuve n°2)</a>.
                 </p>
 
                 <p style="margin-bottom:14px;"><strong>2. Mesure par Réflectométrie (DTF) sur câble coaxial
@@ -397,7 +406,7 @@
                     sur un analyseur de type DTF (Distance to Fault), nous avons relevé la distance du câble coaxial
                     attribué et localisé précisément un défaut physique (court-circuit causé par une soudure
                     défectueuse). Nous avons recoupé cette mesure à l'oscilloscope en mesurant le temps de propagation
-                    de l'onde réfléchie par rapport à l'onde incidente (2<i>L</i> = <i>v</i> × <i>Δt</i>).
+                    de l'onde réfléchie par rapport à l'onde incidente (2<i>L</i> = <i>v</i> × <i>Δt</i>) <a href="#preuve-1" style="color:var(--teal); font-weight:600;">(voir preuve n°1)</a>. Les calculs et les relevés ont été consignés dans le rapport de TP <a href="#preuve-2" style="color:var(--teal); font-weight:600;">(voir preuve n°2)</a>.
                 </p>
 
                 <p style="margin-bottom:14px;"><strong>3. Alignement et test de photométrie sur fibre optique
@@ -408,8 +417,8 @@
                     500m et des connecteurs optiques monomodes. Nous avons d'abord procédé à l'étalonnage en mesurant la
                     puissance de sortie directe de notre source optique calibrée (<i>P<sub>ref</sub></i> = -20 dBm) sur
                     notre photomètre. Nous avons ensuite intercalé notre liaison complète pour relever la puissance
-                    reçue et calculer l'affaiblissement d'insertion total en dB, validant ainsi la liaison vis-à-vis des
-                    tolérances de certification théoriques.
+                    reçue et calculer l'affaiblissement d'insertion total en dB <a href="#preuve-3" style="color:var(--teal); font-weight:600;">(voir preuve n°3)</a>, validant ainsi la liaison vis-à-vis des
+                    tolérances de certification théoriques détaillées dans le rapport de photométrie <a href="#preuve-4" style="color:var(--teal); font-weight:600;">(voir preuve n°4)</a>.
                 </p>
             </div>
         </div>
@@ -425,8 +434,7 @@
             </div>
             <div class="block-body">
 
-                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">1. Mesures
-                    physiques sur supports Cuivre (Réflectométrie & Réflectance)</h4>
+                <h4 id="preuve-1" style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Preuve n°1 : Mesures physiques sur supports Cuivre (Réflectométrie & Réflectance)</h4>
                 <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
                     <strong>Méthode de calcul de la NVP par étalonnage (développée en TD) :</strong><br>
                     Pour déterminer la vitesse de propagation dans le câble sans connaître à l'avance ses
@@ -490,13 +498,13 @@
                     </tbody>
                 </table>
 
-                <div
+                <div id="preuve-2"
                     style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="font-size: 32px;">📄</div>
                         <div style="text-align: left;">
                             <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">
-                                Rapport de mesures Cuivre & Réflectométrie DTF</h5>
+                                Preuve n°2 : Rapport de mesures Cuivre & Réflectométrie DTF</h5>
                             <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de
                                 NVP et de distance aux défauts</p>
                         </div>
@@ -506,8 +514,7 @@
                         style="font-size: 13px; padding: 8px 16px; text-decoration: none;">Consulter le PDF (314 Ko)</a>
                 </div>
 
-                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">2. Mesures
-                    d'atténuation optique relative (Photométrie)</h4>
+                <h4 id="preuve-3" style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Preuve n°3 : Mesures d'atténuation optique relative (Photométrie)</h4>
                 <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
                     <strong>Établissement du bilan de puissance et atténuation de la liaison :</strong><br>
                     La référence de puissance optique absolue injectée est mesurée en sortie de jarretière d'injection :
@@ -558,13 +565,13 @@
                     </tbody>
                 </table>
 
-                <div
+                <div id="preuve-4"
                     style="margin: 20px 0 32px 0; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
                     <div style="display: flex; align-items: center; gap: 16px;">
                         <div style="font-size: 32px;">📄</div>
                         <div style="text-align: left;">
                             <h5 style="font-family:'Outfit'; font-size:14px; margin-bottom:4px; color:var(--text);">
-                                Rapport d'atténuation optique & Photométrie</h5>
+                                Preuve n°4 : Rapport d'atténuation optique & Photométrie</h5>
                             <p style="font-size:12px; color:var(--muted);">Livrable officiel A4 compilant les mesures de
                                 bilan optique FTTH et photométrie</p>
                         </div>
@@ -587,20 +594,28 @@
             </div>
             <div class="block-body">
                 <div class="autoeval-questions">
+                <div style="overflow-x: auto; margin-bottom: 20px; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; background: var(--card);">
+                        <thead>
+                            <tr style="background: var(--bg); border-bottom: 1px solid var(--border); color: var(--text); font-weight: 600;">
+                                <th style="padding: 12px 16px; width: 50%; border-right: 1px solid var(--border);">💡 Problèmes rencontrés</th>
+                                <th style="padding: 12px 16px; width: 50%;">🔓 Solutions trouvées</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--muted); line-height: 1.7;">
+                            <tr>
+                                <td style="padding: 16px; border-right: 1px solid var(--border); vertical-align: top; font-style: italic;">La première difficulté a été la calibration rigoureuse des instruments et la précision des mesures. En photométrie optique, nous avons initialement omis de faire la mesure de puissance de référence (0 dB) à l'aide d'une jarretière d'injection courte directe, ce qui a causé des calculs d'atténuation aberrants (gain optique positif). En réflectométrie cuivre, le bruit sur le signal réfléchi à l'oscilloscope rendait le positionnement des curseurs incertain, ce qui créait une marge d'erreur de près de 5 mètres sur la localisation théorique du défaut physique.</td>
+                                <td style="padding: 16px; vertical-align: top; font-style: italic;">Nous avons repris les fondamentaux : nettoyage systématique des faces de férules optiques SC/UPC à l'aide de solvant adapté (alcool isopropylique) et d'un stylo de nettoyage (les pertes optiques anormales de 4 dB ayant été causées par une poussière microscopique), puis réétalonnage de la puissance absolue d'injection. Pour le cuivre, j'ai optimisé le déclenchement (trigger) et la base de temps de l'oscilloscope pour zoomer sur le front de l'onde réfléchie, ce qui a permis de placer les curseurs de temps de manière fiable et de ramener l'incertitude de distance à moins de 20 cm.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La première difficulté a été la calibration rigoureuse des instruments et la précision des mesures. En photométrie optique, nous avons initialement omis de faire la mesure de puissance de référence (0 dB) à l'aide d'une jarretière d'injection courte directe, ce qui a causé des calculs d'atténuation aberrants (gain optique positif). En réflectométrie cuivre, le bruit sur le signal réfléchi à l'oscilloscope rendait le positionnement des curseurs incertain, ce qui créait une marge d'erreur de près de 5 mètres sur la localisation théorique du défaut physique.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">Nous avons repris les fondamentaux : nettoyage systématique des faces de férules optiques SC/UPC à l'aide de solvant adapté (alcool isopropylique) et d'un stylo de nettoyage (les pertes optiques anormales de 4 dB ayant été causées par une poussière microscopique), puis réétalonnage de la puissance absolue d'injection. Pour le cuivre, j'ai optimisé le déclenchement (trigger) et la base de temps de l'oscilloscope pour zoomer sur le front de l'onde réfléchie, ce qui a permis de placer les curseurs de temps de manière fiable et de ramener l'incertitude de distance à moins de 20 cm.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-label">📚 Qu'ai-je appris de nouveau ?</div>
                         <div class="ae-q-answer">Ce projet m'a permis d'assimiler les modèles mathématiques et physiques régissant la propagation des ondes guidées (phénomènes de réflexion aux transitions d'impédance pour le cuivre, réfraction et réflexion totale interne pour la fibre monomode G.652). J'ai maîtrisé l'utilisation d'appareils de métrologie avancée : l'oscilloscope numérique combiné à un générateur de fonctions (GBF) pour l'analyse temporelle fine (calcul expérimental de la NVP), le réflectomètre portatif pour cuivre (DTF) et le couple source optique calibrée (1310/1550 nm) et photomètre. J'ai appris à concevoir, calculer et valider expérimentalement un bilan de liaison optique, en quantifiant l'atténuation linéique de la fibre (en dB/km), les pertes d'insertion des connecteurs SC/UPC, et l'affaiblissement d'un coupleur passif 1x2.</div>
                     </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-label">🔄 Comment pourrais-je réutiliser ces acquis ?</div>
                         <div class="ae-q-answer">Ces compétences de métrologie et de diagnostic physique sont directement transposables aux métiers d'intégrateur et d'auditeur d'infrastructures télécoms. Elles me serviront lors des déploiements réels de boucles locales optiques (FTTH/FTTO) pour certifier des liens clients ou diagnostiquer des cassures sur la fibre via réflectométrie optique dans le domaine temporel (OTDR). De plus, la rigueur acquise dans le calibrage d'appareils de mesure et dans la rédaction de rapports de tests normés (calculs d'incertitudes) constitue un atout précieux pour n'importe quel projet d'ingénierie physique ou de validation de systèmes de transmission RF et optique.</div>
                     </div>
                 </div>

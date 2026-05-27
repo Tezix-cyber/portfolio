@@ -333,7 +333,13 @@
 
                 <div class="tech-details-grid">
                     <div class="tech-card">
-                        <h3>🌐 Adressage & Plan de réseau</h3>
+                        <div style="margin-bottom:12px;">
+                            <div style="display:flex; gap:4px; margin-bottom:6px;">
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.02</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.06</span>
+                            </div>
+                            <h3 style="margin:0;">🌐 Adressage & Plan de réseau</h3>
+                        </div>
                         <ul>
                             <li>Calcul des plages d'adresses IPv4, masques et passerelles pour les différents services.</li>
                             <li>Modélisation de la topologie réseau physique et logique dans Cisco Packet Tracer.</li>
@@ -341,7 +347,13 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🛠️ Configuration Cisco iOS</h3>
+                        <div style="margin-bottom:12px;">
+                            <div style="display:flex; gap:4px; margin-bottom:6px;">
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.03</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.04</span>
+                            </div>
+                            <h3 style="margin:0;">🛠️ Configuration Cisco iOS</h3>
+                        </div>
                         <ul>
                             <li>Prise en main du CLI (console) pour la configuration initiale (hostname, mots de passe enable/secret).</li>
                             <li>Sécurisation des accès (lignes console, VTY, bannières d'avertissement).</li>
@@ -349,7 +361,13 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🔍 Diagnostic & Câblage</h3>
+                        <div style="margin-bottom:12px;">
+                            <div style="display:flex; gap:4px; margin-bottom:6px;">
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.01</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC11.05</span>
+                            </div>
+                            <h3 style="margin:0;">🔍 Diagnostic & Câblage</h3>
+                        </div>
                         <ul>
                             <li>Câblage physique de la maquette (câbles droits/croisés Ethernet RJ45).</li>
                             <li>Utilisation des commandes de diagnostic (ping, traceroute, show ip interface brief).</li>
@@ -377,16 +395,16 @@
 
                 <p style="margin-bottom:14px;"><strong>2. Maquettage logique et simulation sous Cisco Packet Tracer</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                    Avant de manipuler le matériel réel, nous avons reproduit la topologie cible sur Packet Tracer : un routeur Cisco 2911 reliant notre LAN à un serveur externe simulé, et un switch Catalyst 2960 connectant les différents postes de travail. Nous avons validé la logique de routage et d'adressage en lançant des pings en mode simulation.
+                    Avant de manipuler le matériel réel, nous avons reproduit la topologie cible sur Packet Tracer : un routeur Cisco 2911 reliant notre LAN à un serveur externe simulé, et un switch Catalyst 2960 connectant les différents postes de travail. Nous avons validé la logique de routage et d'adressage en lançant des pings en mode simulation <a href="#preuve-1" style="color:var(--teal); font-weight:600;">(voir preuve n°1)</a>.
                 </p>
 
                 <p style="margin-bottom:14px;"><strong>3. Configuration initiale de base des équipements actifs</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
                     En console via câble bleu RJ45-DB9, nous avons configuré les commutateurs et le routeur :
-                    <br>• Renommage des hôtes (<code>hostname Router-Passerelle</code>, <code>hostname Switch-Access</code>).
+                    <br>• Renommage des hôtes (<code>hostname Router-Gateway</code>, <code>hostname Switch-Access</code>).
                     <br>• Sécurisation du mode privilégié (<code>enable secret</code>) et de la ligne console (<code>password</code>, <code>login</code>).
                     <br>• Écriture d'une bannière de sécurité (<code>banner motd</code>).
-                    <br>• Configuration de l'IP d'administration du switch sur l'interface virtuelle <code>Vlan1</code>.
+                    <br>• Configuration de l'IP d'administration du switch sur l'interface virtuelle <code>Vlan1</code> <a href="#preuve-2" style="color:var(--teal); font-weight:600;">(voir preuve n°2)</a> et sur l'interface du routeur <a href="#preuve-3" style="color:var(--teal); font-weight:600;">(voir preuve n°3)</a>.
                 </p>
 
                 <p style="margin-bottom:14px;"><strong>4. Câblage physique de la maquette en salle de TP</strong></p>
@@ -412,14 +430,14 @@
             </div>
             <div class="block-body">
 
-                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Topologie Réseau Logique sous Packet Tracer</h4>
+                <h4 id="preuve-1" style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Preuve n°1 : Topologie Réseau Logique sous Packet Tracer</h4>
                 <div style="text-align: center; margin-bottom: 24px;">
                     <img src="preuves/preuves_sae_102/VIsio.png" alt="Topologie réseau Packet Tracer"
                         style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
                     <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 1 : Topologie réseau logique simulée (Postes clients, Switch local et Passerelle routeur)</p>
                 </div>
 
-                <div class="code-title">Configuration initiale du Switch Catalyst 2960 (Sécurisation et Administration)</div>
+                <div id="preuve-2" class="code-title">Preuve n°2 : Configuration initiale du Switch Catalyst 2960 (Sécurisation et Administration)</div>
                 <pre><code>! Configuration Switch d'Accès
 Switch> enable
 Switch# configure terminal
@@ -435,7 +453,7 @@ Switch-Access(config-if)# no shutdown
 Switch-Access(config-if)# exit
 Switch-Access(config)# ip default-gateway 192.168.1.254</code></pre>
 
-                <div class="code-title">Configuration de l'interface LAN du routeur Cisco 2911</div>
+                <div id="preuve-3" class="code-title">Preuve n°3 : Configuration de l'interface LAN du routeur Cisco 2911</div>
                 <pre><code>! Configuration de la passerelle LAN sur le routeur
 Router> enable
 Router# configure terminal
@@ -457,20 +475,28 @@ Router-Gateway(config-if)# no shutdown</code></pre>
             </div>
             <div class="block-body">
                 <div class="autoeval-questions">
+                <div style="overflow-x: auto; margin-bottom: 20px; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; background: var(--card);">
+                        <thead>
+                            <tr style="background: var(--bg); border-bottom: 1px solid var(--border); color: var(--text); font-weight: 600;">
+                                <th style="padding: 12px 16px; width: 50%; border-right: 1px solid var(--border);">💡 Problèmes rencontrés</th>
+                                <th style="padding: 12px 16px; width: 50%;">🔓 Solutions trouvées</th>
+                            </tr>
+                        </thead>
+                        <tbody style="color: var(--muted); line-height: 1.7;">
+                            <tr>
+                                <td style="padding: 16px; border-right: 1px solid var(--border); vertical-align: top; font-style: italic;">La première difficulté a été le calcul et la logique du plan d'adressage IP : nous avons commis des erreurs de découpage initial en chevauchant des sous-réseaux, ayant oublié de déduire les adresses de réseau et de diffusion pour chaque plage. De plus, lors du maquettage physique réel, notre groupe a perdu beaucoup de temps à déboguer un manque de connectivité générale, qui résultait de l'attribution d'adresses IP directement sur des interfaces physiques au lieu de créer des sous-interfaces logiques VLAN, doublé de l'oubli de la commande d'activation <code>no shutdown</code>.</td>
+                                <td style="padding: 16px; vertical-align: top; font-style: italic;">J'ai structuré une méthodologie de diagnostic descendante (du physique vers le logique) plutôt que de reconfigurer des éléments au hasard : vérification de la couche 1 (remplacement d'un câble défectueux repéré par son état de diode orange), vérification de la couche 2 (affectation correcte des ports d'accès au VLAN), et validation de la couche 3 à l'aide de commandes iOS Cisco clés comme <code>show ip interface brief</code> et <code>show ip route</code> pour isoler les interfaces inactives.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La première difficulté a été le calcul et la logique du plan d'adressage IP : nous avons commis des erreurs de découpage initial en chevauchant des sous-réseaux, ayant oublié de déduire les adresses de réseau et de diffusion pour chaque plage. De plus, lors du maquettage physique réel, notre groupe a perdu beaucoup de temps à déboguer un manque de connectivité générale, qui résultait de l'attribution d'adresses IP directement sur des interfaces physiques au lieu de créer des sous-interfaces logiques VLAN, doublé de l'oubli de la commande d'activation <code>no shutdown</code>.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">J'ai structuré une méthodologie de diagnostic descendante (du physique vers le logique) plutôt que de reconfigurer des éléments au hasard : vérification de la couche 1 (remplacement d'un câble défectueux repéré par son état de diode orange), vérification de la couche 2 (affectation correcte des ports d'accès au VLAN), et validation de la couche 3 à l'aide de commandes iOS Cisco clés comme <code>show ip interface brief</code> et <code>show ip route</code> pour isoler les interfaces inactives.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-label">📚 Qu'ai-je appris de nouveau ?</div>
                         <div class="ae-q-answer">J'ai acquis une maîtrise pratique de l'adressage IPv4 et du principe de découpage en sous-réseaux (subnetting). J'ai appris à configurer un commutateur de niveau 2 et un routeur Cisco en CLI (configuration des VLANs, routage inter-VLAN par la méthode <i>Router-on-a-Stick</i>, sécurisation des accès console et VTY). Enfin, j'ai assimilé les protocoles fondamentaux de connectivité d'un réseau local (fonctionnement du protocole ARP, attribution dynamique par serveur DHCP, et diagnostics ICMP avec les commandes ping/traceroute).</div>
                     </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-label">🔄 Comment pourrais-je réutiliser ces acquis ?</div>
                         <div class="ae-q-answer">Ces notions sont le fondement absolu de mon cursus en BUT R&T. Elles sont réutilisées quotidiennement lors des TP de réseaux avancés (déploiement de VLANs multiples, configuration de routage dynamique OSPF, mise en place de listes de contrôle d'accès ACLs). L'habitude d'utiliser la console CLI Cisco et de maquetter sur Packet Tracer me permet d'aborder avec confiance les architectures de réseaux d'entreprise complexes et les diagnostics d'infrastructures réelles.</div>
                     </div>
                 </div>

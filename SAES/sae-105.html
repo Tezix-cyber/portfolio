@@ -566,7 +566,13 @@
 
                 <div class="tech-details-grid">
                     <div class="tech-card">
-                        <h3>📡 Acquisition & Requêtage Réseau</h3>
+                        <div style="margin-bottom:12px;">
+                            <div style="display:flex; gap:4px; margin-bottom:6px;">
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.01</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.05</span>
+                            </div>
+                            <h3 style="margin:0;">📡 Acquisition & Requêtage Réseau</h3>
+                        </div>
                         <ul>
                             <li><strong>Requêtes API Overpass</strong> : Rédaction de requêtes Overpass QL complexes
                                 avec filtrage sur zone géopolitique (France) et critères de tags.</li>
@@ -577,7 +583,15 @@
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🐍 Algorithmique & Traitement Python</h3>
+                        <div style="margin-bottom:12px;">
+                            <div style="display:flex; gap:4px; flex-wrap:wrap; margin-bottom:6px;">
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.02</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.03</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.04</span>
+                                <span class="tag" style="font-size:10px; padding:2px 8px;">AC13.06</span>
+                            </div>
+                            <h3 style="margin:0;">🐍 Algorithmique & Traitement Python</h3>
+                        </div>
                         <ul>
                             <li><strong>Gestion de la complétude</strong> : Implémentation de tests de présence de clés
                                 pour éviter les plantages lors de la lecture de tags optionnels (wheelchair,
@@ -609,7 +623,7 @@
                     Python <code>markdown</code> pour convertir du balisage brut en fichier HTML5. J'y ai intégré
                     l'injection d'une feuille de style CSS embarquée (gestion de la typographie, ombres de boîte,
                     boutons de navigation et surbrillance au survol) pour s'assurer que les rapports générés soient
-                    soignés, lisibles et modernes.
+                    soignés, lisibles et modernes <a href="#preuve-5" style="color:var(--teal); font-weight:600;">(voir preuve n°5)</a>.
                 </p>
 
                 <p style="margin-bottom:18px;"><strong>2. Conception du générateur de fiches locales
@@ -620,7 +634,7 @@
                     coordonnées du nœud en identifiant de tuile cartographique (formules trigonométriques basées sur la
                     projection de Mercator), télécharge la tuile OSM correspondante, dessine un marqueur rouge (pin) à
                     l'emplacement précis avec la bibliothèque Pillow (PIL), puis génère une fiche d'information complète
-                    en Markdown avant de la compiler en HTML.
+                    en Markdown avant de la compiler en HTML <a href="#preuve-3" style="color:var(--teal); font-weight:600;">(voir preuve n°3)</a>.
                 </p>
 
                 <p style="margin-bottom:18px;"><strong>3. Acquisition globale des données par Overpass QL
@@ -630,7 +644,7 @@
                     requête structurée en langage Overpass QL. La requête recherche récursivement les objets de type
                     <code>node</code>, <code>way</code> et <code>relation</code> portant le tag
                     <code>[amenity=nightclub]</code> dans la zone géographique délimitée par la frontière française
-                    (référencée par son code d'aire administrative globale).
+                    (référencée par son code d'aire administrative globale). Le cahier des charges <a href="#preuve-1" style="color:var(--teal); font-weight:600;">(voir preuve n°1)</a> cadre ces exigences, et les résultats globaux sont analysés dans le rapport final <a href="#preuve-2" style="color:var(--teal); font-weight:600;">(voir preuve n°2)</a>.
                 </p>
 
                 <p style="margin-bottom:18px;"><strong>4. Analyse statistique et interface interactive
@@ -641,7 +655,7 @@
                     à la volée, l'exécute auprès de l'API Overpass, et calcule en Python le taux de remplissage pour six
                     tags cruciaux : horaires d'ouverture (<code>opening_hours</code>), site internet
                     (<code>website</code>), tarification (<code>fee</code>), droit de fumer (<code>smoking</code>),
-                    présence de karaoké (<code>karaoke</code>) et accessibilité handicapé (<code>wheelchair</code>).
+                    présence de karaoké (<code>karaoke</code>) et accessibilité handicapé (<code>wheelchair</code>) <a href="#preuve-4" style="color:var(--teal); font-weight:600;">(voir preuve n°4)</a>.
                 </p>
 
                 <p style="margin-bottom:0;"><strong>5. Intégration de la robustesse réseau & Gestion d'erreurs</strong>
@@ -651,7 +665,7 @@
                     retour HTTP transitoires (429 Trop de requêtes, 504 Timeout) fréquemment rencontrés sur les serveurs
                     publics d'Overpass. Le programme utilise <code>sys.exit()</code> avec un message explicite lorsque
                     la requête ne renvoie aucun élément afin d'éviter les erreurs de division par zéro dans le calcul
-                    des moyennes.
+                    des moyennes, visible au sein des scripts de traitement <a href="#preuve-3" style="color:var(--teal); font-weight:600;">(voir preuve n°3)</a> et d'analyse <a href="#preuve-4" style="color:var(--teal); font-weight:600;">(voir preuve n°4)</a>.
                 </p>
             </div>
         </div>
@@ -673,10 +687,10 @@
 
                 <div class="proofs-grid" style="margin-bottom: 30px;">
                     <!-- Cahier des charges -->
-                    <div class="proof-card">
+                    <div id="preuve-1" class="proof-card">
                         <div class="proof-header">
                             <span class="proof-icon">📋</span>
-                            <div class="proof-title">Cahier des charges</div>
+                            <div class="proof-title">Preuve n°1 : Cahier des charges</div>
                         </div>
                         <div class="proof-desc">
                             Document officiel spécifiant les exigences fonctionnelles et techniques de la SAÉ 1.5.
@@ -691,10 +705,10 @@
                     </div>
 
                     <!-- Rapport final -->
-                    <div class="proof-card">
+                    <div id="preuve-2" class="proof-card">
                         <div class="proof-header">
                             <span class="proof-icon">📝</span>
-                            <div class="proof-title">Rapport d'évaluation</div>
+                            <div class="proof-title">Preuve n°2 : Rapport d'évaluation</div>
                         </div>
                         <div class="proof-desc">
                             Rapport complet de Nathan Duval détaillant ses choix de conception, les statistiques
@@ -711,10 +725,10 @@
 
 
                     <!-- Fiche OSM -->
-                    <div class="proof-card">
+                    <div id="preuve-3" class="proof-card">
                         <div class="proof-header">
                             <span class="proof-icon">🗺️</span>
-                            <div class="proof-title">fiche_osm.py</div>
+                            <div class="proof-title">Preuve n°3 : Générateur de fiches locales (fiche_osm.py)</div>
                         </div>
                         <div class="proof-desc">
                             Script Python extrayant les tags d'un nœud, calculant sa tuile et ajoutant un marqueur
@@ -728,10 +742,10 @@
                     </div>
 
                     <!-- Infos locales -->
-                    <div class="proof-card">
+                    <div id="preuve-4" class="proof-card">
                         <div class="proof-header">
                             <span class="proof-icon">📈</span>
-                            <div class="proof-title">infos_locales.py</div>
+                            <div class="proof-title">Preuve n°4 : Analyseur statistique (infos_locales.py)</div>
                         </div>
                         <div class="proof-desc">
                             Script interactif de requêtage par console de zones géopolitiques et de compilation des
@@ -745,10 +759,10 @@
                     </div>
 
                     <!-- Md to Html -->
-                    <div class="proof-card">
+                    <div id="preuve-5" class="proof-card">
                         <div class="proof-header">
                             <span class="proof-icon">⚙️</span>
-                            <div class="proof-title">md_to_html.py</div>
+                            <div class="proof-title">Preuve n°5 : Convertisseur Markdown vers HTML (md_to_html.py)</div>
                         </div>
                         <div class="proof-desc">
                             Parseur Markdown-vers-HTML personnalisé injectant les règles CSS de lisibilité et de mise en
@@ -775,20 +789,28 @@
             </div>
             <div class="block-body">
                 <div class="autoeval-questions">
-                    <div class="ae-q">
-                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La première difficulté technique a été la manipulation de flux de données JSON imbriqués et très irréguliers : les données d'OpenStreetMap étant collaboratives, de nombreux nœuds d'établissements ne possédaient pas les attributs optionnels que nous étudiions (comme <code>wheelchair</code> ou <code>opening_hours</code>), ce qui a causé de multiples plantages de mon code Python par des exceptions <code>KeyError</code>. De plus, lors de l'acquisition des données à l'échelle nationale, nos requêtes Overpass trop volumineuses et répétées ont provoqué des blocages temporaires de notre adresse IP par le serveur public d'Overpass (code retour HTTP 429 et 504).</div>
+                    <div style="overflow-x: auto; margin-bottom: 20px; border-radius: 10px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; background: var(--card);">
+                            <thead>
+                                <tr style="background: var(--bg); border-bottom: 1px solid var(--border); color: var(--text); font-weight: 600;">
+                                    <th style="padding: 12px 16px; width: 50%; border-right: 1px solid var(--border);">💡 Problèmes rencontrés</th>
+                                    <th style="padding: 12px 16px; width: 50%;">🔓 Solutions trouvées</th>
+                                </tr>
+                            </thead>
+                            <tbody style="color: var(--muted); line-height: 1.7;">
+                                <tr>
+                                    <td style="padding: 16px; border-right: 1px solid var(--border); vertical-align: top; font-style: italic;">La première difficulté technique a été la manipulation de flux de données JSON imbriqués et très irréguliers : les données d'OpenStreetMap étant collaboratives, de nombreux nœuds d'établissements ne possédaient pas les attributs optionnels que nous étudiions (comme <code>wheelchair</code> ou <code>opening_hours</code>), ce qui a causé de multiples plantages de mon code Python par des exceptions <code>KeyError</code>. De plus, lors de l'acquisition des données à l'échelle nationale, nos requêtes Overpass trop volumineuses et répétées ont provoqué des blocages temporaires de notre adresse IP par le serveur public d'Overpass (code retour HTTP 429 et 504).</td>
+                                    <td style="padding: 16px; vertical-align: top; font-style: italic;">J'ai sécurisé l'extraction de données en remplaçant tous les accès directs par crochets (qui crashaient le programme) par la méthode Python <code>.get()</code> avec valeurs de repli par défaut (ex: "Non renseigné"). J'ai aussi structuré des blocs <code>try-except</code> pour ignorer proprement les nœuds corrompus ou incomplets. Pour contourner les limites réseau d'Overpass, j'ai optimisé les requêtes Overpass QL en filtrant de manière plus stricte côté serveur et j'ai implémenté une boucle de temporisation progressive (avec la bibliothèque <code>time</code>) pour espacer nos appels de test.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">J'ai sécurisé l'extraction de données en remplaçant tous les accès directs par crochets (qui crashaient le programme) par la méthode Python <code>.get()</code> avec valeurs de repli par défaut (ex: "Non renseigné"). J'ai aussi structuré des blocs <code>try-except</code> pour ignorer proprement les nœuds corrompus ou incomplets. Pour contourner les limites réseau d'Overpass, j'ai optimisé les requêtes Overpass QL en filtrant de manière plus stricte côté serveur et j'ai implémenté une boucle de temporisation progressive (avec la bibliothèque <code>time</code>) pour espacer nos appels de test.</div>
-                    </div>
-                    <div class="ae-q">
-                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-label">📚 Qu'ai-je appris de nouveau ?</div>
                         <div class="ae-q-answer">Ce projet m'a permis d'acquérir des compétences avancées en programmation orientée données sous Python 3.11. J'ai appris à interroger des API REST en gérant les couches réseau (requêtes HTTP <code>GET</code> complexes avec la bibliothèque <code>requests</code>, gestion des codes d'erreur et des limitations de requêtes <i>Rate Limiting</i> 429). J'ai maîtrisé la manipulation de fichiers de données semi-structurés au format JSON, le parsing de structures imbriquées (dictionnaires et listes), ainsi que l'utilisation de la bibliothèque Pillow pour traiter des tuiles cartographiques raster (.png) et générer des cartes de localisation dynamiques. De plus, j'ai appris à automatiser la génération de fichiers à la volée, en traduisant des données structurées en livrables Markdown conformes et en pages web HTML statiques enrichies en styles CSS.</div>
                     </div>
                     <div class="ae-q">
-                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-label">🔄 Comment pourrais-je réutiliser ces acquis ?</div>
                         <div class="ae-q-answer">Ces compétences en script Python et en traitement de données sont directement applicables à l'automatisation de tâches d'administration système et réseau (SysAdmin / NetDevOps). Je pourrai écrire des scripts pour interroger des APIs d'équipements actifs (routeurs Cisco via NETCONF/RESTCONF), collecter périodiquement des métriques réseau, parser les logs de pare-feu au format JSON et générer automatiquement des rapports d'audit au format HTML pour des tableaux de bord de supervision (type Zabbix ou Grafana). Plus généralement, cette maîtrise du traitement de flux de données (ETL - Extract, Transform, Load) constitue un socle solide pour tout futur projet orienté Big Data, IoT ou développement d'API.</div>
                     </div>
                 </div>
