@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAÉ 1.01 — Se sensibiliser à l'hygiène informatique · Portfolio BUT R&T · Nathan Duval</title>
+    <meta name="description"
+        content="Détails du projet SAÉ 1.01 par Nathan Duval : sensibilisation à l'hygiène informatique, audit de sécurité et pratiques de chiffrement.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --accent: #f59e0b;
+            --accent-bg: rgba(245, 158, 11, .12);
+            --accent-border: rgba(245, 158, 11, .25);
+        }
+
+        .sae-hero {
+            background: var(--navy);
+            border-radius: 20px;
+            padding: 36px;
+            margin-bottom: 28px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sae-hero::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245, 158, 11, .12), transparent 70%);
+        }
+
+        .sae-hero .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(245, 158, 11, .12);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, .25);
+            margin-bottom: 14px;
+        }
+
+        .sae-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .sae-hero .sae-subtitle {
+            font-size: 15px;
+            color: #94a3b8;
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .sae-hero .sae-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sae-hero .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .sae-hero .meta-item strong {
+            color: #e2e8f0;
+        }
+
+        /* ---- SECTION BLOCKS ---- */
+        .block {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            background: var(--accent-bg);
+        }
+
+        .block-header .bh-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(245, 158, 11, .12);
+            border: 1px solid rgba(245, 158, 11, .25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        .block-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .block-header p {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .block-body {
+            padding: 24px;
+        }
+
+        /* ---- AC CHIPS ---- */
+        .ac-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .ac-chip {
+            padding: 8px 16px;
+            border-radius: 10px;
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            font-size: 13px;
+            font-weight: 600;
+            color: #f59e0b;
+        }
+
+        /* ---- AUTOEVAL ---- */
+        .autoeval-questions {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .ae-q {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .ae-q-label {
+            padding: 12px 16px;
+            background: var(--bg);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ae-q-answer {
+            padding: 14px 16px;
+            color: var(--muted);
+            font-style: italic;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* ---- NIVEAU ---- */
+        .niveau-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .niveau-option {
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 10px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .niveau-option.selected {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, .12);
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        /* ---- NAV ---- */
+        .sae-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        /* ---- TECH GRID ---- */
+        .tech-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .tech-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tech-card li {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .tech-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            .niveau-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="icon" href="../doc_image/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">
+                <span class="logo-badge">ND</span>
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../section/presentation.html">Présentation</a></li>
+                <li><a href="saes.html">Projets</a></li>
+                <li><a href="../section/competences.html">Compétences</a></li>
+                <li><a href="../section/bilan.html">Bilan</a></li>
+            </ul>
+            <div class="nav-right">
+                <button id="theme-toggle" aria-label="Basculer le thème">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header fade-up" style="margin-bottom: 24px;">
+            <div class="breadcrumb"><a href="saes.html" style="color:var(--teal);text-decoration:none;">Projets</a> /
+                SAÉ 1.01</div>
+        </div>
+
+        <!-- HERO SAÉ -->
+        <div class="sae-hero fade-up">
+            <div class="badge">📂 SAÉ 1.01</div>
+            <h1>SAÉ 1.01<br><span style="color:#64748b; font-weight:400; font-size:22px;">Se sensibiliser à l'hygiène informatique</span></h1>
+            <p class="sae-subtitle">
+                Étude théorique et pratique des bases de la sécurité informatique, audit de configuration locale, gestion des identifiants et sécurisation des transferts de données.
+            </p>
+            <div class="sae-meta">
+                <div class="meta-item">📅 <strong>Semestre 1</strong> — 2025</div>
+                <div class="meta-item">👥 <strong>Travail</strong> : Individuel</div>
+                <div class="meta-item">🧰 <strong>Outils</strong> : KeePassXC, Wireshark, GPG, CLI Linux</div>
+                <div class="meta-item">🛠️ <strong>Focus</strong> : Chiffrement, gestionnaires de mots de passe, audit de sécurité</div>
+            </div>
+        </div>
+
+        <!-- 1. DESCRIPTION -->
+        <div class="block fade-up fade-up-1">
+            <div class="block-header">
+                <div class="bh-icon">📋</div>
+                <div>
+                    <h2>Description & Objectifs</h2>
+                    <p>Contexte du projet et compétences visées</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px; line-height:1.7;">
+                    Dans le cadre de cette SAÉ, nous avons été confrontés à l'importance critique de la **sécurité numérique individuelle** dans un cadre professionnel. L'objectif était de réaliser un audit complet de la sécurité de notre poste de travail personnel et de mettre en œuvre les bonnes pratiques préconisées par l'**ANSSI** (Agence nationale de la sécurité des systèmes d'information).
+                </p>
+                <p style="margin-bottom:14px; line-height:1.7;">
+                    Le projet consistait à analyser la robustesse de nos identifiants de connexion, à migrer vers un coffre-fort de mots de passe hors-ligne (KeePassXC), à générer et utiliser un couple de clés asymétriques GPG pour signer et chiffrer des courriels, et à analyser par capture réseau la vulnérabilité des protocoles de communication non chiffrés.
+                </p>
+                <p style="line-height:1.7;">
+                    Ce travail a permis de poser les bases de la culture cyber et de l'administration sécurisée des systèmes d'exploitation, prérequis indispensables pour la suite de la formation en Réseaux & Télécommunications.
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. APPRENTISSAGES CRITIQUES -->
+        <div class="block fade-up fade-up-2">
+            <div class="block-header">
+                <div class="bh-icon">🎯</div>
+                <div>
+                    <h2>Apprentissages Critiques mobilisés</h2>
+                    <p>Apprentissages critiques du référentiel BUT R&T travaillés dans ce projet</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:14px; color:var(--muted); margin-bottom:14px;">
+                    Compétences théoriques et pratiques mobilisées pour valider les notions d'hygiène informatique et de chiffrement.
+                </p>
+                <div class="ac-grid" style="margin-bottom: 20px;">
+                    <div class="ac-chip">AC11.02 — Comprendre l'architecture et les fondements des systèmes numériques</div>
+                    <div class="ac-chip">AC11.04 — Maîtriser les rôles et les principes fondamentaux des systèmes d'exploitation</div>
+                    <div class="ac-chip">AC11.05 — Identifier les dysfonctionnements du réseau local et savoir les signaler</div>
+                </div>
+
+                <div class="tech-details-grid">
+                    <div class="tech-card">
+                        <h3>🔑 Cryptographie & Identifiants</h3>
+                        <ul>
+                            <li>Génération de clés asymétriques GPG (RSA 4096 bits) pour l'échange sécurisé de données.</li>
+                            <li>Signature cryptographique de fichiers pour en garantir l'intégrité et l'authenticité.</li>
+                            <li>Mise en œuvre d'un coffre-fort KeePassXC avec mot de passe maître complexe.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>📡 Analyse Réseau & Protocoles</h3>
+                        <ul>
+                            <li>Capture de trafic réseau sur l'interface locale via Wireshark.</li>
+                            <li>Extraction et analyse de paquets de protocoles non sécurisés (HTTP, Telnet).</li>
+                            <li>Observation en clair des identifiants et des données en transit.</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>🔒 Sécurité du Système</h3>
+                        <ul>
+                            <li>Audit des services actifs et des ports ouverts sur le système local.</li>
+                            <li>Application du guide de durcissement et des règles d'or de l'ANSSI.</li>
+                            <li>Gestion fine des droits d'accès aux fichiers sensibles du système.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. TÂCHES -->
+        <div class="block fade-up fade-up-3">
+            <div class="block-header">
+                <div class="bh-icon">🔧</div>
+                <div>
+                    <h2>Tâches réalisées</h2>
+                    <p>Déroulement technique et méthodologie appliquée</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="margin-bottom:14px;"><strong>1. Migration vers un gestionnaire de mots de passe sécurisé</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Pour éliminer les mots de passe faibles et redondants, j'ai installé et configuré **KeePassXC**. J'ai créé une base de données chiffrée locale, protégée par une phrase de passe maître robuste de 25 caractères (mélangeant majuscules, minuscules, chiffres et caractères spéciaux). J'ai ensuite généré des mots de passe aléatoires de 16 caractères pour l'ensemble de mes services universitaires et professionnels.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>2. Chiffrement asymétrique et signature numérique GPG</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    J'ai généré une paire de clés GPG en utilisant l'algorithme **RSA 4096 bits** en ligne de commande. J'ai exporté ma clé publique pour la transmettre à mes collaborateurs. J'ai ensuite chiffré des messages textuels et signé numériquement des documents afin de garantir l'identité de l'expéditeur et la non-altération du fichier lors du transit.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>3. Analyse des failles de sécurité des protocoles clairs sur Wireshark</strong></p>
+                <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
+                    Afin de prendre conscience du risque des connexions en clair, j'ai mis en place une capture Wireshark lors d'une connexion de test à un serveur Telnet local et à une page d'authentification HTTP. En reconstruisant le flux TCP (<i>Follow TCP Stream</i>), j'ai pu identifier immédiatement l'identifiant et le mot de passe transitant en clair. J'ai reconduit le test en utilisant SSH et HTTPS pour valider la non-visibilité des flux.
+                </p>
+
+                <p style="margin-bottom:14px;"><strong>4. Audit de configuration et application du guide ANSSI</strong></p>
+                <p style="color:var(--muted); font-size:14px;">
+                    J'ai passé en revue les paramètres de sécurité de mon système d'exploitation (Windows 11) : vérification du statut du pare-feu, désactivation des protocoles obsolètes (SMBv1), suppression des comptes invités inutilisés et restriction des droits d'accès réseau. J'ai synthétisé ces actions dans une charte personnelle d'hygiène numérique.
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. PREUVES -->
+        <div class="block fade-up fade-up-4">
+            <div class="block-header">
+                <div class="bh-icon">📎</div>
+                <div>
+                    <h2>Résultats & Preuves</h2>
+                    <p>Livrables et captures d'écrans techniques</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <p style="font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7;">
+                    L'analyse comparative des protocoles sécurisés et non sécurisés est résumée dans le tableau ci-dessous :
+                </p>
+
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); color: var(--text); font-weight: 600;">
+                            <th style="padding: 10px;">Protocole testé</th>
+                            <th style="padding: 10px;">Port</th>
+                            <th style="padding: 10px;">Chiffrement</th>
+                            <th style="padding: 10px;">Résultat Wireshark (TCP Stream)</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: var(--muted);">
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">Telnet</td>
+                            <td style="padding: 10px;">23</td>
+                            <td style="padding: 10px; color:#ef4444;">Aucun (Clair)</td>
+                            <td style="padding: 10px; color:#ef4444;">Login et mot de passe visibles en texte brut</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">SSH</td>
+                            <td style="padding: 10px;">22</td>
+                            <td style="padding: 10px; color:#10b981;">AES / ChaCha20</td>
+                            <td style="padding: 10px; color:#10b981;">Données chiffrées, impossibles à lire</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">HTTP</td>
+                            <td style="padding: 10px;">80</td>
+                            <td style="padding: 10px; color:#ef4444;">Aucun (Clair)</td>
+                            <td style="padding: 10px; color:#ef4444;">Champs du formulaire (POST data) lisibles</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 10px; font-weight: 600; color: var(--text);">HTTPS</td>
+                            <td style="padding: 10px;">443</td>
+                            <td style="padding: 10px; color:#10b981;">TLS 1.3</td>
+                            <td style="padding: 10px; color:#10b981;">Requêtes et réponses entièrement chiffrées</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="code-title">Informations de la paire de clés GPG générée</div>
+                <pre><code>nathan@rt-laptop:~$ gpg --list-keys
+pub   rsa4096 2025-10-14 [SC] [expire: 2027-10-14]
+      A3F8 B729 49D2 04C1 F7E8  3D82 B71C 04D3 E849 F22A
+uid           [ultimate] Nathan Duval &lt;nathan.duval27@gmail.com&gt;
+sub   rsa4096 2025-10-14 [E] [expire: 2027-10-14]</code></pre>
+            </div>
+        </div>
+
+        <!-- 5. AUTOÉVALUATION -->
+        <div class="block fade-up">
+            <div class="block-header">
+                <div class="bh-icon">🔍</div>
+                <div>
+                    <h2>Autoévaluation réflexive</h2>
+                    <p>Analyse critique de mon expérience et de ma progression</p>
+                </div>
+            </div>
+            <div class="block-body">
+                <div class="autoeval-questions">
+                    <div class="ae-q">
+                        <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
+                        <div class="ae-q-answer">La principale complexité a été la compréhension théorique du modèle asymétrique (distinction entre clé publique de chiffrement et clé privée de déchiffrement, et l'inverse pour la signature), ainsi que le paramétrage du trousseau sous Windows/Linux.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
+                        <div class="ae-q-answer">J'ai dessiné des schémas d'échange de clés pour bien visualiser qui possède quelle clé et à quel moment elles interviennent. Pour les outils, j'ai lu les guides utilisateur de GnuPG (GPG) et pratiqué via le terminal.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
+                        <div class="ae-q-answer">J'ai appris à configurer et utiliser au quotidien un gestionnaire de mots de passe, à chiffrer mes échanges par clé publique et à utiliser Wireshark pour analyser et diagnostiquer des flux réseau de base. J'ai aussi appris les règles essentielles de l'ANSSI.</div>
+                    </div>
+                    <div class="ae-q">
+                        <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
+                        <div class="ae-q-answer">L'utilisation du coffre-fort KeePassXC et de GPG est désormais intégrée à ma routine quotidienne pour stocker mes accès réseau et signer mes projets. L'analyse Wireshark est un socle indispensable pour les cours de protocoles et de cybersécurité à venir.</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <div class="section-label">Niveau de maîtrise estimé</div>
+                    <div class="niveau-grid">
+                        <div class="niveau-option">
+                            ⭐ Débutant<br><span style="font-size:11px; margin-top:4px; display:block;">Notions de
+                                base</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐ En cours<br><span
+                                style="font-size:11px; margin-top:4px; display:block;">En
+                                développement</span>
+                        </div>
+                        <div class="niveau-option selected">
+                            ⭐⭐⭐ Maîtrisé<br><span style="font-size:11px; margin-top:4px; display:block;">Autonome</span>
+                        </div>
+                        <div class="niveau-option">
+                            ⭐⭐⭐⭐ Expert<br><span style="font-size:11px; margin-top:4px; display:block;">Peut
+                                enseigner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="sae-nav">
+            <a href="saes.html" class="btn btn-outline">← Retour aux projets</a>
+            <a href="sae-102.html" class="btn btn-primary">Projet suivant (SAÉ 1.02) →</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-text">Portfolio <span>R&T</span></span>
+                <p>Portfolio de formation BUT Réseaux & Télécommunications.<br>
+                    IUT d'Ifs (Campus 3, Université de Caen) — Promotion 2025–2028.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../section/presentation.html">Présentation</a></li>
+                    <li><a href="saes.html">Projets</a></li>
+                    <li><a href="../section/competences.html">Compétences</a></li>
+                    <li><a href="../section/bilan.html">Bilan global</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="contact-line">📍 IUT d'Ifs (Campus 3, Université de Caen)</div>
+                <div class="contact-line">🎓 BUT R&T · Promo 2025–2028</div>
+                <div class="contact-line">🔒 Spécialisation Cybersécurité</div>
+                <div class="contact-line">✉️ <a href="mailto:nathan.duval27@gmail.com">nathan.duval27@gmail.com</a>
+                </div>
+                <div class="contact-line">📞 <a href="tel:+33767711417">07 67 71 14 17</a></div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nathan-duval-485265410/" target="_blank"
+                        rel="noopener noreferrer">🔗 LinkedIn</a>
+                    <a href="https://github.com/Tezix-cyber" target="_blank" rel="noopener noreferrer">⚙️ GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nathan Duval — Tous droits réservés</span>
+            <span>BUT Réseaux & Télécommunications · <a href="../index.html">Portfolio</a></span>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Retour en haut">↑</button>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
