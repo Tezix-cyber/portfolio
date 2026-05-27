@@ -303,6 +303,12 @@ main {
     border-color: rgba(245, 158, 11, .25);
 }
 
+.tag-pink {
+    background: rgba(236, 72, 153, .12);
+    color: #ec4899;
+    border-color: rgba(236, 72, 153, .25);
+}
+
 /* ==========================================
    PLACEHOLDER / TODO BLOCKS
    ========================================== */

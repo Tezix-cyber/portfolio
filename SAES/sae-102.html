@@ -297,24 +297,13 @@
             </div>
             <div class="block-body">
                 <p style="margin-bottom:14px;">
-                    Dans le cadre de cette SAÉ, nous avons été recrutés en tant que techniciens réseau pour la société
-                    <strong>Fibre&Company</strong>, une entreprise spécialisée dans le déploiement de la fibre optique.
-                    Son réseau initial très basique (60 postes utilisateurs, switchs non paramétrables, adressage à
-                    plat, box ADSL gérant les services de DNS cache, DHCP et routage sans cloisonnement) devenait un
-                    frein et un risque de sécurité majeur, d'autant que l'entreprise projetait de <strong>doubler ses
-                        effectifs</strong> (passage à plus de 120 postes).
+                    La <strong>SAÉ 1.02 — S'initier aux réseaux informatiques</strong> est le premier projet pratique de réseau de notre cursus. Son objectif était de nous familiariser avec les équipements réseau physiques et simulés, d'assimiler les concepts d'adressage IPv4 et de valider le fonctionnement d'un réseau local simple (LAN).
                 </p>
                 <p style="margin-bottom:14px;">
-                    L'objectif principal était de **concevoir et réaliser un prototype sécurisé et redondant** sur
-                    maquette avant le passage en production. Il s'agissait de segmenter le trafic en VLANs, de
-                    configurer le routage inter-VLANs, d'agréger les liaisons commutées et d'installer un serveur de
-                    services Debian 13 virtualisé sur un hyperviseur **Proxmox VE**.
+                    En nous basant sur un cahier des charges d'une petite agence, nous devions concevoir un plan d'adressage IP sans gaspillage, concevoir la maquette sur le logiciel **Cisco Packet Tracer**, puis réaliser le câblage physique réel en salle de travaux pratiques. Il s'agissait également d'apprendre à configurer de base les commutateurs (Cisco Catalyst) et routeurs pour assurer la connectivité.
                 </p>
                 <p>
-                    Ce projet a permis de mobiliser des compétences transverses en adressage IPv4, en protocoles de
-                    niveau 2 (RSTP, LACP), en routage de niveau 3, ainsi qu'en administration système Linux (DNS
-                    récursif, serveurs de fichiers Samba, transferts de configuration TFTP et politiques de sécurité de
-                    l'ANSSI).
+                    Ce projet a été l'occasion de manipuler pour la première fois le CLI (Command Line Interface) d'iOS Cisco, de comprendre le routage statique de base et de diagnostiquer des dysfonctionnements physiques de réseau local.
                 </p>
             </div>
         </div>
@@ -344,29 +333,27 @@
 
                 <div class="tech-details-grid">
                     <div class="tech-card">
-                        <h3>🌐 Administration & Commutation</h3>
+                        <h3>🌐 Adressage & Plan de réseau</h3>
                         <ul>
-                            <li>Segmentation en 6 VLANs métiers pour isoler les flux.</li>
-                            <li>Spanning Tree RSTP pour éliminer les boucles (3750 configuré en Root).</li>
-                            <li>Liaisons agrégées LACP (EtherChannel) pour la redondance et la bande passante.</li>
+                            <li>Calcul des plages d'adresses IPv4, masques et passerelles pour les différents services.</li>
+                            <li>Modélisation de la topologie réseau physique et logique dans Cisco Packet Tracer.</li>
+                            <li>Attribution d'adresses de manière statique et par serveur DHCP.</li>
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🐧 Systèmes & Services</h3>
+                        <h3>🛠️ Configuration Cisco iOS</h3>
                         <ul>
-                            <li>Debian 13 VM multi-disques (XFS pour le /home et Ext4 pour le reste).</li>
-                            <li>Automatisation de l'intégration utilisateurs via <code>newusers</code> et
-                                <code>pwgen</code>.
-                            </li>
-                            <li>DNS récursif cache (Bind9), serveur web (Apache2) et serveur TFTP.</li>
+                            <li>Prise en main du CLI (console) pour la configuration initiale (hostname, mots de passe enable/secret).</li>
+                            <li>Sécurisation des accès (lignes console, VTY, bannières d'avertissement).</li>
+                            <li>Configuration d'une adresse IP d'administration sur le VLAN 1 d'un commutateur Catalyst.</li>
                         </ul>
                     </div>
                     <div class="tech-card">
-                        <h3>🔒 Sécurité & Robustesse</h3>
+                        <h3>🔍 Diagnostic & Câblage</h3>
                         <ul>
-                            <li>Port-Security sur les switchs, protection contre les tempêtes de broadcast.</li>
-                            <li>Désactivation de Telnet/HTTP, accès SSH sécurisé par clés RSA 4096 bits (ANSSI).</li>
-                            <li>Sauvegardes incrémentales du disque utilisateur via <code>xfsdump</code>.</li>
+                            <li>Câblage physique de la maquette (câbles droits/croisés Ethernet RJ45).</li>
+                            <li>Utilisation des commandes de diagnostic (ping, traceroute, show ip interface brief).</li>
+                            <li>Résolution de dysfonctionnements de connectivité basiques (erreurs d'interfaces, mauvais masques).</li>
                         </ul>
                     </div>
                 </div>
@@ -383,67 +370,33 @@
                 </div>
             </div>
             <div class="block-body">
-                <p style="margin-bottom:14px;"><strong>1. Conception du plan d'adressage IPv4 sans VLSM</strong></p>
+                <p style="margin-bottom:14px;"><strong>1. Conception du plan d'adressage IPv4 de l'agence</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                    Pour héberger 150 machines par VLAN, nous avons dimensionné les masques au plus près. Le masque
-                    requis est un <strong>/24 (255.255.255.0)</strong>, offrant 254 adresses utiles (le /25 étant limité
-                    à 126 hôtes).
-                    Nous avons découpé le réseau privé <code>172.16.0.0/16</code> de la manière suivante :
-                    <br>• VLAN 200 (Serveurs) : <code>172.16.0.0/24</code> (IP serveur : <code>172.16.0.10</code>)
-                    <br>• VLAN 210 (Comptabilité) : <code>172.16.1.0/24</code>
-                    <br>• VLAN 220 (Administratif) : <code>172.16.2.0/24</code>
-                    <br>• VLAN 230 (Vente) : <code>172.16.3.0/24</code>
-                    <br>• VLAN 240 (Supervision) : <code>172.16.4.0/24</code>
-                    <br>• VLAN 250 (Admin Informatique) : <code>172.16.5.0/24</code>
-                    <br>• VLAN 696 (Non utilisé / Natif) : <code>172.16.96.0/24</code>
-                    <br>• Lien point-à-point L3 (Switch L3 ↔ Routeur 2911) : <code>172.16.254.0/30</code>
+                    Nous devions découper une plage d'adresses réseau privée de classe C (<code>192.168.1.0/24</code>) pour alimenter deux bureaux de l'agence (le bureau administration et le bureau technique). Nous avons dimensionné les masques pour accueillir les machines et affecté les passerelles par défaut sur le routeur local.
                 </p>
 
-                <p style="margin-bottom:14px;"><strong>2. Déploiement et configuration des équipements actifs
-                        Cisco</strong></p>
+                <p style="margin-bottom:14px;"><strong>2. Maquettage logique et simulation sous Cisco Packet Tracer</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                    Sur le switch L3 (Catalyst 3750), nous avons activé le routage IP et configuré les interfaces
-                    virtuelles (SVI). Nous y avons déployé le serveur DHCP pour l'ensemble des VLANs (sauf le VLAN 200)
-                    avec attribution du serveur DNS de l'entreprise.
-                    Les switchs d'accès ont été reliés au commutateur racine par des liaisons EtherChannel LACP
-                    redondantes.
+                    Avant de manipuler le matériel réel, nous avons reproduit la topologie cible sur Packet Tracer : un routeur Cisco 2911 reliant notre LAN à un serveur externe simulé, et un switch Catalyst 2960 connectant les différents postes de travail. Nous avons validé la logique de routage et d'adressage en lançant des pings en mode simulation.
                 </p>
 
-                <p style="margin-bottom:14px;"><strong>3. Installation et partitionnement Debian 13 VM</strong></p>
+                <p style="margin-bottom:14px;"><strong>3. Configuration initiale de base des équipements actifs</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                    La machine virtuelle Debian 13 a été installée sous Proxmox VE en mode UEFI avec 4 disques virtuels
-                    distincts :
-                    <br>• <strong>Disque 1 (50 Go)</strong> : <code>/boot/efi</code> (500 Mo FAT), <code>/</code> (40 Go
-                    Ext4), swap (6 Go), <code>/tmp</code> (4 Go Ext4)
-                    <br>• <strong>Disque 2 (60 Go)</strong> : <code>/var</code> (Ext4) pour les données variables (logs,
-                    sites)
-                    <br>• <strong>Disque 3 (70 Go)</strong> : <code>/home</code> (XFS) pour les répertoires personnels
-                    <br>• <strong>Disque 4 (80 Go)</strong> : <code>/BackupHome</code> (Ext4) pour héberger les fichiers
-                    de sauvegarde
+                    En console via câble bleu RJ45-DB9, nous avons configuré les commutateurs et le routeur :
+                    <br>• Renommage des hôtes (<code>hostname Router-Passerelle</code>, <code>hostname Switch-Access</code>).
+                    <br>• Sécurisation du mode privilégié (<code>enable secret</code>) et de la ligne console (<code>password</code>, <code>login</code>).
+                    <br>• Écriture d'une bannière de sécurité (<code>banner motd</code>).
+                    <br>• Configuration de l'IP d'administration du switch sur l'interface virtuelle <code>Vlan1</code>.
                 </p>
 
-                <p style="margin-bottom:14px;"><strong>4. Provisionnement automatique et restriction d'accès</strong>
-                </p>
+                <p style="margin-bottom:14px;"><strong>4. Câblage physique de la maquette en salle de TP</strong></p>
                 <p style="margin-bottom:18px; color:var(--muted); font-size:14px;">
-                    Pour créer les comptes sans utiliser de boucles Bash (exigence du responsable), nous avons utilisé
-                    l'utilitaire <code>newusers</code> couplé à <code>pwgen</code> pour générer des mots de passe
-                    robustes de 10 caractères avec symboles. Seuls les 5 premiers utilisateurs (groupe <em>Admin
-                        Informatique</em>) ont reçu un interpréteur <code>/bin/bash</code>, les autres étant redirigés
-                    vers <code>/usr/sbin/nologin</code>.
+                    Nous avons réalisé le câblage physique sur notre armoire de TP : connexion des postes clients (PCs sous Windows) aux ports du commutateur en câble droit, et liaison du commutateur au port Gigabit du routeur. Nous avons appris à identifier les câbles et à observer les diodes d'état des ports (orange, vert).
                 </p>
 
-                <p style="margin-bottom:14px;"><strong>5. Services applicatifs & Sécurité globale</strong></p>
+                <p style="margin-bottom:14px;"><strong>5. Validation et diagnostic de connectivité</strong></p>
                 <p style="color:var(--muted); font-size:14px;">
-                    • <strong>DNS Cache (Bind9)</strong> : Résolution récursive réactive locale.
-                    <br>• <strong>Partage Samba</strong> : Accès invité en lecture seule. Dépôt autorisé aux groupes
-                    <em>Administratif</em> et <em>Admin Informatique</em>. Protection des données par l'activation du
-                    Sticky Bit (<code>chmod +t</code>) sur les dossiers partagés, empêchant la suppression des fichiers
-                    par un tiers.
-                    <br>• <strong>Web (Apache2)</strong> & <strong>Sauvegarde TFTP</strong> (stockage d'IOS Cisco et de
-                    fichiers de configuration).
-                    <br>• <strong>Durcissement</strong> : Clés SSH RSA de 4096 bits (conforme ANSSI), désactivation de
-                    SSHv1, masquage des bannières de version, limitation des ciphers aux plus sécurisés (AES-GCM et
-                    ChaCha20-Poly1305).
+                    Afin de valider la maquette, nous avons effectué des tests de connectivité (<code>ping</code> et <code>traceroute</code>) entre les postes clients et les interfaces du routeur. Nous avons résolu des problèmes d'accès en vérifiant les configurations réseau des clients (passerelles mal renseignées) et en utilisant les commandes Cisco <code>show interfaces</code> pour détecter d'éventuels ports désactivés (<code>shutdown</code>).
                 </p>
             </div>
         </div>
@@ -459,41 +412,37 @@
             </div>
             <div class="block-body">
 
-                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Topologie
-                    Réseau Logique (Fibre&Company)</h4>
+                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Topologie Réseau Logique sous Packet Tracer</h4>
                 <div style="text-align: center; margin-bottom: 24px;">
-                    <img src="../preuves_sae_102/VIsio.png" alt="Topologie réseau Fibre&Company"
+                    <img src="../preuves_sae_102/VIsio.png" alt="Topologie réseau Packet Tracer"
                         style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
-                    <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 1 : Maquette réseau Cisco &
-                        Hyperviseur Proxmox VE (VLANs & routage L3)</p>
+                    <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 1 : Topologie réseau logique simulée (Postes clients, Switch local et Passerelle routeur)</p>
                 </div>
 
-                <h4 style="font-family:'Outfit'; font-size:15px; margin-bottom:10px; color:var(--text);">Schéma de
-                    partitionnement des disques Debian 13 VM</h4>
-                <div style="text-align: center; margin-bottom: 28px;">
-                    <img src="../preuves_sae_102/sae12_disks.png" alt="Partitionnement disque Debian VM"
-                        style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
-                    <p style="font-size:12px; color:var(--muted); margin-top:8px;">Figure 2 : Architecture multi-disques
-                        et points de montage système/données/sauvegardes</p>
-                </div>
+                <div class="code-title">Configuration initiale du Switch Catalyst 2960 (Sécurisation et Administration)</div>
+                <pre><code>! Configuration Switch d'Accès
+Switch> enable
+Switch# configure terminal
+Switch(config)# hostname Switch-Access
+Switch-Access(config)# enable secret secret123
+Switch-Access(config)# line console 0
+Switch-Access(config-line)# password consolepass
+Switch-Access(config-line)# login
+Switch-Access(config-line)# exit
+Switch-Access(config)# interface Vlan1
+Switch-Access(config-if)# ip address 192.168.1.250 255.255.255.0
+Switch-Access(config-if)# no shutdown
+Switch-Access(config-if)# exit
+Switch-Access(config)# ip default-gateway 192.168.1.254</code></pre>
 
-                <div class="code-title">Configuration Switch Catalyst 3750 L3 (Routage Inter-VLAN & DHCP)</div>
-                <pre><code>! Routage Inter-VLAN et passerelle
-ip routing
-interface Vlan210
- ip address 172.16.1.254 255.255.255.0
-!
-! Pool DHCP (Exclusion des 5 dernieres IP)
-ip dhcp excluded-address 172.16.1.250 172.16.1.254
-ip dhcp pool Pool-Compta
- network 172.16.1.0 255.255.255.0
- default-router 172.16.1.254
- dns-server 172.16.0.10</code></pre>
-
-                <div class="code-title">Configuration Routeur 2911 (Routage statique LAN & WAN)</div>
-                <pre><code>! Routage statique local & default route vers Box
-ip route 0.0.0.0 0.0.0.0 192.168.1.1
-ip route 172.16.0.0 255.255.0.0 172.16.254.1</code></pre>
+                <div class="code-title">Configuration de l'interface LAN du routeur Cisco 2911</div>
+                <pre><code>! Configuration de la passerelle LAN sur le routeur
+Router> enable
+Router# configure terminal
+Router(config)# hostname Router-Gateway
+Router-Gateway(config)# interface GigabitEthernet0/0
+Router-Gateway(config-if)# ip address 192.168.1.254 255.255.255.0
+Router-Gateway(config-if)# no shutdown</code></pre>
             </div>
         </div>
 
@@ -510,30 +459,19 @@ ip route 172.16.0.0 255.255.0.0 172.16.254.1</code></pre>
                 <div class="autoeval-questions">
                     <div class="ae-q">
                         <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La principale difficulté résidait dans l'intégration globale de
-                            l'adressage IP sans VLSM pour satisfaire le besoin de 150 postes tout en évitant le
-                            gaspillage d'adresses, ainsi que la configuration fine de Samba pour restreindre la
-                            modification et la suppression de fichiers aux seuls propriétaires.</div>
+                        <div class="ae-q-answer">La principale difficulté a été de manipuler pour la première fois la console CLI sans interface graphique et de retenir la syntaxe exacte des commandes de configuration iOS Cisco. De plus, lors du câblage physique, une erreur de câble (câble croisé utilisé à la place d'un droit) a temporairement bloqué les pings.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">J'ai structuré l'adressage en blocs /24 contigus au sein de
-                            172.16.0.0/16. Pour Samba, j'ai combiné les directives de partage Samba (write list) avec le
-                            sticky bit POSIX (chmod +t) sur le répertoire partagé sous Debian pour garantir que seuls
-                            les propriétaires puissent supprimer ou modifier leurs fichiers.</div>
+                        <div class="ae-q-answer">Nous avons utilisé l'aide en ligne du CLI Cisco (touche <code>?</code> et complétion automatique par tabulation) pour retrouver la syntaxe des commandes. Pour le problème de câblage, nous avons vérifié l'état des ports et testé les câbles avec des testeurs réseau physiques de la salle de TP avant de les reconnecter.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                        <div class="ae-q-answer">J'ai appris à concevoir un réseau d'entreprise de A à Z (commutation
-                            L2, routage L3 Cisco), à manipuler des techniques avancées d'administration Debian (gestion
-                            multi-disque, xfsdump, newusers pour le provisionnement en masse) et à appliquer les règles
-                            de durcissement de l'ANSSI (SSHv2, clés asymétriques RSA 4096 bits).</div>
+                        <div class="ae-q-answer">J'ai appris à concevoir un plan d'adressage IP de A à Z, à configurer et sécuriser le niveau 2 et 3 de base sur des équipements Cisco et à utiliser des outils système console (ping, traceroute) pour tester et valider des connexions.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                        <div class="ae-q-answer">Ces compétences fondamentales de switching, routing et de durcissement
-                            Linux constituent le socle technique indispensable pour mon projet professionnel orienté
-                            vers la cybersécurité et l'administration système sécurisée.</div>
+                        <div class="ae-q-answer">Ces bases d'administration réseau Cisco iOS et de diagnostic de connectivité constituent les briques de base absolues de toute la formation. Elles seront directement réutilisées dans les SAÉ suivantes (comme la conception de réseaux plus étendus ou le déploiement de protocoles de routage dynamique au Semestre 2).</div>
                     </div>
                 </div>
 
