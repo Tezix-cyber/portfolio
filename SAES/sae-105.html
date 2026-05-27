@@ -777,27 +777,19 @@
                 <div class="autoeval-questions">
                     <div class="ae-q">
                         <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">Les principales difficultés ont été la prise en main d'Overpass QL, la
-                            variabilité des attributs OSM selon les objets et le choix de statistiques vraiment
-                            pertinentes.</div>
+                        <div class="ae-q-answer">La première difficulté technique a été la manipulation de flux de données JSON imbriqués et très irréguliers : les données d'OpenStreetMap étant collaboratives, de nombreux nœuds d'établissements ne possédaient pas les attributs optionnels que nous étudiions (comme <code>wheelchair</code> ou <code>opening_hours</code>), ce qui a causé de multiples plantages de mon code Python par des exceptions <code>KeyError</code>. De plus, lors de l'acquisition des données à l'échelle nationale, nos requêtes Overpass trop volumineuses et répétées ont provoqué des blocages temporaires de notre adresse IP par le serveur public d'Overpass (code retour HTTP 429 et 504).</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">J'ai testé progressivement les requêtes dans l'interpréteur Overpass,
-                            comparé les résultats JSON et ajusté le traitement Python avec des contrôles sur les champs
-                            absents.</div>
+                        <div class="ae-q-answer">J'ai sécurisé l'extraction de données en remplaçant tous les accès directs par crochets (qui crashaient le programme) par la méthode Python <code>.get()</code> avec valeurs de repli par défaut (ex: "Non renseigné"). J'ai aussi structuré des blocs <code>try-except</code> pour ignorer proprement les nœuds corrompus ou incomplets. Pour contourner les limites réseau d'Overpass, j'ai optimisé les requêtes Overpass QL en filtrant de manière plus stricte côté serveur et j'ai implémenté une boucle de temporisation progressive (avec la bibliothèque <code>time</code>) pour espacer nos appels de test.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                        <div class="ae-q-answer">J'ai renforcé ma maîtrise de Python pour l'exploitation d'API, la
-                            structuration modulaire de scripts et la transformation de données en livrables lisibles
-                            (Markdown/HTML).</div>
+                        <div class="ae-q-answer">Ce projet m'a permis d'acquérir des compétences avancées en programmation orientée données sous Python 3.11. J'ai appris à interroger des API REST en gérant les couches réseau (requêtes HTTP <code>GET</code> complexes avec la bibliothèque <code>requests</code>, gestion des codes d'erreur et des limitations de requêtes <i>Rate Limiting</i> 429). J'ai maîtrisé la manipulation de fichiers de données semi-structurés au format JSON, le parsing de structures imbriquées (dictionnaires et listes), ainsi que l'utilisation de la bibliothèque Pillow pour traiter des tuiles cartographiques raster (.png) et générer des cartes de localisation dynamiques. De plus, j'ai appris à automatiser la génération de fichiers à la volée, en traduisant des données structurées en livrables Markdown conformes et en pages web HTML statiques enrichies en styles CSS.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                        <div class="ae-q-answer">Ces compétences seront utiles pour des projets data, la supervision de
-                            services, l'automatisation de rapports et plus globalement pour tout besoin d'analyse de
-                            données ouvertes.</div>
+                        <div class="ae-q-answer">Ces compétences en script Python et en traitement de données sont directement applicables à l'automatisation de tâches d'administration système et réseau (SysAdmin / NetDevOps). Je pourrai écrire des scripts pour interroger des APIs d'équipements actifs (routeurs Cisco via NETCONF/RESTCONF), collecter périodiquement des métriques réseau, parser les logs de pare-feu au format JSON et générer automatiquement des rapports d'audit au format HTML pour des tableaux de bord de supervision (type Zabbix ou Grafana). Plus généralement, cette maîtrise du traitement de flux de données (ETL - Extract, Transform, Load) constitue un socle solide pour tout futur projet orienté Big Data, IoT ou développement d'API.</div>
                     </div>
                 </div>
 

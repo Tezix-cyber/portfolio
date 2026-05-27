@@ -589,36 +589,19 @@
                 <div class="autoeval-questions">
                     <div class="ae-q">
                         <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La principale difficulté a été l'interprétation précise à
-                            l'oscilloscope de l'écho de l'onde incidente. Selon que le câble se terminait par un circuit
-                            ouvert ou par un court-circuit, l'impulsion était réfléchie en phase ou en opposition de
-                            phase, ce qui nécessitait une bonne maîtrise de la théorie. De plus, pour la photométrie,
-                            les mesures optiques se sont avérées très sensibles à la saleté sur la férule des
-                            connecteurs (poussière ou graisse), augmentant anormalement l'atténuation.</div>
+                        <div class="ae-q-answer">La première difficulté a été la calibration rigoureuse des instruments et la précision des mesures. En photométrie optique, nous avons initialement omis de faire la mesure de puissance de référence (0 dB) à l'aide d'une jarretière d'injection courte directe, ce qui a causé des calculs d'atténuation aberrants (gain optique positif). En réflectométrie cuivre, le bruit sur le signal réfléchi à l'oscilloscope rendait le positionnement des curseurs incertain, ce qui créait une marge d'erreur de près de 5 mètres sur la localisation théorique du défaut physique.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">Nous avons utilisé les curseurs de l'oscilloscope numérique pour
-                            pointer avec précision le début du flanc de montée du signal réfléchi, éliminant les
-                            incertitudes visuelles. Pour la liaison optique, nous avons appliqué les règles de l'art en
-                            nettoyant systématiquement les connecteurs avec des lingettes spéciales sèches et des
-                            solvants adaptés (alcool isopropylique) avant chaque mesure, ce qui a stabilisé la valeur
-                            d'affaiblissement mesurée.</div>
+                        <div class="ae-q-answer">Nous avons repris les fondamentaux : nettoyage systématique des faces de férules optiques SC/UPC à l'aide de solvant adapté (alcool isopropylique) et d'un stylo de nettoyage (les pertes optiques anormales de 4 dB ayant été causées par une poussière microscopique), puis réétalonnage de la puissance absolue d'injection. Pour le cuivre, j'ai optimisé le déclenchement (trigger) et la base de temps de l'oscilloscope pour zoomer sur le front de l'onde réfléchie, ce qui a permis de placer les curseurs de temps de manière fiable et de ramener l'incertitude de distance à moins de 20 cm.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                        <div class="ae-q-answer">J'ai acquis une solide compréhension de la théorie de propagation
-                            guidée dans les conducteurs métalliques et dans le verre. J'ai appris à manipuler des
-                            instruments de mesure indispensables comme le réflectomètre DTF et le couple
-                            photomètre/source lumineuse, tout en apprenant à calculer un bilan de puissance optique
-                            théorique (atténuation linéique en dB/km, pertes de connectique).</div>
+                        <div class="ae-q-answer">Ce projet m'a permis d'assimiler les modèles mathématiques et physiques régissant la propagation des ondes guidées (phénomènes de réflexion aux transitions d'impédance pour le cuivre, réfraction et réflexion totale interne pour la fibre monomode G.652). J'ai maîtrisé l'utilisation d'appareils de métrologie avancée : l'oscilloscope numérique combiné à un générateur de fonctions (GBF) pour l'analyse temporelle fine (calcul expérimental de la NVP), le réflectomètre portatif pour cuivre (DTF) et le couple source optique calibrée (1310/1550 nm) et photomètre. J'ai appris à concevoir, calculer et valider expérimentalement un bilan de liaison optique, en quantifiant l'atténuation linéique de la fibre (en dB/km), les pertes d'insertion des connecteurs SC/UPC, et l'affaiblissement d'un coupleur passif 1x2.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                        <div class="ae-q-answer">Ces connaissances sont directement applicables pour le diagnostic de
-                            dysfonctionnement sur des liaisons de télécommunication physiques (coupure d'une ligne
-                            ADSL/VDSL, problème sur une dorsale fibre optique inter-bâtiment FTTO/FTTH). C'est un
-                            prérequis indispensable pour tout travail d'audit d'infrastructure réseau physique.</div>
+                        <div class="ae-q-answer">Ces compétences de métrologie et de diagnostic physique sont directement transposables aux métiers d'intégrateur et d'auditeur d'infrastructures télécoms. Elles me serviront lors des déploiements réels de boucles locales optiques (FTTH/FTTO) pour certifier des liens clients ou diagnostiquer des cassures sur la fibre via réflectométrie optique dans le domaine temporel (OTDR). De plus, la rigueur acquise dans le calibrage d'appareils de mesure et dans la rédaction de rapports de tests normés (calculs d'incertitudes) constitue un atout précieux pour n'importe quel projet d'ingénierie physique ou de validation de systèmes de transmission RF et optique.</div>
                     </div>
                 </div>
 

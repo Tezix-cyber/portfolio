@@ -459,19 +459,19 @@ Router-Gateway(config-if)# no shutdown</code></pre>
                 <div class="autoeval-questions">
                     <div class="ae-q">
                         <div class="ae-q-label">💡 Quelles difficultés as-tu rencontrées ?</div>
-                        <div class="ae-q-answer">La principale difficulté a été de manipuler pour la première fois la console CLI sans interface graphique et de retenir la syntaxe exacte des commandes de configuration iOS Cisco. De plus, lors du câblage physique, une erreur de câble (câble croisé utilisé à la place d'un droit) a temporairement bloqué les pings.</div>
+                        <div class="ae-q-answer">La première difficulté a été le calcul et la logique du plan d'adressage IP : nous avons commis des erreurs de découpage initial en chevauchant des sous-réseaux, ayant oublié de déduire les adresses de réseau et de diffusion pour chaque plage. De plus, lors du maquettage physique réel, notre groupe a perdu beaucoup de temps à déboguer un manque de connectivité générale, qui résultait de l'attribution d'adresses IP directement sur des interfaces physiques au lieu de créer des sous-interfaces logiques VLAN, doublé de l'oubli de la commande d'activation <code>no shutdown</code>.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔓 Comment les as-tu surmontées ?</div>
-                        <div class="ae-q-answer">Nous avons utilisé l'aide en ligne du CLI Cisco (touche <code>?</code> et complétion automatique par tabulation) pour retrouver la syntaxe des commandes. Pour le problème de câblage, nous avons vérifié l'état des ports et testé les câbles avec des testeurs réseau physiques de la salle de TP avant de les reconnecter.</div>
+                        <div class="ae-q-answer">J'ai structuré une méthodologie de diagnostic descendante (du physique vers le logique) plutôt que de reconfigurer des éléments au hasard : vérification de la couche 1 (remplacement d'un câble défectueux repéré par son état de diode orange), vérification de la couche 2 (affectation correcte des ports d'accès au VLAN), et validation de la couche 3 à l'aide de commandes iOS Cisco clés comme <code>show ip interface brief</code> et <code>show ip route</code> pour isoler les interfaces inactives.</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">📚 Qu'as-tu appris de nouveau ?</div>
-                        <div class="ae-q-answer">J'ai appris à concevoir un plan d'adressage IP de A à Z, à configurer et sécuriser le niveau 2 et 3 de base sur des équipements Cisco et à utiliser des outils système console (ping, traceroute) pour tester et valider des connexions.</div>
+                        <div class="ae-q-answer">J'ai acquis une maîtrise pratique de l'adressage IPv4 et du principe de découpage en sous-réseaux (subnetting). J'ai appris à configurer un commutateur de niveau 2 et un routeur Cisco en CLI (configuration des VLANs, routage inter-VLAN par la méthode <i>Router-on-a-Stick</i>, sécurisation des accès console et VTY). Enfin, j'ai assimilé les protocoles fondamentaux de connectivité d'un réseau local (fonctionnement du protocole ARP, attribution dynamique par serveur DHCP, et diagnostics ICMP avec les commandes ping/traceroute).</div>
                     </div>
                     <div class="ae-q">
                         <div class="ae-q-label">🔄 Comment pourrais-tu réutiliser ces acquis ?</div>
-                        <div class="ae-q-answer">Ces bases d'administration réseau Cisco iOS et de diagnostic de connectivité constituent les briques de base absolues de toute la formation. Elles seront directement réutilisées dans les SAÉ suivantes (comme la conception de réseaux plus étendus ou le déploiement de protocoles de routage dynamique au Semestre 2).</div>
+                        <div class="ae-q-answer">Ces notions sont le fondement absolu de mon cursus en BUT R&T. Elles sont réutilisées quotidiennement lors des TP de réseaux avancés (déploiement de VLANs multiples, configuration de routage dynamique OSPF, mise en place de listes de contrôle d'accès ACLs). L'habitude d'utiliser la console CLI Cisco et de maquetter sur Packet Tracer me permet d'aborder avec confiance les architectures de réseaux d'entreprise complexes et les diagnostics d'infrastructures réelles.</div>
                     </div>
                 </div>
 
